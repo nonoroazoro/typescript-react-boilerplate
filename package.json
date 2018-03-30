@@ -1,0 +1,60 @@
+{
+    "name": "typescript-react-boilerplate",
+    "version": "1.0.0",
+    "description": "Minimal example for React with TypeScript.",
+    "license": "MIT",
+    "main": "dist/src/index",
+    "author": {
+        "email": "xiaochao.k@gmail.com",
+        "name": "nonoroazoro",
+        "url": "http://www.alibabagroup.com/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nonoroazoro/typescript-react-boilerplate"
+    },
+    "homepage": "https://github.com/nonoroazoro/typescript-react-boilerplate",
+    "bugs": {
+        "url": "https://github.com/nonoroazoro/typescript-react-boilerplate/issues"
+    },
+    "keywords": [
+        "boilerplate",
+        "react",
+        "typescript-react-boilerplate",
+        "typescript"
+    ],
+    "scripts": {
+        "precommit": "lint-staged",
+        "prebuild": "npm run clean",
+        "start": "npm run dev",
+        "dev": "",
+        "build": "tsc -p ./tsconfig.json --sourceMap false",
+        "watch": "tsc -p ./tsconfig.json -w",
+        "test": "mocha",
+        "clean": "rimraf dist/*"
+    },
+    "dependencies": {
+        "classnames": "^2.2.5",
+        "less": "^3.0.1",
+        "normalize.css": "^8.0.0",
+        "react-dom": "^16.3.0",
+        "react-hot-loader": "^4.0.0",
+        "react": "^16.3.0"
+    },
+    "devDependencies": {
+        "chalk": "^2.3.2",
+        "husky": "^0.14.3",
+        "lint-staged": "^7.0.0",
+        "mocha": "^5.0.5",
+        "rimraf": "^2.6.2",
+        "should": "^13.2.1",
+        "tslint": "^5.9.1",
+        "typescript": "^2.8.1"
+    },
+    "lint-staged": {
+        "./src/**/*.tsx?": [
+            "tslint",
+            "git add"
+        ]
+    }
+}
