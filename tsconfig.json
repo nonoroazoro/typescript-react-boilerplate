@@ -2,6 +2,9 @@
     "compilerOptions": {
         "target": "es5",
         "module": "commonjs",
+        "outDir": "dist",
+        "rootDir": ".",
+        "jsx": "react",
         "allowUnreachableCode": true,
         "declaration": true,
         "experimentalDecorators": true,
@@ -11,8 +14,6 @@
         "noUnusedLocals": true,
         "noUnusedParameters": true,
         "strictNullChecks": true,
-        "outDir": "dist",
-        "rootDir": ".",
         "pretty": true,
         "skipLibCheck": true,
         "sourceMap": true,
