@@ -7,7 +7,7 @@ const server = new WebpackDevServer(webpack(config), {
     contentBase: path.resolve(__dirname, "../examples"),
     disableHostCheck: true,
     historyApiFallback: true,
-    // hot: true,
+    hot: true,
     https: false,
     noInfo: false,
     publicPath: config.output.publicPath,
