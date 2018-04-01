@@ -5,12 +5,6 @@ config.mode = "development";
 
 config.module.rules.push(
     {
-        enforce: "pre",
-        test: /\.tsx?$/,
-        use: ["tslint-loader"],
-        exclude: /node_modules/
-    },
-    {
         test: /\.css$/,
         use: ["style-loader", "css-loader"]
     },
