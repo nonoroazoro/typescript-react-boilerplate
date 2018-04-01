@@ -1,19 +1,34 @@
 const path = require("path");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 const ROOT_PATH = path.resolve(__dirname, "../../");
-const BUILD_PATH = path.join(ROOT_PATH, "dist");
+const SRC_PATH = path.resolve(ROOT_PATH, "./src/demo");
+const BUILD_PATH = path.join(ROOT_PATH, "./dist/public/assets");
 
 module.exports = {
-    context: ROOT_PATH,
+    context: SRC_PATH,
+    entry: {
+        vendor: ["./common/vendor"],
+        demo: ["./index"]
+    },
+    devtool: "source-map",
     output: {
         path: BUILD_PATH,
+        publicPath: "/assets/",
         filename: "[name].js",
-        publicPath: "/assets/"
+        chunkFilename: "[id].chunk.js"
+    },
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    name: "vendor",
+                    chunks: "all"
+                }
+            }
+        }
     },
     resolve: {
         extensions: [".js", ".jsx"]
-        // modules: ["./", "node_modules"] // see https://github.com/webpack-contrib/css-loader/issues/74.
     },
     module: {
         rules: [
@@ -28,13 +43,13 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.(png|jpg|svg)$/,
+                test: /\.(png|jpg)$/,
                 use: [
                     {
                         loader: "url-loader",
                         options: {
                             limit: 8192,
-                            name: "images/[name].[ext]"
+                            name: "res/[name].[ext]"
                         }
                     }
                 ]
@@ -47,32 +62,28 @@ module.exports = {
                         options: {
                             limit: 8192,
                             mimetype: "application/font-woff",
-                            name: "fonts/[name].[ext]"
+                            name: "res/fonts/[name].[ext]"
                         }
                     }
                 ]
             },
             {
-                test: /\.(ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-                use: [
-                    {
-                        loader: "file-loader",
-                        options: {
-                            limit: 8192,
-                            mimetype: "application/font-woff",
-                            name: "fonts/[name].[ext]"
+                test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                use:
+                    [
+                        {
+                            loader: "file-loader",
+                            options: {
+                                limit: 8192,
+                                mimetype: "application/font-woff",
+                                name: "res/fonts/[name].[ext]"
+                            }
                         }
-                    }
-                ]
+                    ]
             }
         ]
     },
-    plugins: [
-        new CleanWebpackPlugin(BUILD_PATH, {
-            root: ROOT_PATH,
-            verbose: false
-        })
-    ],
+    plugins: [],
     stats: {
         children: false,
         modules: false

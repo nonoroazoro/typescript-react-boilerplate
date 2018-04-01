@@ -1,14 +1,7 @@
 const webpack = require("webpack");
 const config = require("./webpack.config.base");
 
-const PREFIX = "xfeedback";
-
-config.entry = {
-    index: ["./examples"]
-};
-
-// Source map for development.
-config.devtool = "cheap-module-eval-source-map";
+config.mode = "development";
 
 config.module.rules.push(
     {
@@ -35,7 +28,7 @@ config.module.rules.push(
                 options: {
                     modules: true,
                     sourceMap: true,
-                    localIdentName: `${PREFIX}-[name]-[local]`
+                    localIdentName: "[name]-[local]"
                 }
             },
             "less-loader"
@@ -47,17 +40,12 @@ config.module.rules.push(
 // Hot module replacement.
 for (const key of Object.keys(config.entry))
 {
-    if (Array.isArray(config.entry[key]))
-    {
-        config.entry[key].unshift(
-            "react-hot-loader/patch",
-            "webpack-dev-server/client?http://0.0.0.0:8080",
-            "webpack/hot/only-dev-server"
-        );
-    }
+    config.entry[key].unshift(
+        "react-hot-loader/patch",
+        "webpack-hot-middleware/client?quiet=true"
+    );
 }
 config.plugins.push(
-    new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()
 );
 
