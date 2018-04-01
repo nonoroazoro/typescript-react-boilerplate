@@ -1,19 +1,15 @@
 const path = require("path");
-
-// `CheckerPlugin` is optional. Use it if you want async error reporting.
-// We need this plugin to detect a `--watch` mode. It may be removed later
-// after https://github.com/webpack/webpack/issues/3460 will be resolved.
-const { CheckerPlugin } = require("awesome-typescript-loader");
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
+const ForkTsCheckerNotifierWebpackPlugin = require("fork-ts-checker-notifier-webpack-plugin");
 
 const ROOT_PATH = path.resolve(__dirname, "../../");
-const SRC_PATH = path.resolve(ROOT_PATH, "./src");
 const BUILD_PATH = path.join(ROOT_PATH, "./dist");
 
 module.exports = {
-    context: SRC_PATH,
+    context: ROOT_PATH,
     entry: {
-        vendor: ["./common/vendor"],
-        index: ["./index"]
+        vendor: ["./src/common/vendor"],
+        index: ["./src/index"]
     },
     devtool: "source-map",
     output: {
@@ -42,9 +38,14 @@ module.exports = {
             {
                 test: /\.tsx?$/,
                 use: [
+                    "cache-loader",
                     {
-                        loader: "awesome-typescript-loader",
-                        options: { useCache: true }
+                        loader: "thread-loader",
+                        options: { workers: require("os").cpus().length - 1 }
+                    },
+                    {
+                        loader: "ts-loader",
+                        options: { happyPackMode: true, transpileOnly: true }
                     }
                 ],
                 exclude: /node_modules/
@@ -91,7 +92,8 @@ module.exports = {
         ]
     },
     plugins: [
-        new CheckerPlugin()
+        new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true }),
+        new ForkTsCheckerNotifierWebpackPlugin({ skipSuccessful: true })
     ],
     stats: {
         children: false,
