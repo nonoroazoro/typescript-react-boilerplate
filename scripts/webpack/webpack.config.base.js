@@ -92,7 +92,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true }),
+        new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true, tslint: true }),
         new ForkTsCheckerNotifierWebpackPlugin({ skipSuccessful: true })
     ],
     stats: {
