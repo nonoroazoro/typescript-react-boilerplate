@@ -2,7 +2,7 @@
 
 ## TODO
 
-1. react-hot-loader?
+1. react-hot-loader? DO NOT US WebpackDevServer's hot with HotModuleReplacementPlugin, fuck!!!
 
 1. how to import less files in ts?
 
