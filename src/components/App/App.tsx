@@ -1,7 +1,7 @@
 import * as React from "react";
 import { PureComponent } from "react";
 
-// import * as styles from "./App.less";
+import * as styles from "./App.less";
 
 export interface IProps
 {
@@ -30,7 +30,7 @@ export default class App extends PureComponent<IProps, IState>
     {
         const { name } = this.props;
         return (
-            <div className="app">
+            <div className={styles.app}>
                 {`Hello ${name}!`}
             </div>
         );
