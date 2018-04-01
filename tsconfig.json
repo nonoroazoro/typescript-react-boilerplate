@@ -1,22 +1,27 @@
 {
     "compilerOptions": {
         "target": "es5",
+        "lib": [
+            "dom",
+            "es2015"
+        ],
         "module": "commonjs",
         "outDir": "dist",
         "rootDir": ".",
         "jsx": "react",
+        "moduleResolution": "node",
         "allowUnreachableCode": true,
-        "declaration": false,
+        "declaration": true,
         "experimentalDecorators": true,
         "noImplicitAny": true,
         "noImplicitReturns": true,
         "noImplicitThis": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
-        "strictNullChecks": true,
         "pretty": true,
         "skipLibCheck": true,
         "sourceMap": true,
+        "strictNullChecks": true,
         "suppressImplicitAnyIndexErrors": true
     },
     "exclude": [
