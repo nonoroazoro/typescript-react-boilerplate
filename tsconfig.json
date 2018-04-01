@@ -3,9 +3,9 @@
         "target": "es5",
         "lib": [
             "dom",
-            "es2015"
+            "es6"
         ],
-        "module": "commonjs",
+        "module": "es6",
         "outDir": "dist",
         "rootDir": ".",
         "jsx": "react",
