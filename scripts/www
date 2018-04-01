@@ -4,7 +4,7 @@ const { green, red } = require("chalk");
 const server = require("./devServer");
 
 const port = process.env.PORT || 8080;
-server.listen(port, "0.0.0.0", (err) =>
+server.listen(port, "localhost", (err) =>
 {
     console.log(
         err ? red(`Unable to start the dev server: ${err.message}`)
