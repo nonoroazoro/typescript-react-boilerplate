@@ -4,11 +4,9 @@
 
 import "normalize.css";
 
-import "babel-polyfill";
-
-import "prop-types";
+// import "babel-polyfill";
 
 import "react";
 import "react-dom";
-import "react-hot-loader";
-import "react-router-dom";
+// import "react-hot-loader";
+// import "react-router-dom";
