@@ -19,7 +19,8 @@ function render()
 render();
 
 // HMR to preserve React's state.
-if ((module as any).hot)
+declare const module: any;
+if (module.hot)
 {
-    (module as any).hot.accept("./components/App", render);
+    module.hot.accept("./components/App", render);
 }
