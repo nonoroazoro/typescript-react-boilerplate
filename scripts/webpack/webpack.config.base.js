@@ -1,14 +1,19 @@
 const path = require("path");
 
+// `CheckerPlugin` is optional. Use it if you want async error reporting.
+// We need this plugin to detect a `--watch` mode. It may be removed later
+// after https://github.com/webpack/webpack/issues/3460 will be resolved.
+const { CheckerPlugin } = require("awesome-typescript-loader");
+
 const ROOT_PATH = path.resolve(__dirname, "../../");
-const SRC_PATH = path.resolve(ROOT_PATH, "./src/demo");
-const BUILD_PATH = path.join(ROOT_PATH, "./dist/public/assets");
+const SRC_PATH = path.resolve(ROOT_PATH, "./src");
+const BUILD_PATH = path.join(ROOT_PATH, "./dist");
 
 module.exports = {
     context: SRC_PATH,
     entry: {
         vendor: ["./common/vendor"],
-        demo: ["./index"]
+        index: ["./index"]
     },
     devtool: "source-map",
     output: {
@@ -22,22 +27,23 @@ module.exports = {
             cacheGroups: {
                 vendor: {
                     name: "vendor",
-                    chunks: "all"
+                    chunks: "all",
+                    test: /[\\/]node_modules[\\/]/
                 }
             }
         }
     },
     resolve: {
-        extensions: [".js", ".jsx"]
+        extensions: [".ts", ".tsx", ".js", ".jsx"]
     },
     module: {
         rules: [
             {
-                test: /\.jsx?$/,
+                test: /\.tsx?$/,
                 use: [
                     {
-                        loader: "babel-loader",
-                        options: { cacheDirectory: true }
+                        loader: "awesome-typescript-loader",
+                        options: { useCache: true }
                     }
                 ],
                 exclude: /node_modules/
@@ -83,7 +89,9 @@ module.exports = {
             }
         ]
     },
-    plugins: [],
+    plugins: [
+        new CheckerPlugin()
+    ],
     stats: {
         children: false,
         modules: false
