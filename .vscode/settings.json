@@ -1,4 +1,7 @@
 {
+    "files.exclude": {
+        "**/.awcache": true
+    },
     "search.exclude": {
         "**/dist": true
     }
