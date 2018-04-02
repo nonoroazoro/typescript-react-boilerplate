@@ -11,7 +11,11 @@ const server = new WebpackDevServer(webpack(config), {
     noInfo: false,
     publicPath: config.output.publicPath,
     quiet: false,
-    stats: { colors: true }
+    stats: {
+        children: false,
+        colors: true,
+        modules: false
+    }
 });
 
 module.exports = server;
