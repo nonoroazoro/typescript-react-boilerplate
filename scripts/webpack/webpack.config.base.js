@@ -4,10 +4,13 @@ const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const ROOT_PATH = path.resolve(__dirname, "../../");
 const BUILD_PATH = path.join(ROOT_PATH, "./dist");
 
+const packageJSON = require(path.resolve(ROOT_PATH, "./package.json"));
+const vendor = Object.keys(packageJSON["dependencies"]);
+
 module.exports = {
     context: ROOT_PATH,
     entry: {
-        vendor: ["./src/common/vendor"],
+        vendor,
         index: ["./src/index"]
     },
     devtool: "source-map",
