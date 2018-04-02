@@ -1,4 +1,2 @@
-import App from "./App";
-
-export { IProps, IState } from "./App";
-export default App;
+export * from "./App";
+export { default } from "./App";
