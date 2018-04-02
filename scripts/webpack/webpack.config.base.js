@@ -1,6 +1,5 @@
 const path = require("path");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
-const ForkTsCheckerNotifierWebpackPlugin = require("fork-ts-checker-notifier-webpack-plugin");
 
 const ROOT_PATH = path.resolve(__dirname, "../../");
 const BUILD_PATH = path.join(ROOT_PATH, "./dist");
@@ -92,8 +91,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true, tslint: true }),
-        new ForkTsCheckerNotifierWebpackPlugin({ excludeWarnings: true, skipSuccessful: true })
+        new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true, tslint: true })
     ],
     stats: {
         children: false,
