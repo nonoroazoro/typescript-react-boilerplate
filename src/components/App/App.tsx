@@ -1,19 +1,19 @@
 import * as React from "react";
-import { PureComponent } from "react";
+import { Props, PureComponent } from "react";
 
-import * as styles from "./App.less";
+import styles from "./App.less";
 
-export interface IProps
+export interface IProps extends Props<App>
 {
     /**
-     * Name.
+     * Message.
      */
-    name: string;
+    message: string;
 
     /**
-     * Age.
+     * Sender.
      */
-    age?: number;
+    sender: string;
 }
 
 export interface IState
@@ -28,10 +28,11 @@ export default class App extends PureComponent<IProps, IState>
 {
     render()
     {
-        const { name } = this.props;
+        const { message, sender } = this.props;
         return (
             <div className={styles.app}>
-                {`Hello ${name}!`}
+                <p>{`Message: ${message}`}</p>
+                <p>{`From ${sender}`}</p>
             </div>
         );
     }

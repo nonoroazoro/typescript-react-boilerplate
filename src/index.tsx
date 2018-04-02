@@ -4,13 +4,13 @@ import { AppContainer } from "react-hot-loader";
 
 import App from "./components/App";
 
-// import "./index.less";
+import "./index.less";
 
 function render()
 {
     ReactDOM.render(
         <AppContainer>
-            <App name="Jack" />
+            <App message="Hello World" sender="Jack" />
         </AppContainer>,
         document.getElementById("root")
     );
