@@ -1,10 +1,15 @@
+@import "~normalize.css";
 @import "./variables.less";
 
-.reset()
+:global
 {
-    font-size: @font-size-base;
-    line-height: @line-height-base;
-    width: 100%;
+    body
+    {
+        font-family: @font-family;
+        font-size: @font-size-base;
+        line-height: @line-height-base;
+        width: 100%;
+    }
 
     h1, h2, h3, h4, h5, h6
     {
