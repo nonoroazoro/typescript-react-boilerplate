@@ -45,7 +45,7 @@ export default class App extends PureComponent<IProps, IState>
         return (
             <div className={styles.app}>
                 <p>{`Message: ${message}`}</p>
-                <p>{`From ${sender}`}</p>
+                <p>{`From: ${sender}`}</p>
                 <p>{`Clicked ${value}`}</p>
                 <button type="button" onClick={this.handleClick}>Click Me</button>
             </div>
