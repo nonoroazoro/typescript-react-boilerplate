@@ -18,7 +18,8 @@ function render()
 
 render();
 
-// HMR to preserve React's state, see https://github.com/gaearon/react-hot-loader/blob/master/docs/Troubleshooting.md
+// Add hook to auto re-render the root component.
+// See https://github.com/gaearon/react-hot-loader/blob/master/docs/Troubleshooting.md
 declare const module: any;
 if (module.hot)
 {
