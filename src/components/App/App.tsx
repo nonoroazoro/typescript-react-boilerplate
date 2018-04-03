@@ -24,7 +24,7 @@ export interface IState
     value: number;
 }
 
-class App extends PureComponent<IProps, IState>
+export default class App extends PureComponent<IProps, IState>
 {
     state = {
         value: 0
@@ -52,9 +52,3 @@ class App extends PureComponent<IProps, IState>
         );
     }
 }
-
-// Add react-hot-loader to preserve state (to support React v16.3.0).
-// See https://github.com/gaearon/react-hot-loader/issues/923
-require("react-hot-loader").default.register(App, "App", module.id);
-
-export default App;

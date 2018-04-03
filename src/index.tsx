@@ -8,6 +8,10 @@ import "./index.less";
 
 function render()
 {
+    // Add react-hot-loader to preserve state (to support React v16.3.0).
+    // See https://github.com/gaearon/react-hot-loader/issues/923
+    require("react-hot-loader").default.register(App, "App", module.id);
+
     ReactDOM.render(
         <AppContainer>
             <App message="Hello World" sender="Jack" />
