@@ -10,6 +10,7 @@
             "spaces",
             4
         ],
+        "jsx-no-lambda": false,
         "max-classes-per-file": false,
         "max-line-length": [
             true,
@@ -62,7 +63,7 @@
             }
         ],
         "variable-name": [
-            true,
+            false,
             "allow-leading-underscore"
         ]
     }

@@ -1,10 +1,15 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { AppContainer } from "react-hot-loader";
+import { Provider } from "react-redux";
 
 import App from "./components/App";
+import { IRootState } from "./redux/rootReducer";
+import configureStore from "./redux/store";
 
 import "./index.less";
+
+const store = configureStore({} as IRootState);
 
 function render()
 {
@@ -13,9 +18,11 @@ function render()
     require("react-hot-loader").default.register(App, "App", module.id);
 
     ReactDOM.render(
-        <AppContainer>
-            <App message="Hello World" sender="Jack" />
-        </AppContainer>,
+        <Provider store={store}>
+            <AppContainer>
+                <App />
+            </AppContainer>
+        </Provider>,
         document.getElementById("root")
     );
 }
