@@ -1,7 +1,3 @@
-/**
- * Counter is a Presentational Component.
- */
-
 import * as cs from "classnames";
 import * as React from "react";
 import { connect } from "react-redux";
