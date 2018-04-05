@@ -1,6 +1,6 @@
 ﻿import { combineReducers, Reducer } from "redux";
 
-import counter, { ICounterState } from "./counter/reducers";
+import { ICounterState, reducers as counter } from "./counter";
 
 /**
  * Represents the state of the root component.

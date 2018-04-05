@@ -4,8 +4,7 @@ import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
 import { Action } from "redux-actions";
 
-import actions, { CounterActionCreators } from "../../redux/counter/actions";
-import { ICounterState } from "../../redux/counter/reducers";
+import { actionCreators, CounterActionCreators, ICounterState } from "../../redux/counter";
 import { IRootState } from "../../redux/rootReducer";
 
 import * as styles from "./Counter.less";
@@ -27,7 +26,7 @@ export const mapStateToProps = (state: IRootState) =>
 
 export const mapDispatchToProps = (dispatch: Dispatch<ICounterState>) =>
 {
-    return { actions: bindActionCreators(actions, dispatch) };
+    return { actions: bindActionCreators(actionCreators, dispatch) };
 };
 
 const Counter = (props: IProps) =>
