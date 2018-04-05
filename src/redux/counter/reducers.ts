@@ -17,7 +17,7 @@ export interface ICounterState
 }
 
 /**
- * Reducers of `counter` component.
+ * Reducers of the `counter` component.
  */
 export default handleActions(
     {
