@@ -3,7 +3,6 @@
 const config = require("./webpack.config.base");
 
 config.mode = "production";
-config.devtool = "source-map";
 config.output.filename = "[name].[chunkhash:8].js";
 config.output.chunkFilename = "[name].[chunkhash:8].chunk.js";
 
