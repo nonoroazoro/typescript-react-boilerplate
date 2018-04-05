@@ -1,6 +1,6 @@
 ﻿import { Action, combineActions, handleActions } from "redux-actions";
 
-import { handleActionError } from "../createActions";
+import { handleActionError } from "../actionHelpers";
 import actions from "./actions";
 
 /**
