@@ -4,24 +4,24 @@ import { handleActionError } from "../actionHelper";
 import actions from "./actions";
 
 /**
- * Initial state of the `counter` component.
+ * Initial state of the `Counter` component.
  */
-export const INITIAL_STATE: ICounterState = { value: 0 };
+export const INITIAL_STATE: CounterState = { value: 0 };
 
 /**
- * Represents the state of the `counter` component.
+ * Represents the state of the `Counter` component.
  */
-export interface ICounterState
+export interface CounterState
 {
     readonly value: number;
 }
 
 /**
- * Reducers of the `counter` component.
+ * Reducers of the `Counter` component.
  */
 export default handleActions(
     {
-        [combineActions(actions.increase, actions.increaseAsync)]: (state: ICounterState, action: Action<number>) =>
+        [combineActions(actions.increase, actions.increaseAsync)]: (state: CounterState, action: Action<number>) =>
         {
             if (action.error)
             {
@@ -31,11 +31,11 @@ export default handleActions(
             {
                 return {
                     ...state,
-                    value: state.value + (action.payload || 1)
+                    value: state.value + action.payload!
                 };
             }
         },
-        [combineActions(actions.decrease, actions.decreaseAsync)]: (state: ICounterState, action: Action<number>) =>
+        [combineActions(actions.decrease, actions.decreaseAsync)]: (state: CounterState, action: Action<number>) =>
         {
             if (action.error)
             {
@@ -45,7 +45,7 @@ export default handleActions(
             {
                 return {
                     ...state,
-                    value: state.value - (action.payload || 1)
+                    value: state.value - action.payload!
                 };
             }
         }

@@ -4,9 +4,9 @@ import { Test } from "../../api";
 import { createActionTypes } from "../actionHelper";
 
 /**
- * Enum action types of the `counter` component.
+ * Enum action types of the `Counter` component.
  */
-enum BaseTypes
+enum EnumTypes
 {
     decrease,
     decreaseAsync,
@@ -15,23 +15,23 @@ enum BaseTypes
 }
 
 /**
- * Action types of the `counter` component.
+ * Action types of the `Counter` component.
  */
-const actionTypes = createActionTypes("counter", BaseTypes);
+const actionTypes = createActionTypes("counter", EnumTypes);
 
 /**
- * Action creators of the `counter` component.
+ * Action creators of the `Counter` component.
  */
 const actionCreators = {
     /**
      * Synchronous increase.
      */
-    increase: createAction(actionTypes.increase, (amount: number) => amount),
+    increase: createAction<number>(actionTypes.increase),
 
     /**
      * Synchronous decrease.
      */
-    decrease: createAction(actionTypes.decrease, (amount: number) => amount),
+    decrease: createAction<number>(actionTypes.decrease),
 
     /**
      * Asynchronous increase.

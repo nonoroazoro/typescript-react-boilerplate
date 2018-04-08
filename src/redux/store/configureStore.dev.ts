@@ -1,15 +1,14 @@
-﻿/**
- *  Configure store.
- */
-
-import { applyMiddleware, createStore, Store } from "redux";
+﻿import { applyMiddleware, createStore, Store } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import reduxImmutableStateInvariant from "redux-immutable-state-invariant";
 import * as reduxPromiseMiddleware from "redux-promise";
 
-import rootReducer, { IRootState } from "../rootReducer";
+import rootReducer, { RootState } from "../rootReducer";
 
-export default function configureStore(preloadedState: IRootState): Store<IRootState>
+/**
+ *  Configure store for `development` environment.
+ */
+export default function configureStore(preloadedState: RootState): Store<RootState>
 {
     const store = createStore(
         rootReducer,
@@ -25,9 +24,9 @@ export default function configureStore(preloadedState: IRootState): Store<IRootS
     return store;
 }
 
-function applyHMR(store: Store<IRootState>)
+function applyHMR(store: Store<RootState>)
 {
-    // Enable HMR for redux reducers.
+    // TODO: Enable HMR for redux reducers (not work).
     if ((module as any).hot)
     {
         (module as any).hot.accept("../rootReducer", () => store.replaceReducer(rootReducer));

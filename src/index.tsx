@@ -4,18 +4,21 @@ import { AppContainer } from "react-hot-loader";
 import { Provider } from "react-redux";
 
 import App from "./components/App";
-import { IRootState } from "./redux/rootReducer";
+import { RootState } from "./redux/rootReducer";
 import configureStore from "./redux/store";
 
 import "./index.less";
 
-const store = configureStore({} as IRootState);
+const store = configureStore();
 
 function render()
 {
-    // Add react-hot-loader to preserve state (to support React v16.3.0).
-    // See https://github.com/gaearon/react-hot-loader/issues/923
-    require("react-hot-loader").default.register(App, "App", module.id);
+    if (process.env.NODE_ENV !== "production")
+    {
+        // Add react-hot-loader to preserve state (to support React v16.3.0).
+        // See https://github.com/gaearon/react-hot-loader/issues/923
+        require("react-hot-loader").default.register(App, "App", module.id);
+    }
 
     ReactDOM.render(
         <Provider store={store}>

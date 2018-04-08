@@ -1,13 +1,12 @@
-﻿/**
- *  Configure store.
- */
-
-import { applyMiddleware, createStore, Store } from "redux";
+﻿import { applyMiddleware, createStore, Store } from "redux";
 import * as reduxPromiseMiddleware from "redux-promise";
 
-import rootReducer, { IRootState } from "../rootReducer";
+import rootReducer, { RootState } from "../rootReducer";
 
-export default function configureStore(preloadedState: IRootState): Store<IRootState>
+/**
+ *  Configure store for `production` environment.
+ */
+export default function configureStore(preloadedState: RootState): Store<RootState>
 {
     return createStore(
         rootReducer,

@@ -1,10 +1,10 @@
 import { Store } from "redux";
 
-import { IRootState } from "../rootReducer";
+import { RootState } from "../rootReducer";
 import configureStoreDev from "./configureStore.dev";
 import configureStoreProd from "./configureStore.prod";
 
-let configureStore: (preloadedState: IRootState) => Store<IRootState>;
+let configureStore: (preloadedState?: RootState) => Store<RootState>;
 if (process.env.NODE_ENV === "production")
 {
     configureStore = configureStoreProd;

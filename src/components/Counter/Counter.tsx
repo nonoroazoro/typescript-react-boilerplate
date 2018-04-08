@@ -2,34 +2,22 @@ import * as cs from "classnames";
 import * as React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
-import { Action } from "redux-actions";
 
-import { actionCreators, CounterActionCreators, ICounterState } from "../../redux/counter";
-import { IRootState } from "../../redux/rootReducer";
+import { ReduxProps } from "../../redux/actionHelper";
+import { actionCreators, CounterActionCreators, CounterState } from "../../redux/counter";
+import { RootState } from "../../redux/rootReducer";
 
 import * as styles from "./Counter.less";
 
 /**
- * Represents the props of `Counter`.
+ * Represents the props of the `Counter` component.
  */
-export interface IProps
+export interface CounterProps extends ReduxProps<CounterActionCreators>
 {
-    actions: CounterActionCreators;
-    className?: string;
     value: number;
 }
 
-export const mapStateToProps = (state: IRootState) =>
-{
-    return { value: state.counter.value };
-};
-
-export const mapDispatchToProps = (dispatch: Dispatch<ICounterState>) =>
-{
-    return { actions: bindActionCreators(actionCreators, dispatch) };
-};
-
-const Counter = (props: IProps) =>
+const Counter = (props: CounterProps) =>
 {
     const { className, actions: { increase, decrease, increaseAsync, decreaseAsync }, value } = props;
     return (
@@ -45,4 +33,13 @@ const Counter = (props: IProps) =>
     );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+export default connect(
+    (state: RootState) =>
+    {
+        return { value: state.counter.value };
+    },
+    (dispatch: Dispatch<CounterState>) =>
+    {
+        return { actions: bindActionCreators(actionCreators, dispatch) };
+    }
+)(Counter);

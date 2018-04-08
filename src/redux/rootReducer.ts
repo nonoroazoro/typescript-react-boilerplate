@@ -1,19 +1,22 @@
 ﻿import { combineReducers, Reducer } from "redux";
 
-import { ICounterState, reducers as counter } from "./counter";
+import { CounterState, reducers as counter } from "./counter";
 
 /**
  * Represents the state of the root component.
  */
-export interface IRootState
+export interface RootState
 {
-    counter: ICounterState;
+    /**
+     * State of the `Counter` component.
+     */
+    counter: CounterState;
 }
 
 /**
  * Combine reducers.
  */
-const reducer: Reducer<IRootState> = combineReducers<IRootState>({
+const reducer: Reducer<RootState> = combineReducers<RootState>({
     counter
 });
 
