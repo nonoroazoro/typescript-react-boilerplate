@@ -16,8 +16,8 @@ export interface RootState
 /**
  * Combine reducers.
  */
-const reducer: Reducer<RootState> = combineReducers<RootState>({
+const rootReducer: Reducer<RootState> = combineReducers<RootState>({
     counter
 });
 
-export default reducer;
+export default rootReducer;
