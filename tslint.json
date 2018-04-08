@@ -10,8 +10,12 @@
             "spaces",
             4
         ],
+        "interface-name": [
+            true,
+            "never-prefix"
+        ],
         "jsx-no-lambda": false,
-        "max-classes-per-file": false,
+        "max-classes-per-file": true,
         "max-line-length": [
             true,
             200
@@ -62,9 +66,9 @@
                 "singleline": "never"
             }
         ],
-        "variable-name": [
-            false,
-            "allow-leading-underscore"
-        ]
+        "variable-name": {
+            "severity": "warn",
+            "options": "allow-leading-underscore"
+        }
     }
 }
