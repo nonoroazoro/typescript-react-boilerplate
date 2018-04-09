@@ -1,6 +1,5 @@
 const path = require("path");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
@@ -62,15 +61,6 @@ module.exports = {
                     }
                 ],
                 exclude: /node_modules/
-            },
-            {
-                test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader, "css-loader"]
-            },
-            {
-                test: /\.less$/,
-                use: [MiniCssExtractPlugin.loader, "css-loader", "less-loader"],
-                include: /node_modules/
             },
             {
                 test: /\.(png|jpg)$/,

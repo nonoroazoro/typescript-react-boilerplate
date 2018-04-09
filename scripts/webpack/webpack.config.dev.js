@@ -1,5 +1,4 @@
 const webpack = require("webpack");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const config = require("./webpack.config.base");
 
@@ -7,9 +6,18 @@ config.mode = "development";
 
 config.module.rules.push(
     {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
+    },
+    {
+        test: /\.less$/,
+        use: ["style-loader", "css-loader", "less-loader"],
+        include: /node_modules/
+    },
+    {
         test: /\.less$/,
         use: [
-            MiniCssExtractPlugin.loader,
+            "style-loader",
             {
                 loader: "css-loader",
                 options: {
@@ -21,10 +29,6 @@ config.module.rules.push(
         ],
         exclude: /node_modules/
     }
-);
-
-config.plugins.push(
-    new MiniCssExtractPlugin({ filename: "res/[name].css" })
 );
 
 // Hot module replacement, see http://gaearon.github.io/react-hot-loader/getstarted/

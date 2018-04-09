@@ -8,6 +8,15 @@ config.output.chunkFilename = "[name].[chunkhash:8].chunk.js";
 
 config.module.rules.push(
     {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader"]
+    },
+    {
+        test: /\.less$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "less-loader"],
+        include: /node_modules/
+    },
+    {
         test: /\.less$/,
         use: [
             MiniCssExtractPlugin.loader,
@@ -26,7 +35,7 @@ config.module.rules.push(
 );
 
 config.plugins.push(
-    new MiniCssExtractPlugin({ filename: "res/[name].[chunkhash:8].css" })
+    new MiniCssExtractPlugin({ filename: "res/[name].[contenthash:8].css" })
 );
 
 module.exports = config;
