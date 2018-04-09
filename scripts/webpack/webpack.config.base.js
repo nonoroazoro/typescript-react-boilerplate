@@ -20,7 +20,7 @@ module.exports = {
         path: BUILD_PATH,
         publicPath: "/assets/",
         filename: "[name].js",
-        chunkFilename: "[id].chunk.js"
+        chunkFilename: "[name].chunk.js"
     },
     optimization: {
         minimizer: [
