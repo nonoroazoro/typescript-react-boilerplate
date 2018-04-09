@@ -1,5 +1,8 @@
 const path = require("path");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 const ROOT_PATH = path.resolve(__dirname, "../../");
 const BUILD_PATH = path.join(ROOT_PATH, "./dist");
@@ -21,9 +24,17 @@ module.exports = {
         chunkFilename: "[id].chunk.js"
     },
     optimization: {
+        minimizer: [
+            new UglifyJsPlugin({
+                cache: true,
+                parallel: true,
+                sourceMap: true
+            }),
+            new OptimizeCSSAssetsPlugin()
+        ],
         splitChunks: {
             cacheGroups: {
-                vendor: {
+                vendors: {
                     name: "vendor",
                     chunks: "all",
                     enforce: true,
@@ -51,6 +62,15 @@ module.exports = {
                     }
                 ],
                 exclude: /node_modules/
+            },
+            {
+                test: /\.css$/,
+                use: [MiniCssExtractPlugin.loader, "css-loader"]
+            },
+            {
+                test: /\.less$/,
+                use: [MiniCssExtractPlugin.loader, "css-loader", "less-loader"],
+                include: /node_modules/
             },
             {
                 test: /\.(png|jpg)$/,

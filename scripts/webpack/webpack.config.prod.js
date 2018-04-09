@@ -1,4 +1,4 @@
-﻿const ExtractTextPlugin = require("extract-text-webpack-plugin");
+﻿const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const config = require("./webpack.config.base");
 
@@ -8,47 +8,25 @@ config.output.chunkFilename = "[name].[chunkhash:8].chunk.js";
 
 config.module.rules.push(
     {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-            use: ["css-loader"],
-            fallback: "style-loader"
-        })
-    },
-    {
         test: /\.less$/,
-        use: ExtractTextPlugin.extract({
-            use: ["css-loader", "less-loader"],
-            fallback: "style-loader"
-        }),
-        include: /node_modules/
-    },
-    {
-        test: /\.less$/,
-        use: ExtractTextPlugin.extract(
+        use: [
+            MiniCssExtractPlugin.loader,
             {
-                use: [
-                    {
-                        loader: "css-loader",
-                        options: {
-                            modules: true,
-                            localIdentName: "[name]-[local]__[hash:base64:8]"
-                        }
-                    },
-                    "less-loader"
-                ],
-                fallback: "style-loader"
-            }
-        ),
+                loader: "css-loader",
+                options: {
+                    modules: true,
+                    sourceMap: true,
+                    localIdentName: "[name]-[local]__[hash:base64:8]"
+                }
+            },
+            "less-loader"
+        ],
         exclude: /node_modules/
     }
 );
 
 config.plugins.push(
-    new ExtractTextPlugin({
-        filename: "res/[name].[chunkhash:8].css",
-        allChunks: true,
-        ignoreOrder: true
-    })
+    new MiniCssExtractPlugin({ filename: "res/[name].[chunkhash:8].css" })
 );
 
 module.exports = config;
