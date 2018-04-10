@@ -1,4 +1,5 @@
-﻿import { Action, createAction } from "redux-actions";
+﻿// @ts-ignore, see https://github.com/Microsoft/TypeScript/issues/5711#issuecomment-229497938
+import { Action, createAction } from "redux-actions";
 
 import { Test } from "../../api";
 import { createActionTypes } from "../actionHelper";
