@@ -4,7 +4,6 @@ import { AppContainer } from "react-hot-loader";
 import { Provider } from "react-redux";
 
 import App from "./components/App";
-import { RootState } from "./redux/rootReducer";
 import configureStore from "./redux/store";
 
 import "./index.less";
