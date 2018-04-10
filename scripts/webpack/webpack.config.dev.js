@@ -31,18 +31,16 @@ config.module.rules.push(
     }
 );
 
-// Hot module replacement, see http://gaearon.github.io/react-hot-loader/getstarted/
+// Hot module replacement, see https://github.com/gaearon/react-hot-loader#getting-started
 for (const key of Object.keys(config.entry))
 {
     config.entry[key].unshift(
-        "react-hot-loader/patch",
         "webpack-dev-server/client?http://0.0.0.0:8080",
         "webpack/hot/only-dev-server"
     );
 }
 config.plugins.push(
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin()
+    new webpack.HotModuleReplacementPlugin()
 );
 
 module.exports = config;
