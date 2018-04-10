@@ -10,7 +10,7 @@ export interface RootState
     /**
      * State of `counter`.
      */
-    counter: CounterState;
+    readonly counter: CounterState;
 }
 
 /**
