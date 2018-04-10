@@ -1,6 +1,6 @@
 ﻿import { combineReducers, Reducer } from "redux";
 
-import { CounterState, reducers as counter } from "./counter";
+import { CounterState, reducer as counter } from "./counter";
 
 /**
  * Represents the root state.

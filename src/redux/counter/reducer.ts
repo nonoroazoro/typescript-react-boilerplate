@@ -17,7 +17,7 @@ export interface CounterState
 }
 
 /**
- * Reducers of `counter`.
+ * Reducer of `counter`, which is composed of different reducers.
  */
 export default handleActions(
     {
