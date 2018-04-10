@@ -46,7 +46,8 @@ export function createActionTypes<EnumActionTypes>(prefix: string, enumActionTyp
     return new Proxy(enumActionTypes as any, {
         get(target, property)
         {
-            return `@@${prefix}/${property}`;
+            // Using `Enum[Enum[key]]` to get the name of enum;
+            return `@@${prefix}/${target[target[property]]}`;
         }
     });
 }
