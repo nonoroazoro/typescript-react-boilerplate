@@ -4,7 +4,7 @@ import { Test } from "../../api";
 import { createActionTypes } from "../actionHelper";
 
 /**
- * Enum action types of the `Counter` component.
+ * Enum action types of `counter`.
  */
 enum EnumTypes
 {
@@ -15,12 +15,12 @@ enum EnumTypes
 }
 
 /**
- * Action types of the `Counter` component.
+ * Action types of `counter`.
  */
 const actionTypes = createActionTypes("counter", EnumTypes);
 
 /**
- * Action creators of the `Counter` component.
+ * Action creators of `counter`.
  */
 const actionCreators = {
     /**

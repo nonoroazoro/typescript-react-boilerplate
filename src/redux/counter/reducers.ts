@@ -4,12 +4,12 @@ import { handleActionError } from "../actionHelper";
 import actions from "./actions";
 
 /**
- * Initial state of the `Counter` component.
+ * Initial state of `counter`.
  */
 export const INITIAL_STATE: CounterState = { value: 0 };
 
 /**
- * Represents the state of the `Counter` component.
+ * Represents the state of `counter`.
  */
 export interface CounterState
 {
@@ -17,7 +17,7 @@ export interface CounterState
 }
 
 /**
- * Reducers of the `Counter` component.
+ * Reducers of `counter`.
  */
 export default handleActions(
     {

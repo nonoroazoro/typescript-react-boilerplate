@@ -3,12 +3,12 @@
 import { CounterState, reducers as counter } from "./counter";
 
 /**
- * Represents the state of the root component.
+ * Represents the root state.
  */
 export interface RootState
 {
     /**
-     * State of the `Counter` component.
+     * State of `counter`.
      */
     counter: CounterState;
 }
