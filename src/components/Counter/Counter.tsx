@@ -1,5 +1,6 @@
 import * as cs from "classnames";
 import * as React from "react";
+import { SFC } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
 
@@ -17,7 +18,7 @@ export interface CounterProps extends ReduxProps<CounterActionCreators>
     value: number;
 }
 
-const Counter = (props: CounterProps) =>
+const Counter: SFC<CounterProps> = (props) =>
 {
     const { className, actions: { increase, decrease, increaseAsync, decreaseAsync }, value } = props;
     return (
