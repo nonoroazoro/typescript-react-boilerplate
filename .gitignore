@@ -7,4 +7,5 @@ package-lock.json
 
 # Project specific stuff
 .cache-loader
+@coverage
 dist
