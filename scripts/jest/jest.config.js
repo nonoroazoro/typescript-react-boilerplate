@@ -13,7 +13,7 @@ module.exports = {
     "rootDir": "../../",
     "setupTestFrameworkScriptFile": "<rootDir>/scripts/jest/jest.setup.js",
     "snapshotSerializers": ["enzyme-to-json/serializer"],
-    "testRegex": "__tests__\\/.+\\.(test|spec)\\.tsx?$",
+    "testRegex": "/__tests__/.+\\.(test|spec)\\.tsx?$",
     "transform": { "^.+\\.tsx?$": "ts-jest" },
     "verbose": true
 };
