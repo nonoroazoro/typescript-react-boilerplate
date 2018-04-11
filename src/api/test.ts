@@ -3,21 +3,21 @@
  */
 export async function doSomeAsyncJob(param: number): Promise<number>
 {
-    const result = await _fetchData(param);
+    const result = await fetchData(param);
     if (result.success)
     {
         return result.data;
     }
-    throw new Error(result.error);
+    throw new Error(result.message);
 }
 
 /**
- * Fetch data with an asynchronous api.
+ * Simulate a web api.
  */
-function _fetchData(param: number): Promise<{
+function fetchData(param: number): Promise<{
     data: number,
-    error?: string,
-    success: boolean
+    success: boolean,
+    message?: string
 }>
 {
     return new Promise((resolve) =>
