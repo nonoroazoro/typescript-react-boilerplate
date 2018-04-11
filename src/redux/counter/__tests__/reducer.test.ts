@@ -1,21 +1,60 @@
 import { createAction } from "redux-actions";
+import * as configureStore from "redux-mock-store";
+import * as reduxPromiseMiddleware from "redux-promise";
 
-import { actionCreators, reducer } from "../index";
+import { actionCreators, CounterState, INITIAL_STATE, reducer } from "../index";
 
-const INIT_ACTION = createAction<number>("@@counter/init")(0);
-const initialState = reducer(undefined as any, INIT_ACTION);
+let initialState: CounterState;
+const createMockStore = configureStore([reduxPromiseMiddleware]);
 
-describe("counter logic", () =>
+describe("Reducer: counter", () =>
 {
-    test("initial state", () =>
+    beforeAll(() =>
     {
-        expect(initialState).toMatchSnapshot();
+        const action = createAction<number>("@@counter/init")(undefined as any);
+        initialState = reducer(undefined as any, action);
     });
 
-    test("reducer: increased", () =>
+    afterEach(() =>
+    {
+        expect(initialState).toEqual(INITIAL_STATE);
+    });
+
+    test("increased by 1", () =>
     {
         const action = actionCreators.increase(1);
         const state = reducer(initialState, action);
         expect(state.value).toEqual(1);
+    });
+
+    test("decreased by 1", () =>
+    {
+        const action = actionCreators.decrease(1);
+        const state = reducer(initialState, action);
+        expect(state.value).toEqual(-1);
+    });
+
+    test("increased (async) by 1", async () =>
+    {
+        const store = createMockStore();
+        const asyncAction = actionCreators.increaseAsync(1);
+        const action = await store.dispatch(asyncAction);
+
+        expect(action).not.toHaveProperty("error");
+
+        const state = reducer(initialState, action);
+        expect(state.value).toEqual(1);
+    });
+
+    test("decreased (async) by 1", async () =>
+    {
+        const store = createMockStore();
+        const asyncAction = actionCreators.decreaseAsync(1);
+        const action = await store.dispatch(asyncAction);
+
+        expect(action).not.toHaveProperty("error");
+
+        const state = reducer(initialState, action);
+        expect(state.value).toEqual(-1);
     });
 });
