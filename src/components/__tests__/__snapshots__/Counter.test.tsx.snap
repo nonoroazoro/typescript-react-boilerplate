@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Counter (Presentational) render 1`] = `
+<div
+  className="counter-test container"
+>
+  <span
+    className="value"
+  >
+    0
+  </span>
+  <button
+    className="btn"
+    onClick={[Function]}
+  >
+    +1
+  </button>
+  <button
+    className="btn"
+    onClick={[Function]}
+  >
+    -1
+  </button>
+  <button
+    className="btn"
+    onClick={[Function]}
+  >
+    +2
+  </button>
+  <button
+    className="btn"
+    onClick={[Function]}
+  >
+    -3
+  </button>
+  <button
+    className="btn"
+    onClick={[Function]}
+  >
+    Asynchronous Increment
+  </button>
+  <button
+    className="btn"
+    onClick={[Function]}
+  >
+    Asynchronous Decrement
+  </button>
+</div>
+`;
