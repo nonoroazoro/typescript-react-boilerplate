@@ -1,4 +1,5 @@
 module.exports = {
+    "coverageDirectory": "<rootDir>/@coverage",
     "globals": {
         "ts-jest": {
             "tsConfigFile": "tsconfig.test.json"
