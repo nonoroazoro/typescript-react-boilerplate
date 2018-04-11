@@ -18,7 +18,10 @@ export interface CounterProps extends ReduxProps<CounterActionCreators>
     value: number;
 }
 
-const Counter: SFC<CounterProps> = (props) =>
+/**
+ * The `Presentational` `Counter` component.
+ */
+export const Counter: SFC<CounterProps> = (props) =>
 {
     const { className, actions: { increase, decrease, increaseAsync, decreaseAsync }, value } = props;
     return (
@@ -34,6 +37,9 @@ const Counter: SFC<CounterProps> = (props) =>
     );
 };
 
+/**
+ * The `Container` `Counter` component.
+ */
 export default connect(
     (state: RootState) =>
     {
