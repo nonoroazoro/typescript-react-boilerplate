@@ -1,7 +1,7 @@
 ﻿import { Action, combineActions, handleActions } from "redux-actions";
 
 import { handleActionError } from "../actionHelper";
-import actions from "./actions";
+import { actionTypes } from "./actions";
 
 /**
  * Initial state of `counter`.
@@ -21,7 +21,7 @@ export interface CounterState
  */
 export default handleActions(
     {
-        [combineActions(actions.increase, actions.increaseAsync)]: (state: CounterState, action: Action<number>) =>
+        [combineActions(actionTypes.increase, actionTypes.increaseAsync)]: (state: CounterState, action: Action<number>) =>
         {
             if (action.error)
             {
@@ -35,7 +35,7 @@ export default handleActions(
                 };
             }
         },
-        [combineActions(actions.decrease, actions.decreaseAsync)]: (state: CounterState, action: Action<number>) =>
+        [combineActions(actionTypes.decrease, actionTypes.decreaseAsync)]: (state: CounterState, action: Action<number>) =>
         {
             if (action.error)
             {
