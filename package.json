@@ -27,7 +27,7 @@
         "precommit": "lint-staged",
         "clean": "rimraf dist/*",
         "start": "npm run dev",
-        "dev": "node ./scripts/www",
+        "dev": "node ./scripts/devServer",
         "build:dev": "npm run clean && webpack --config ./scripts/webpack/webpack.config.dev.js --progress",
         "build:prod": "npm run clean && webpack --config ./scripts/webpack/webpack.config.prod.js --progress",
         "test": "jest --config ./scripts/jest/jest.config.js",
