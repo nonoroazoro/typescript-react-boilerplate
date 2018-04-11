@@ -3,7 +3,7 @@ import * as React from "react";
 
 import { Counter, CounterProps } from "../Counter";
 
-describe("Counter (Presentational)", () =>
+describe("Counter (Presentational Component)", () =>
 {
     let props: CounterProps;
     let wrapper: ShallowWrapper<CounterProps>;
@@ -23,17 +23,17 @@ describe("Counter (Presentational)", () =>
         wrapper = shallow(<Counter {...props} />);
     });
 
-    it("render", () =>
+    it("render component", () =>
     {
         expect(wrapper).toMatchSnapshot();
     });
 
-    it("init value", () =>
+    it("render init value", () =>
     {
         expect(wrapper.find(".value").text()).toEqual(String(props.value));
     });
 
-    it("class name", () =>
+    it("render class name", () =>
     {
         expect(wrapper.find(`.${props.className}`)).not.toBeNull();
     });

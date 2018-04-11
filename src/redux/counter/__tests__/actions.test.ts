@@ -18,7 +18,7 @@ describe("Actions: counter", () =>
         store.clearActions();
     });
 
-    test("dispatch increase action", () =>
+    it("dispatch increase action", () =>
     {
         const amount = 1;
         const expectedActions = [{
@@ -31,7 +31,7 @@ describe("Actions: counter", () =>
         expect(store.getActions()).toEqual(expectedActions);
     });
 
-    test("dispatch decrease action", () =>
+    it("dispatch decrease action", () =>
     {
         const amount = 1;
         const expectedActions = [{
@@ -44,7 +44,7 @@ describe("Actions: counter", () =>
         expect(store.getActions()).toEqual(expectedActions);
     });
 
-    test("dispatch increaseAsync action", async () =>
+    it("dispatch increaseAsync action", async () =>
     {
         const amount = 1;
         const expectedActions = [{
@@ -57,7 +57,7 @@ describe("Actions: counter", () =>
         expect(store.getActions()).toEqual(expectedActions);
     });
 
-    test("dispatch decreaseAsync action", async () =>
+    it("dispatch decreaseAsync action", async () =>
     {
         const amount = 1;
         const expectedActions = [{

@@ -20,21 +20,21 @@ describe("Reducer: counter", () =>
         expect(initialState).toEqual(INITIAL_STATE);
     });
 
-    test("increased by 1", () =>
+    it("increased by 1", () =>
     {
         const action = actionCreators.increase(1);
         const state = reducer(initialState, action);
         expect(state.value).toEqual(1);
     });
 
-    test("decreased by 1", () =>
+    it("decreased by 1", () =>
     {
         const action = actionCreators.decrease(1);
         const state = reducer(initialState, action);
         expect(state.value).toEqual(-1);
     });
 
-    test("increased (async) by 1", async () =>
+    it("increased (async) by 1", async () =>
     {
         const store = createMockStore();
         const asyncAction = actionCreators.increaseAsync(1);
@@ -46,7 +46,7 @@ describe("Reducer: counter", () =>
         expect(state.value).toEqual(1);
     });
 
-    test("decreased (async) by 1", async () =>
+    it("decreased (async) by 1", async () =>
     {
         const store = createMockStore();
         const asyncAction = actionCreators.decreaseAsync(1);
