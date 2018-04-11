@@ -39,6 +39,8 @@ for (const key of Object.keys(config.entry))
         "webpack/hot/only-dev-server"
     );
 }
-config.plugins.push(new webpack.HotModuleReplacementPlugin());
+config.plugins.push(
+    new webpack.HotModuleReplacementPlugin()
+);
 
 module.exports = config;
