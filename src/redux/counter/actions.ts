@@ -18,7 +18,7 @@ enum EnumTypes
 /**
  * Action types of `counter`.
  */
-const actionTypes = createActionTypes("counter", EnumTypes);
+export const actionTypes = createActionTypes("counter", EnumTypes);
 
 /**
  * Action creators of `counter`.
