@@ -4,9 +4,6 @@ import { SFC } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
 
-// @ts-ignore, see https://github.com/Microsoft/TypeScript/issues/5711#issuecomment-229497938
-import { Action } from "redux-actions";
-
 import { ReduxProps } from "../../redux/actionHelper";
 import { actionCreators, CounterActionCreators, CounterState } from "../../redux/counter";
 import { RootState } from "../../redux/rootReducer";
