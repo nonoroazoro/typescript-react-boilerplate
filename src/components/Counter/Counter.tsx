@@ -45,7 +45,7 @@ export const Counter: SFC<CounterProps> = (props) =>
 export default connect(
     (state: RootState) =>
     {
-        return { value: state.counter.value };
+        return { ...state.counter };
     },
     (dispatch: Dispatch<CounterState>) =>
     {
