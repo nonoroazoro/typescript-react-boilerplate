@@ -1,5 +1,4 @@
 ﻿import { ActionCreatorsMapObject } from "redux";
-import { Action } from "redux-actions";
 
 /**
  * Represents the base props of `Redux`;
@@ -15,18 +14,6 @@ export interface ReduxProps<ActionCreators extends ActionCreatorsMapObject>
      * The class name of the component.
      */
     className?: string;
-}
-
-/**
- * Handle action error.
- */
-export function handleActionError<State>(state: State, { error, payload }: Action<any>)
-{
-    if (error && payload)
-    {
-        console.error(payload.message);
-    }
-    return state;
 }
 
 /**
