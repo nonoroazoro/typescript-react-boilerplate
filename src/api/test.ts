@@ -25,6 +25,6 @@ function fetchData(param: number): Promise<{
         setTimeout(() => resolve({
             data: param,
             success: true
-        }), 1000);
+        }), Math.random() * 500);
     });
 }
