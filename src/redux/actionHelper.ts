@@ -20,9 +20,12 @@ export interface ReduxProps<ActionCreators extends ActionCreatorsMapObject>
 /**
  * Handle action error.
  */
-export function handleActionError<State, Payload>(state: State, action: Action<Payload>)
+export function handleActionError<State>(state: State, { error, payload }: Action<any>)
 {
-    console.error(action.payload);
+    if (error && payload)
+    {
+        console.error(payload.message);
+    }
     return state;
 }
 
