@@ -1,6 +1,5 @@
 ﻿import { Action, combineActions, handleActions } from "redux-actions";
 
-import { handleActionError } from "../actionHelper";
 import { actionTypes } from "./actions";
 
 /**
@@ -25,7 +24,7 @@ export default handleActions(
         {
             if (action.error)
             {
-                return handleActionError(state, action);
+                return handleError(state, action as Action<Error>);
             }
             else
             {
@@ -39,7 +38,7 @@ export default handleActions(
         {
             if (action.error)
             {
-                return handleActionError(state, action);
+                return handleError(state, action as Action<Error>);
             }
             else
             {
@@ -52,3 +51,16 @@ export default handleActions(
     },
     INITIAL_STATE
 );
+
+function handleError(state: CounterState, { error, payload }: Action<Error>)
+{
+    if (error && payload)
+    {
+        console.error(payload.message);
+        return {
+            ...state,
+            error: payload
+        };
+    }
+    return state;
+}
