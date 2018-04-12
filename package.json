@@ -38,10 +38,13 @@
     "dependencies": {
         "babel-polyfill": "^6.26.0",
         "classnames": "^2.2.5",
+        "history": "^4.7.2",
         "normalize.css": "^8.0.0",
         "react": "^16.3.1",
         "react-dom": "^16.3.1",
         "react-redux": "^5.0.7",
+        "react-router-dom": "^4.2.2",
+        "react-router-redux": "^5.0.0-alpha.9",
         "redux": "^3.7.2",
         "redux-actions": "^2.3.0",
         "redux-promise": "^0.5.3"
@@ -49,10 +52,13 @@
     "devDependencies": {
         "@types/classnames": "^2.2.3",
         "@types/enzyme": "^3.1.9",
+        "@types/history": "^4.6.2",
         "@types/jest": "^22.2.2",
         "@types/react": "^16.3.5",
         "@types/react-dom": "^16.0.4",
         "@types/react-redux": "^5.0.15",
+        "@types/react-router-dom": "^4.2.6",
+        "@types/react-router-redux": "^5.0.13",
         "@types/redux-actions": "^2.2.4",
         "@types/redux-immutable-state-invariant": "^2.0.4",
         "@types/redux-promise": "^0.5.28",
