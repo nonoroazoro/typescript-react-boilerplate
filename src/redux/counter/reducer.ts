@@ -21,7 +21,7 @@ export interface CounterState
  */
 export default handleActions(
     {
-        [combineActions(actionTypes.increase, actionTypes.increaseAsync)]: (state: CounterState, action: Action<number>) =>
+        [combineActions(actionTypes.increase, actionTypes.increaseAsync)](state: CounterState, action: Action<number>)
         {
             if (action.error)
             {
@@ -35,7 +35,7 @@ export default handleActions(
                 };
             }
         },
-        [combineActions(actionTypes.decrease, actionTypes.decreaseAsync)]: (state: CounterState, action: Action<number>) =>
+        [combineActions(actionTypes.decrease, actionTypes.decreaseAsync)](state: CounterState, action: Action<number>)
         {
             if (action.error)
             {
