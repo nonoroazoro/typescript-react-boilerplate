@@ -1,6 +1,8 @@
-﻿import { applyMiddleware, createStore, Store } from "redux";
+﻿import { routerMiddleware } from "react-router-redux";
+import { applyMiddleware, createStore, Store } from "redux";
 import * as reduxPromiseMiddleware from "redux-promise";
 
+import history from "../history";
 import rootReducer, { RootState } from "../rootReducer";
 
 /**
@@ -11,6 +13,9 @@ export default function configureStore(preloadedState: RootState): Store<RootSta
     return createStore(
         rootReducer,
         preloadedState,
-        applyMiddleware(reduxPromiseMiddleware)
+        applyMiddleware(
+            reduxPromiseMiddleware,
+            routerMiddleware(history)
+        )
     );
 }
