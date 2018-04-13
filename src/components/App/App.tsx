@@ -1,7 +1,7 @@
 import * as React from "react";
 import { PureComponent } from "react";
 import { hot } from "react-hot-loader";
-import { Route, RouteComponentProps, Switch, withRouter } from "react-router-dom";
+import { Redirect, Route, RouteComponentProps, Switch, withRouter } from "react-router-dom";
 
 import Counter from "../../containers/Counter";
 import About from "../About";
@@ -21,6 +21,7 @@ class App extends PureComponent
                     <Switch>
                         <Route exact path="/" component={Counter} />
                         <Route path="/about" component={About} />
+                        <Redirect to="/" />
                     </Switch>
                 </main>
             </div>
