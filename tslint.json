@@ -19,6 +19,7 @@
             "never"
         ],
         "jsx-no-lambda": false,
+        "jsx-no-multiline-js": false,
         "max-classes-per-file": true,
         "max-line-length": [
             true,
