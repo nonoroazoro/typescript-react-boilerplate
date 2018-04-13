@@ -1,12 +1,8 @@
 import * as cs from "classnames";
 import * as React from "react";
-import { SFC } from "react";
-import { connect } from "react-redux";
-import { bindActionCreators, Dispatch } from "redux";
 
 import { ReduxProps } from "../../redux/actionHelper";
-import { actionCreators, CounterActionCreators, CounterState } from "../../redux/counter";
-import { RootState } from "../../redux/rootReducer";
+import { CounterActionCreators, CounterState } from "../../redux/counter";
 
 import * as styles from "./Counter.less";
 
@@ -20,7 +16,7 @@ export interface CounterProps extends ReduxProps<CounterActionCreators>, Counter
 /**
  * The `Presentational` `Counter` component.
  */
-export const Counter: SFC<CounterProps> = (props) =>
+export default (props: CounterProps) =>
 {
     const { className, actions: { increase, decrease, increaseAsync, decreaseAsync }, value } = props;
     return (
@@ -35,17 +31,3 @@ export const Counter: SFC<CounterProps> = (props) =>
         </div>
     );
 };
-
-/**
- * The `Container` `Counter` component.
- */
-export default connect(
-    (state: RootState) =>
-    {
-        return { ...state.counter };
-    },
-    (dispatch: Dispatch<CounterState>) =>
-    {
-        return { actions: bindActionCreators(actionCreators, dispatch) };
-    }
-)(Counter);

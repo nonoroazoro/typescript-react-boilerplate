@@ -1,7 +1,7 @@
 import { shallow, ShallowWrapper } from "enzyme";
 import * as React from "react";
 
-import { Counter, CounterProps } from "../Counter";
+import Counter, { CounterProps } from "../Counter";
 
 describe("Counter (Presentational Component)", () =>
 {
