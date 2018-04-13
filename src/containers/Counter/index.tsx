@@ -3,21 +3,19 @@ import * as React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
 
+import Counter, { CounterProps } from "../../components/Counter";
 import { actionCreators, CounterState } from "../../redux/counter";
 import { RootState } from "../../redux/rootReducer";
-
-// @ts-ignore
-import Counter, { CounterProps } from "../../components/Counter";
 
 /**
  * The `Container` `Counter` component.
  */
 export default connect(
-    (state: RootState) =>
+    (state: RootState): Partial<CounterProps> =>
     {
         return { ...state.counter };
     },
-    (dispatch: Dispatch<CounterState>) =>
+    (dispatch: Dispatch<CounterState>): Partial<CounterProps> =>
     {
         return { actions: bindActionCreators(actionCreators, dispatch) };
     }
