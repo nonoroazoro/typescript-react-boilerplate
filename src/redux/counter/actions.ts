@@ -2,7 +2,7 @@
 import { Action, createAction } from "redux-actions";
 
 import { Test } from "../../api";
-import { createActionTypes } from "../actionHelper";
+import { createActionTypes } from "../utils/actions";
 
 /**
  * Enum action types of `counter`.
