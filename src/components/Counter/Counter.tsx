@@ -2,14 +2,14 @@ import * as cs from "classnames";
 import * as React from "react";
 
 import { CounterActionCreators, CounterState } from "../../redux/counter";
-import { ReduxProps } from "../../redux/utils/types";
+import { BaseReduxProps } from "../../redux/utils/types";
 
 import * as styles from "./Counter.less";
 
 /**
  * Represents the props of the `Counter` component.
  */
-export interface CounterProps extends ReduxProps<CounterActionCreators>, CounterState
+export interface CounterProps extends BaseReduxProps<CounterActionCreators>, CounterState
 {
 }
 
