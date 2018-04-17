@@ -9,10 +9,10 @@ import { createActionTypes } from "../utils/actions";
  */
 enum EnumTypes
 {
-    decrease,
-    decreaseAsync,
-    increase,
-    increaseAsync
+    DECREASE,
+    DECREASE_ASYNC,
+    INCREASE,
+    INCREASE_ASYNC
 }
 
 /**
@@ -27,22 +27,22 @@ const actionCreators = {
     /**
      * Synchronous increase.
      */
-    increase: createAction<number>(actionTypes.increase),
+    increase: createAction<number>(actionTypes.INCREASE),
 
     /**
      * Synchronous decrease.
      */
-    decrease: createAction<number>(actionTypes.decrease),
+    decrease: createAction<number>(actionTypes.DECREASE),
 
     /**
      * Asynchronous increase.
      */
-    increaseAsync: createAction(actionTypes.increaseAsync, (amount: number) => Test.doSomeAsyncJob(amount)),
+    increaseAsync: createAction(actionTypes.INCREASE_ASYNC, (amount: number) => Test.doSomeAsyncJob(amount)),
 
     /**
      * Asynchronous decrease.
      */
-    decreaseAsync: createAction(actionTypes.decreaseAsync, (amount: number) => Test.doSomeAsyncJob(amount))
+    decreaseAsync: createAction(actionTypes.DECREASE_ASYNC, (amount: number) => Test.doSomeAsyncJob(amount))
 };
 
 /**

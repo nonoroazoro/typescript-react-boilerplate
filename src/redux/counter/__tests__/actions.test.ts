@@ -22,7 +22,7 @@ describe("Actions: counter", () =>
     {
         const amount = 1;
         const expectedActions = [{
-            type: actionTypes.increase,
+            type: actionTypes.INCREASE,
             payload: amount
         }];
 
@@ -35,7 +35,7 @@ describe("Actions: counter", () =>
     {
         const amount = 1;
         const expectedActions = [{
-            type: actionTypes.decrease,
+            type: actionTypes.DECREASE,
             payload: amount
         }];
 
@@ -48,7 +48,7 @@ describe("Actions: counter", () =>
     {
         const amount = 1;
         const expectedActions = [{
-            type: actionTypes.increaseAsync,
+            type: actionTypes.INCREASE_ASYNC,
             payload: amount
         }];
 
@@ -61,7 +61,7 @@ describe("Actions: counter", () =>
     {
         const amount = 1;
         const expectedActions = [{
-            type: actionTypes.decreaseAsync,
+            type: actionTypes.DECREASE_ASYNC,
             payload: amount
         }];
 
