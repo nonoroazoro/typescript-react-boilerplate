@@ -7,11 +7,11 @@ import { actionCreators, CounterState, INITIAL_STATE, reducer } from "../index";
 let initialState: CounterState;
 const createMockStore = configureStore([reduxPromiseMiddleware]);
 
-describe("Reducer: counter", () =>
+describe("counter's reducer", () =>
 {
     beforeAll(() =>
     {
-        const action = createAction<number>("@@counter/init")(undefined as any);
+        const action = createAction<number>("@@counter/INIT")(undefined as any);
         initialState = reducer(undefined as any, action);
     });
 
@@ -20,41 +20,45 @@ describe("Reducer: counter", () =>
         expect(initialState).toEqual(INITIAL_STATE);
     });
 
-    it("increased by 1", () =>
+    it("increased", () =>
     {
-        const action = actionCreators.increase(1);
+        const amount = Math.floor(Math.random() * 10 + 1);
+        const action = actionCreators.increase(amount);
         const state = reducer(initialState, action);
-        expect(state.value).toEqual(1);
+        expect(state.value).toEqual(amount);
     });
 
-    it("decreased by 1", () =>
+    it("decreased", () =>
     {
-        const action = actionCreators.decrease(1);
+        const amount = Math.floor(Math.random() * 10 + 1);
+        const action = actionCreators.decrease(amount);
         const state = reducer(initialState, action);
-        expect(state.value).toEqual(-1);
+        expect(state.value).toEqual(-amount);
     });
 
-    it("increased (async) by 1", async () =>
+    it("increased (async)", async () =>
     {
+        const amount = Math.floor(Math.random() * 10 + 1);
         const store = createMockStore();
-        const asyncAction = actionCreators.increaseAsync(1);
+        const asyncAction = actionCreators.increaseAsync(amount);
         const action = await store.dispatch(asyncAction);
 
         expect(action).not.toHaveProperty("error");
 
         const state = reducer(initialState, action);
-        expect(state.value).toEqual(1);
+        expect(state.value).toEqual(amount);
     });
 
-    it("decreased (async) by 1", async () =>
+    it("decreased (async)", async () =>
     {
+        const amount = Math.floor(Math.random() * 10 + 1);
         const store = createMockStore();
-        const asyncAction = actionCreators.decreaseAsync(1);
+        const asyncAction = actionCreators.decreaseAsync(amount);
         const action = await store.dispatch(asyncAction);
 
         expect(action).not.toHaveProperty("error");
 
         const state = reducer(initialState, action);
-        expect(state.value).toEqual(-1);
+        expect(state.value).toEqual(-amount);
     });
 });

@@ -6,7 +6,7 @@ import { actionCreators, actionTypes } from "../index";
 let store: any;
 const createMockStore = configureStore([reduxPromiseMiddleware]);
 
-describe("Actions: counter", () =>
+describe("counter's actions", () =>
 {
     beforeAll(() =>
     {
@@ -20,7 +20,7 @@ describe("Actions: counter", () =>
 
     it("dispatch increase action", () =>
     {
-        const amount = 1;
+        const amount = Math.floor(Math.random() * 10 + 1);
         const expectedActions = [{
             type: actionTypes.INCREASE,
             payload: amount
@@ -33,7 +33,7 @@ describe("Actions: counter", () =>
 
     it("dispatch decrease action", () =>
     {
-        const amount = 1;
+        const amount = Math.floor(Math.random() * 10 + 1);
         const expectedActions = [{
             type: actionTypes.DECREASE,
             payload: amount
@@ -46,7 +46,7 @@ describe("Actions: counter", () =>
 
     it("dispatch increaseAsync action", async () =>
     {
-        const amount = 1;
+        const amount = Math.floor(Math.random() * 10 + 1);
         const expectedActions = [{
             type: actionTypes.INCREASE_ASYNC,
             payload: amount
@@ -59,7 +59,7 @@ describe("Actions: counter", () =>
 
     it("dispatch decreaseAsync action", async () =>
     {
-        const amount = 1;
+        const amount = Math.floor(Math.random() * 10 + 1);
         const expectedActions = [{
             type: actionTypes.DECREASE_ASYNC,
             payload: amount
