@@ -20,7 +20,7 @@ module.exports = {
         path: BUILD_PATH,
         publicPath: "/assets/",
         filename: "[name].js",
-        chunkFilename: "[name].chunk.js"
+        chunkFilename: "[name].js"
     },
     optimization: {
         minimizer: [
@@ -63,13 +63,13 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.(png|jpg)$/,
+                test: /\.(png|jpg|gif)$/,
                 use: [
                     {
                         loader: "url-loader",
                         options: {
                             limit: 8192,
-                            name: "res/[name].[ext]"
+                            name: "images/[name].[ext]"
                         }
                     }
                 ]
@@ -82,7 +82,7 @@ module.exports = {
                         options: {
                             limit: 8192,
                             mimetype: "application/font-woff",
-                            name: "res/fonts/[name].[ext]"
+                            name: "fonts/[name].[ext]"
                         }
                     }
                 ]
@@ -96,7 +96,7 @@ module.exports = {
                             options: {
                                 limit: 8192,
                                 mimetype: "application/font-woff",
-                                name: "res/fonts/[name].[ext]"
+                                name: "fonts/[name].[ext]"
                             }
                         }
                     ]

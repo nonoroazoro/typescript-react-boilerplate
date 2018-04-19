@@ -3,8 +3,8 @@
 const config = require("./webpack.config.base");
 
 config.mode = "production";
-config.output.filename = "[name].[contenthash:8].js";
-config.output.chunkFilename = "[name].[contenthash:8].chunk.js";
+config.output.filename = "[name].[chunkhash:8].js";
+config.output.chunkFilename = "[name].[chunkhash:8].js";
 
 config.module.rules.push(
     {
@@ -35,7 +35,7 @@ config.module.rules.push(
 );
 
 config.plugins.push(
-    new MiniCssExtractPlugin({ filename: "res/[name].[contenthash:8].css" })
+    new MiniCssExtractPlugin({ filename: "[name].[chunkhash:8].css" })
 );
 
 module.exports = config;
