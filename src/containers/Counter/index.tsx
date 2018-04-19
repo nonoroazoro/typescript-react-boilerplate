@@ -1,10 +1,10 @@
 // @ts-ignore
 import * as React from "react";
 import { connect } from "react-redux";
-import { bindActionCreators, Dispatch } from "redux";
+import { Action, bindActionCreators, Dispatch } from "redux";
 
 import Counter, { CounterProps } from "../../components/Counter";
-import { actionCreators, CounterState } from "../../redux/counter";
+import { actionCreators } from "../../redux/counter";
 import { RootState } from "../../redux/rootReducer";
 
 /**
@@ -15,7 +15,7 @@ export default connect(
     {
         return { ...state.counter };
     },
-    (dispatch: Dispatch<CounterState>): Partial<CounterProps> =>
+    (dispatch: Dispatch<Action>): Partial<CounterProps> =>
     {
         return { actions: bindActionCreators(actionCreators, dispatch) };
     }
