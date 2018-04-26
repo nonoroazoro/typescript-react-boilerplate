@@ -9,8 +9,8 @@
 - react-router-dom
 - react-router-redux (v5)
 - react-hot-loader
-- webpack (v4)
 - css-modules
+- webpack (v4)
 
 
 ## Testing
