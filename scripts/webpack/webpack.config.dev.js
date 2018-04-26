@@ -19,10 +19,13 @@ config.module.rules.push(
         use: [
             "style-loader",
             {
-                loader: "css-loader",
+                loader: "typings-for-css-modules-loader",
                 options: {
+                    camelCase: true,
+                    localIdentName: "[name]-[local]",
                     modules: true,
-                    localIdentName: "[name]-[local]"
+                    namedExport: true,
+                    sourceMap: true
                 }
             },
             "less-loader"

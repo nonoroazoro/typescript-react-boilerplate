@@ -21,11 +21,13 @@ config.module.rules.push(
         use: [
             MiniCssExtractPlugin.loader,
             {
-                loader: "css-loader",
+                loader: "typings-for-css-modules-loader",
                 options: {
+                    camelCase: true,
+                    localIdentName: "[name]-[local]__[hash:base64:8]",
                     modules: true,
-                    sourceMap: true,
-                    localIdentName: "[name]-[local]__[hash:base64:8]"
+                    namedExport: true,
+                    sourceMap: true
                 }
             },
             "less-loader"

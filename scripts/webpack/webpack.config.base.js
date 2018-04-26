@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require("webpack");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
@@ -103,7 +104,10 @@ module.exports = {
         ]
     },
     plugins: [
-        new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true, tslint: true })
+        new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true, tslint: true }),
+        new webpack.WatchIgnorePlugin([
+            /less\.d\.ts$/
+        ])
     ],
     stats: {
         children: false,
