@@ -22,11 +22,11 @@
 
 1. In `transpileOnly` mode of `ts-loader`, the `Typescript` compiler **will not** generate declaration files.
 
-1. When using [CSS Modules](https://github.com/css-modules/css-modules):
+1. When using [CSS-Modules](https://github.com/css-modules/css-modules):
 
-    1. You have to make declaration files for e.g. `*.less` files, for example, [css-modules.d.ts](./src/typings/css-modules.d.ts).
+    1. ~~You have to make declaration files for e.g. `*.less` files, for example, [css-modules.d.ts](./src/typings/css-modules.d.ts).~~ Using `typings-for-css-modules-loader` to generate typings for CSS-Modules.
 
-    1. To make the IconFont work properly with CSS Modules, you have to import the styles in the global scope:
+    1. To make the Iconfont work properly with CSS-Modules, you have to import the styles in the global scope:
 
         ```less
         :global
