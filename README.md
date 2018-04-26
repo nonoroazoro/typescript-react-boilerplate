@@ -5,6 +5,7 @@
 
 - typescript
 - react
+- redux (v4)
 - react-router-dom
 - react-router-redux (v5)
 - react-hot-loader
