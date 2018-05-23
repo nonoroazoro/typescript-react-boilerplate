@@ -35,13 +35,13 @@ config.module.rules.push(
 );
 
 // Hot module replacement, see https://github.com/gaearon/react-hot-loader#getting-started
-for (const key of Object.keys(config.entry))
+Object.keys(config.entry).forEach((key) =>
 {
     config.entry[key].unshift(
         "webpack-dev-server/client?http://0.0.0.0:8080",
         "webpack/hot/only-dev-server"
     );
-}
+});
 config.plugins.push(
     new webpack.HotModuleReplacementPlugin()
 );
