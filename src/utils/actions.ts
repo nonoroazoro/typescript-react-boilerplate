@@ -1,9 +1,4 @@
-﻿/**
- * Represents the `Redux Action Types`. It's a mapped type of `EnumActionTypes`.
- */
-export type ActionTypes<EnumActionTypes> = {
-    [key in keyof EnumActionTypes]: string;
-};
+﻿import { ActionTypes } from "../types";
 
 /**
  * Creates `Redux` action types from `enum` action types.

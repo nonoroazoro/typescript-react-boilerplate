@@ -1,6 +1,13 @@
 import { ActionCreatorsMapObject } from "redux";
 
 /**
+ * Represents the `Redux Action Types`. It's a mapped type of `EnumActionTypes`.
+ */
+export type ActionTypes<EnumActionTypes> = {
+    [key in keyof EnumActionTypes]: string;
+};
+
+/**
  * Represents the base props of `React` component;
  */
 export interface BaseReactProps
