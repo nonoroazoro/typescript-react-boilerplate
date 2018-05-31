@@ -2,7 +2,7 @@ import * as cs from "classnames";
 import * as React from "react";
 
 import { CounterActionCreators, CounterState } from "../../redux/counter";
-import { BaseReduxProps } from "../../redux/utils/types";
+import { BaseReduxProps } from "../../utils/types";
 
 import * as styles from "./Counter.less";
 
