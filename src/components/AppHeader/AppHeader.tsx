@@ -2,17 +2,14 @@ import * as cs from "classnames";
 import * as React from "react";
 import { NavLink } from "react-router-dom";
 
-import * as styles from "./AppHeader.less";
+import { BaseReactProps } from "../../types";
 
-export interface AppHeaderProps
-{
-    className?: string;
-}
+import * as styles from "./AppHeader.less";
 
 /**
  * App header.
  */
-export default ({ className }: AppHeaderProps) =>
+export function AppHeader({ className }: BaseReactProps)
 {
     return (
         <header className={cs(className, styles.appHeader)}>
@@ -22,4 +19,4 @@ export default ({ className }: AppHeaderProps) =>
             </nav>
         </header>
     );
-};
+}

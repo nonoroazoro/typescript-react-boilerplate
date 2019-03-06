@@ -8,12 +8,13 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 const ROOT_PATH = path.resolve(__dirname, "../../");
 const BUILD_PATH = path.join(ROOT_PATH, "./dist");
+const tsconfig = path.resolve(ROOT_PATH, 'tsconfig.es.json');
 const packageName = getPackageName();
 
 module.exports = {
     context: ROOT_PATH,
     entry: {
-        [packageName]: ["./src"]
+        [`${packageName}.min`]: ["./src"]
     },
     output: {
         path: BUILD_PATH,
@@ -47,7 +48,10 @@ module.exports = {
                     "cache-loader",
                     {
                         loader: "ts-loader",
-                        options: { transpileOnly: true }
+                        options: {
+                            transpileOnly: true,
+                            configFile: tsconfig
+                        }
                     }
                 ],
                 exclude: /node_modules/
@@ -93,7 +97,11 @@ module.exports = {
         ]
     },
     plugins: [
-        new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true, tslint: true }),
+        new ForkTsCheckerWebpackPlugin({
+            checkSyntacticErrors: true,
+            tsconfig,
+            tslint: true
+        }),
         new webpack.WatchIgnorePlugin([/less\.d\.ts$/]),
         new webpack.IgnorePlugin(/\.js\.map$/)
         // new BundleAnalyzerPlugin()

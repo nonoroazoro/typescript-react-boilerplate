@@ -1,7 +1,7 @@
 import { EnhancedError } from "../types";
 
 /**
- * Create an Error with the specified message, config, error code, request and response.
+ * Creates an `EnhancedError` object with the specified message, config, error code, request and response.
  *
  * @param {string} message The error message.
  * @param {Object} config The config.
@@ -17,7 +17,8 @@ export function createError(message?: string, code?: number, request?: any, resp
 }
 
 /**
- * Update an `Error` with the specified error code, request, response and meta data.
+ * Creates an `EnhancedError` object from an `Error` object
+ * with the specified error code, request, response and meta data.
  *
  * @param {Error} error The error to update.
  * @param {number} [code] The error code.

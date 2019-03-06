@@ -56,6 +56,7 @@
             "severity": "warn"
         },
         "no-empty": false,
+        "no-empty-interface": false,
         "no-string-literal": false,
         "no-var-keyword": true,
         "no-var-requires": false,

@@ -1,9 +1,9 @@
 import { shallow, ShallowWrapper } from "enzyme";
 import * as React from "react";
 
-import Counter, { CounterProps } from "../Counter";
+import { Counter, CounterProps } from "../Counter";
 
-describe("Counter (Presentational Component)", () =>
+describe("Counter Component", () =>
 {
     let props: CounterProps;
     let wrapper: ShallowWrapper<CounterProps>;
@@ -11,12 +11,6 @@ describe("Counter (Presentational Component)", () =>
     beforeAll(() =>
     {
         props = {
-            actions: {
-                decrease: jest.fn(),
-                decreaseAsync: jest.fn(),
-                increase: jest.fn(),
-                increaseAsync: jest.fn()
-            },
             className: "counter-test",
             value: 0
         };

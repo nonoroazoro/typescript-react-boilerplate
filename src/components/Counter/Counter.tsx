@@ -1,33 +1,42 @@
 import * as cs from "classnames";
 import * as React from "react";
 
-import { CounterActionCreators, CounterState } from "../../redux/counter";
-import { BaseReduxProps } from "../../types";
+import { BaseReactProps } from "../../types";
 
 import * as styles from "./Counter.less";
 
-/**
- * Represents the props of the `Counter` component.
- */
-export interface CounterProps extends BaseReduxProps<CounterActionCreators>, CounterState
+export interface CounterProps extends BaseReactProps
 {
+    value: number;
 }
 
-/**
- * The `Presentational` `Counter` component.
- */
-export default (props: CounterProps) =>
+export interface CounterState
 {
-    const { className, actions: { increase, decrease, increaseAsync, decreaseAsync }, value } = props;
-    return (
-        <div className={cs(className, styles.container)}>
-            <span className={styles.value}>{value}</span>
-            <button className={styles.btn} onClick={() => increase(1)}>+1</button>
-            <button className={styles.btn} onClick={() => decrease(1)}>-1</button>
-            <button className={styles.btn} onClick={() => increase(2)}>+2</button>
-            <button className={styles.btn} onClick={() => decrease(3)}>-3</button>
-            <button className={styles.btn} onClick={() => increaseAsync(1)}>Asynchronous Increment</button>
-            <button className={styles.btn} onClick={() => decreaseAsync(1)}>Asynchronous Decrement</button>
-        </div>
-    );
-};
+    value: number;
+}
+
+export class Counter extends React.PureComponent<CounterProps, CounterState>
+{
+    static defaultProps: CounterProps = {
+        value: 0
+    };
+
+    state = {
+        value: this.props.value
+    };
+
+    render()
+    {
+        const { className } = this.props;
+        const { value } = this.state;
+        return (
+            <div className={cs(className, styles.container)}>
+                <span className={styles.value}>{value}</span>
+                <button className={styles.btn} onClick={() => this.setState({ value: this.state.value + 1 })}>+1</button>
+                <button className={styles.btn} onClick={() => this.setState({ value: this.state.value - 1 })}>-1</button>
+                <button className={styles.btn} onClick={() => this.setState({ value: this.state.value + 2 })}>+2</button>
+                <button className={styles.btn} onClick={() => this.setState({ value: this.state.value - 3 })}>-3</button>
+            </div>
+        );
+    }
+}
