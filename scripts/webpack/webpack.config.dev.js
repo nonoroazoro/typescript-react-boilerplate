@@ -2,6 +2,7 @@ const webpack = require("webpack");
 const config = require("./webpack.config.base");
 
 config.mode = "development";
+config.devtool = "source-map";
 config.module.rules.push(
     {
         test: /\.css$/,
