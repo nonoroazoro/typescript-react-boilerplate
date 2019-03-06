@@ -1,21 +1,23 @@
 const path = require("path");
 const webpack = require("webpack");
+const { getPackageName } = require("../utils/package");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+// const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 const ROOT_PATH = path.resolve(__dirname, "../../");
 const BUILD_PATH = path.join(ROOT_PATH, "./dist");
+const packageName = getPackageName();
 
 module.exports = {
     context: ROOT_PATH,
-    devtool: "source-map",
     entry: {
-        index: ["./src"]
+        [packageName]: ["./src"]
     },
     output: {
         path: BUILD_PATH,
-        publicPath: "/assets/",
+        publicPath: "/",
         filename: "[name].js",
         chunkFilename: "[name].chunk.js"
     },
@@ -94,6 +96,7 @@ module.exports = {
         new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true, tslint: true }),
         new webpack.WatchIgnorePlugin([/less\.d\.ts$/]),
         new webpack.IgnorePlugin(/\.js\.map$/)
+        // new BundleAnalyzerPlugin()
     ],
     stats: {
         children: false,
