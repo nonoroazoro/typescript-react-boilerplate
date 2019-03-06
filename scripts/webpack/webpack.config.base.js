@@ -7,25 +7,25 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const ROOT_PATH = path.resolve(__dirname, "../../");
 const BUILD_PATH = path.join(ROOT_PATH, "./dist");
 
-const vendorEntry = {};
-const { dependencies } = require(path.resolve(ROOT_PATH, "./package.json"));
-if (dependencies)
-{
-    vendorEntry.vendor = Object.keys(dependencies);
-}
-
 module.exports = {
     context: ROOT_PATH,
-    entry: {
-        ...vendorEntry,
-        index: ["./src/index"]
-    },
     devtool: "source-map",
+    entry: {
+        index: ["./src"]
+    },
     output: {
         path: BUILD_PATH,
         publicPath: "/assets/",
         filename: "[name].js",
-        chunkFilename: "[name].js"
+        chunkFilename: "[name].chunk.js"
+    },
+    resolve: {
+        extensions: [".ts", ".tsx", ".js", ".jsx"]
+    },
+    externals:
+    {
+        "react": "React",
+        "react-dom": "ReactDOM"
     },
     optimization: {
         minimizer: [
@@ -35,20 +35,7 @@ module.exports = {
                 sourceMap: true
             }),
             new OptimizeCSSAssetsPlugin()
-        ],
-        splitChunks: {
-            cacheGroups: {
-                vendors: {
-                    name: "vendor",
-                    chunks: "all",
-                    enforce: true,
-                    test: /[\\/]node_modules[\\/]/
-                }
-            }
-        }
-    },
-    resolve: {
-        extensions: [".ts", ".tsx", ".js", ".jsx"]
+        ]
     },
     module: {
         rules: [
@@ -57,12 +44,8 @@ module.exports = {
                 use: [
                     "cache-loader",
                     {
-                        loader: "thread-loader",
-                        options: { workers: require("os").cpus().length - 1 }
-                    },
-                    {
                         loader: "ts-loader",
-                        options: { happyPackMode: true, transpileOnly: true }
+                        options: { transpileOnly: true }
                     }
                 ],
                 exclude: /node_modules/
@@ -109,9 +92,8 @@ module.exports = {
     },
     plugins: [
         new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true, tslint: true }),
-        new webpack.WatchIgnorePlugin([
-            /less\.d\.ts$/
-        ])
+        new webpack.WatchIgnorePlugin([/less\.d\.ts$/]),
+        new webpack.IgnorePlugin(/\.js\.map$/)
     ],
     stats: {
         children: false,
