@@ -1,3 +1,5 @@
+require('jest-fetch-mock');
+
 // see https://github.com/facebook/create-react-app/issues/3199
 require("raf/polyfill");
 
