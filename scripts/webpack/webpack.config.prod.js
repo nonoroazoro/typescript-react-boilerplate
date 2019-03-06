@@ -1,8 +1,9 @@
 ﻿const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
+const { getPackageName } = require("../utils/package");
 const config = require("./webpack.config.base");
 
 config.mode = "production";
+config.devtool = "hidden-source-map";
 config.output.filename = "[name].[chunkhash:8].js";
 config.output.chunkFilename = "[name].[chunkhash:8].js";
 
@@ -24,10 +25,9 @@ config.module.rules.push(
                 loader: "typings-for-css-modules-loader",
                 options: {
                     camelCase: true,
-                    localIdentName: "[name]-[local]__[hash:base64:8]",
+                    localIdentName: `${getPackageName()}-[path]-[local]`,
                     modules: true,
                     namedExport: true,
-                    sourceMap: true
                 }
             },
             "less-loader"
