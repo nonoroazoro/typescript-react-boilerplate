@@ -23,10 +23,11 @@ config.module.rules.push(
             {
                 loader: "typings-for-css-modules-loader",
                 options: {
+                    namedExport: true,
                     camelCase: true,
                     localIdentName: "[path]-[local]",
                     modules: true,
-                    namedExport: true
+                    sourceMap: true
                 }
             },
             "less-loader"
