@@ -14,7 +14,7 @@ const server = new WebpackDevServer(compiler, {
     https: false,
     noInfo: false,
     publicPath: config.output.publicPath,
-    quiet: true,
+    quiet: false,
     compress: true,
     stats: {
         children: false,
