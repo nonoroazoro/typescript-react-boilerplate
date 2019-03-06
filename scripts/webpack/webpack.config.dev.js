@@ -27,7 +27,7 @@ config.module.rules.push(
                     camelCase: true,
                     localIdentName: "[path]-[local]",
                     modules: true,
-                    sourceMap: true
+                    sourceMap: false
                 }
             },
             "less-loader"
