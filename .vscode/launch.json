@@ -6,12 +6,12 @@
             "request": "attach",
             "name": "Attach to Chrome",
             "port": 9222,
-            "smartStep": false,
-            "url": "http://localhost:8080",
-            "webRoot": "${workspaceRoot}/src",
+            "urlFilter": "http://localhost:8080*",
+            "webRoot": "${workspaceRoot}",
             "sourceMapPathOverrides": {
-                "webpack:///./src/*": "${webRoot}/*"
-            }
+                "webpack:///./*": "${webRoot}/*"
+            },
+            "smartStep": true
         }
     ]
 }
