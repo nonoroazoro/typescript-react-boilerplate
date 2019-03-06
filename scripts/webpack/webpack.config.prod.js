@@ -8,8 +8,6 @@ config.devtool = "hidden-source-map";
 config.entry = {
     [`${packageName}.min`]: ["./src"]
 };
-config.output.filename = "[name].[chunkhash:8].js";
-config.output.chunkFilename = "[name].[chunkhash:8].js";
 
 config.module.rules.push(
     {
@@ -41,7 +39,7 @@ config.module.rules.push(
 );
 
 config.plugins.push(
-    new MiniCssExtractPlugin({ filename: "[name].[chunkhash:8].css" })
+    new MiniCssExtractPlugin({ filename: "[name].css" })
 );
 
 module.exports = config;
