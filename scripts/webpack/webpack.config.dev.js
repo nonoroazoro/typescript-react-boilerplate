@@ -1,9 +1,7 @@
 const webpack = require("webpack");
-
 const config = require("./webpack.config.base");
 
 config.mode = "development";
-
 config.module.rules.push(
     {
         test: /\.css$/,
@@ -22,10 +20,9 @@ config.module.rules.push(
                 loader: "typings-for-css-modules-loader",
                 options: {
                     camelCase: true,
-                    localIdentName: "[name]-[local]",
+                    localIdentName: "[path]-[local]",
                     modules: true,
-                    namedExport: true,
-                    sourceMap: true
+                    namedExport: true
                 }
             },
             "less-loader"
