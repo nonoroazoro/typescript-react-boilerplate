@@ -1,6 +1,5 @@
 const path = require("path");
 const webpack = require("webpack");
-const { getPackageName } = require("../utils/package");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
@@ -8,14 +7,9 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 const ROOT_PATH = path.resolve(__dirname, "../../");
 const BUILD_PATH = path.join(ROOT_PATH, "./dist");
-const tsconfig = path.resolve(ROOT_PATH, 'tsconfig.es.json');
-const packageName = getPackageName();
 
 module.exports = {
     context: ROOT_PATH,
-    entry: {
-        [`${packageName}.min`]: ["./src"]
-    },
     output: {
         path: BUILD_PATH,
         publicPath: "/",
@@ -48,10 +42,7 @@ module.exports = {
                     "cache-loader",
                     {
                         loader: "ts-loader",
-                        options: {
-                            transpileOnly: true,
-                            configFile: tsconfig
-                        }
+                        options: { transpileOnly: true }
                     }
                 ],
                 exclude: /node_modules/
@@ -97,11 +88,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new ForkTsCheckerWebpackPlugin({
-            checkSyntacticErrors: true,
-            tsconfig,
-            tslint: true
-        }),
+        new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true, tslint: true }),
         new webpack.WatchIgnorePlugin([/less\.d\.ts$/]),
         new webpack.IgnorePlugin(/\.js\.map$/)
         // new BundleAnalyzerPlugin()

@@ -3,6 +3,9 @@ const config = require("./webpack.config.base");
 
 config.mode = "development";
 config.devtool = "source-map";
+config.entry = {
+    index: ["./src"]
+};
 config.module.rules.push(
     {
         test: /\.css$/,
