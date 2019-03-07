@@ -46,8 +46,7 @@ config.module.rules.push(
                     namedExport: true,
                     camelCase: true,
                     localIdentName: `${packageName}-[path]-[local]`,
-                    modules: true,
-                    sourceMap: true
+                    modules: true
                 }
             },
             "less-loader"
