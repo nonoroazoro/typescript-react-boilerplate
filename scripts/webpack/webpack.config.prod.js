@@ -6,15 +6,21 @@ const { getPackageName } = require("../utils/package");
 const packageName = getPackageName();
 const config = require("./webpack.config.base");
 config.mode = "production";
+
+// Use `hidden-source-map`, so that the browser will not load it automatically.
+// You can still load it manually.
+config.devtool = "hidden-source-map";
+
 config.entry = {
     [`${packageName}.min`]: ["./src"]
 };
+
 config.optimization = {
     minimizer: [
         new TerserPlugin({
             cache: true,
             parallel: true,
-            sourceMap: false
+            sourceMap: true
         }),
         new OptimizeCSSAssetsPlugin()
     ]
@@ -41,7 +47,7 @@ config.module.rules.push(
                     camelCase: true,
                     localIdentName: `${packageName}-[path]-[local]`,
                     modules: true,
-                    sourceMap: false
+                    sourceMap: true
                 }
             },
             "less-loader"
