@@ -1,10 +1,11 @@
 const path = require("path");
+const chalk = require("chalk");
 const webpack = require("webpack");
-const { green, red } = require("chalk");
 const WebpackDevServer = require("webpack-dev-server");
-const config = require("../webpack/webpack.config.dev");
 
+const host = "0.0.0.0";
 const port = process.env.PORT || 8080;
+const config = require("../webpack/webpack.config.dev");
 const compiler = webpack(config);
 const server = new WebpackDevServer(compiler, {
     contentBase: path.resolve(__dirname, "../../examples"),
@@ -32,12 +33,12 @@ compiler.hooks.done.tap("done", (stats) =>
     const { errors } = stats.toJson();
     if (errors && errors.length > 0)
     {
-        console.info(red(`\nUnable to start the dev server: ${stats.errors}\n`));
+        console.info(chalk.bold.redBright(`\nFailed to start the DevServer: ${stats.errors}\n`));
     }
     else
     {
-        console.info(green(`\nDev server is started on ${port}, ready for debugging...\n`));
+        console.info(chalk.bold.greenBright(`\nDevServer is ready on`), chalk.bold.underline.cyan(`${host}:${port}\n`));
     }
 });
 
-server.listen(port, "0.0.0.0");
+server.listen(port, host);
