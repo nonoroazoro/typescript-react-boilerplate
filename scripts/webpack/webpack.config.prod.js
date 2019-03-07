@@ -1,19 +1,17 @@
-﻿const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+﻿const TerserPlugin = require("terser-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const { getPackageName } = require("../utils/package");
-const config = require("./webpack.config.base");
-const packageName = getPackageName();
 
+const packageName = getPackageName();
+const config = require("./webpack.config.base");
 config.mode = "production";
-config.devtool = "hidden-source-map";
 config.entry = {
     [`${packageName}.min`]: ["./src"]
 };
-
 config.optimization = {
     minimizer: [
-        new UglifyJsPlugin({
+        new TerserPlugin({
             cache: true,
             parallel: true,
             sourceMap: false
@@ -53,7 +51,7 @@ config.module.rules.push(
 );
 
 config.plugins.push(
-    new MiniCssExtractPlugin({ filename: "[name].css" })
+    new MiniCssExtractPlugin({ filename: "[name].css", chunkFilename: "[id].css" })
 );
 
 module.exports = config;
