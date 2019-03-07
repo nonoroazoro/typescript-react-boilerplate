@@ -51,7 +51,7 @@ config.module.rules.push(
 );
 
 config.plugins.push(
-    new MiniCssExtractPlugin({ filename: "[name].css", chunkFilename: "[id].css" })
+    new MiniCssExtractPlugin({ filename: "[name].css", chunkFilename: "[id].chunk.css" })
 );
 
 module.exports = config;
