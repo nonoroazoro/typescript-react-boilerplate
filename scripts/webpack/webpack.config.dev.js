@@ -1,11 +1,12 @@
 const webpack = require("webpack");
-const config = require("./webpack.config.base");
 
+const config = require("./webpack.config.base");
 config.mode = "development";
-config.devtool = "source-map";
+config.devtool = "cheap-module-eval-source-map";
 config.entry = {
     index: ["./src"]
 };
+
 config.module.rules.push(
     {
         test: /\.css$/,
