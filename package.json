@@ -25,7 +25,7 @@
         "typescript"
     ],
     "scripts": {
-        "clean": "rimraf dist",
+        "clean": "rimraf dist/*",
         "cleanCov": "rimraf @coverage",
         "start": "npm run dev",
         "dev": "node ./scripts/server/devServer",
