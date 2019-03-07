@@ -79,7 +79,6 @@ module.exports = {
     plugins: [
         new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true, tslint: true }),
         new webpack.WatchIgnorePlugin([/less\.d\.ts$/]),
-        new webpack.IgnorePlugin(/\.js\.map$/)
         // new BundleAnalyzerPlugin()
     ],
     stats: {
