@@ -12,7 +12,7 @@ import * as styles from "./AppHeader.less";
 export function AppHeader({ className }: BaseReactProps)
 {
     return (
-        <header className={cs(className, styles.appHeader)}>
+        <header className={cs(className)}>
             <nav className={styles.nav}>
                 <NavLink exact to="/" className={styles.link} activeClassName={styles.active}>Home</NavLink>
                 <NavLink exact to="/about" className={styles.link} activeClassName={styles.active} >About</NavLink>

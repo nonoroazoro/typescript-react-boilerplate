@@ -1,2 +1,2 @@
-export const circle: string;
+export const container: string;
 export const title: string;
