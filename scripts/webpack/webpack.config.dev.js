@@ -36,7 +36,12 @@ config.module.rules.push(
     }
 );
 
-// Hot module replacement, see https://github.com/gaearon/react-hot-loader#getting-started
+// 1. HMR: Use patched react-dom to support React 16.6+ features in RHL.
+config.resolve.alias = {
+    "react-dom": "@hot-loader/react-dom"
+};
+
+// 2. HMR: Add entries and plugins.
 Object.keys(config.entry).forEach((key) =>
 {
     config.entry[key].unshift(
