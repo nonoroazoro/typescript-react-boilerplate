@@ -1,7 +1,7 @@
 import { shallow, ShallowWrapper } from "enzyme";
 import * as React from "react";
 
-import { Counter, CounterProps } from "../Counter";
+import { Counter, CounterProps } from "../../components/Counter";
 
 describe("Counter Component", () =>
 {
@@ -24,7 +24,7 @@ describe("Counter Component", () =>
 
     it("render init value", () =>
     {
-        expect(wrapper.find(".value").text()).toEqual(String(props.value));
+        expect(wrapper.find(".value").text()).toBe(String(props.value));
     });
 
     it("render class name", () =>
