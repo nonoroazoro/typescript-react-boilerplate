@@ -1,7 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
-// const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 const ROOT_PATH = path.resolve(__dirname, "../../");
 const BUILD_PATH = path.join(ROOT_PATH, "./dist");
@@ -16,12 +15,6 @@ module.exports = {
     },
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".jsx"]
-    },
-    externals:
-    {
-        "react": "React",
-        "react-dom": "ReactDOM",
-        "react-router-dom": "ReactRouterDOM"
     },
     module: {
         rules: [
@@ -78,8 +71,7 @@ module.exports = {
     },
     plugins: [
         new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true, tslint: true }),
-        new webpack.WatchIgnorePlugin([/less\.d\.ts$/]),
-        // new BundleAnalyzerPlugin()
+        new webpack.WatchIgnorePlugin([/less\.d\.ts$/])
     ],
     stats: {
         children: false,

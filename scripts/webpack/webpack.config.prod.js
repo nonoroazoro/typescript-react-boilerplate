@@ -1,8 +1,9 @@
 ﻿const TerserPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const { getPackageName } = require("../utils/package");
+// const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
+const { getPackageName } = require("../utils/package");
 const packageName = getPackageName();
 const config = require("./webpack.config.base");
 config.mode = "production";
@@ -13,6 +14,12 @@ config.devtool = "hidden-source-map";
 
 config.entry = {
     [`${packageName}.min`]: ["./src"]
+};
+
+config.externals = {
+    "react": "React",
+    "react-dom": "ReactDOM",
+    "react-router-dom": "ReactRouterDOM"
 };
 
 config.optimization = {
@@ -58,5 +65,7 @@ config.module.rules.push(
 config.plugins.push(
     new MiniCssExtractPlugin({ filename: "[name].css", chunkFilename: "[id].chunk.css" })
 );
+
+// config.plugins.push(new BundleAnalyzerPlugin());
 
 module.exports = config;
