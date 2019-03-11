@@ -1,5 +1,6 @@
 const path = require("path");
 const chalk = require("chalk");
+const symbols = require("log-symbols");
 const webpack = require("webpack");
 const WebpackDevServer = require("webpack-dev-server");
 
@@ -33,11 +34,20 @@ compiler.hooks.done.tap("done", (stats) =>
     const { errors } = stats.toJson();
     if (errors && errors.length > 0)
     {
-        console.info(chalk.bold.redBright(`\nFailed to start the DevServer: ${stats.errors}\n`));
+        console.log(
+            "\n",
+            symbols.error,
+            chalk.bold.redBright(`\nFailed to start the DevServer: ${stats.errors}\n`)
+        );
     }
     else
     {
-        console.info(chalk.bold.greenBright(`\nDevServer is ready on`), chalk.bold.underline.cyan(`${host}:${port}\n`));
+        console.log(
+            "\n",
+            symbols.success,
+            chalk.bold.greenBright(`DevServer is ready on`),
+            chalk.bold.underline.cyan(`${host}:${port}\n`)
+        );
     }
 });
 
