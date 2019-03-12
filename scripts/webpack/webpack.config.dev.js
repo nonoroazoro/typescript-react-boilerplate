@@ -22,9 +22,8 @@ config.module.rules.push(
         use: [
             "style-loader",
             {
-                loader: "typings-for-css-modules-loader",
+                loader: "css-loader",
                 options: {
-                    namedExport: true,
                     camelCase: true,
                     localIdentName: "[name]-[local]",
                     modules: true

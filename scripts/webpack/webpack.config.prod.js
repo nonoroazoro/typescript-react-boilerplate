@@ -48,9 +48,8 @@ config.module.rules.push(
         use: [
             MiniCssExtractPlugin.loader,
             {
-                loader: "typings-for-css-modules-loader",
+                loader: "css-loader",
                 options: {
-                    namedExport: true,
                     camelCase: true,
                     localIdentName: `${packageName}-[path]-[local]`,
                     modules: true
