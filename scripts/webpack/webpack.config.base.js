@@ -7,6 +7,9 @@ const BUILD_PATH = path.join(ROOT_PATH, "./dist");
 
 module.exports = {
     context: ROOT_PATH,
+    entry: {
+        index: ["./src"]
+    },
     output: {
         path: BUILD_PATH,
         publicPath: "/",

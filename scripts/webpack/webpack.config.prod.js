@@ -3,18 +3,12 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 // const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
-const { getPackageName } = require("../utils/package");
-const packageName = getPackageName();
 const config = require("./webpack.config.base");
 config.mode = "production";
 
 // Use `hidden-source-map`, so that the browser will not load it automatically.
 // You can still load it manually.
 config.devtool = "hidden-source-map";
-
-config.entry = {
-    [`${packageName}.min`]: ["./src"]
-};
 
 config.externals = {
     "react": "React",
@@ -51,7 +45,7 @@ config.module.rules.push(
                 loader: "css-loader",
                 options: {
                     camelCase: true,
-                    localIdentName: `${packageName}-[path]-[local]`,
+                    localIdentName: "[hash:base64]",
                     modules: true
                 }
             },
