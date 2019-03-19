@@ -37,7 +37,7 @@ compiler.hooks.done.tap("done", (stats) =>
         console.log(
             "\n",
             symbols.error,
-            chalk.bold.redBright(`\nFailed to start the DevServer: ${stats.errors}\n`)
+            chalk.bold.redBright(`Failed to start the DevServer: ${stats.errors}\n`)
         );
     }
     else
