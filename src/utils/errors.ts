@@ -2,49 +2,48 @@ import { EnhancedError } from "../types";
 
 /**
  * Creates an `EnhancedError` object with the specified
- * message, config, error code, request and response.
+ * message, error code, request, response and meta data.
  *
  * @param {string} message The error message.
- * @param {Object} config The config.
- * @param {string} [code] The error code (for example, "ECONNABORTED").
- * @param {Object} [request] The request.
- * @param {Object} [response] The response.
+ * @param {(number | string)} [code] The error code.
+ * @param {any} [request] The request.
+ * @param {any} [response] The response.
+ * @param {any} [meta] The meta data.
  * @returns {Error} The created error.
  */
 export function createError(
     message?: string,
-    code?: number,
+    code?: number | string,
     request?: any,
     response?: any,
     meta?: any
 ): EnhancedError
 {
-    const error = new Error(message);
-    return enhanceError(error, code, request, response, meta);
+    return enhanceError(new Error(message), code, request, response, meta);
 }
 
 /**
- * Creates an `EnhancedError` object from an `Error` object with the specified
+ * Enhances an existing `Error` or `EnhancedError` object with the specified
  * error code, request, response and meta data.
  *
- * @param {Error} error The error to update.
- * @param {number} [code] The error code.
+ * @param {(Error | EnhancedError)} error The error to enhance.
+ * @param {(number | string)} [code] The error code.
  * @param {any} [request] The request.
  * @param {any} [response] The response.
  * @param {any} [meta] The meta data.
  */
 export function enhanceError(
-    error: Error,
-    code?: number,
+    error: Error | EnhancedError,
+    code?: number | string,
     request?: any,
     response?: any,
     meta?: any
 ): EnhancedError
 {
-    const result: EnhancedError = error;
-    result.code = code;
-    result.request = request;
-    result.response = response;
-    result.meta = meta;
-    return result;
+    const e: EnhancedError = error;
+    e.code = code;
+    e.request = request;
+    e.response = response;
+    e.meta = meta;
+    return e;
 }

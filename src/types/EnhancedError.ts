@@ -6,7 +6,7 @@ export interface EnhancedError extends Error
     /**
      * The error code, if available.
      */
-    code?: number;
+    code?: number | string;
 
     /**
      * The request, if available.
