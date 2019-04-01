@@ -3,9 +3,7 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { Router } from "react-router-dom";
 
-import { App } from "./components/App";
-
-import "./index.less";
+import { App } from "./App";
 
 const history = createBrowserHistory();
 

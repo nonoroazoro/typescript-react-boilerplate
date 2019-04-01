@@ -2,13 +2,12 @@ import * as React from "react";
 import { hot } from "react-hot-loader/root";
 import { Redirect, Route, Switch } from "react-router-dom";
 
-import { About } from "../About";
-import { AppHeader } from "../AppHeader";
-import { Counter } from "../Counter";
+import { About } from "./components/About";
+import { AppHeader } from "./components/AppHeader";
+import { Counter } from "./components/Counter";
 
 import * as styles from "./App.less";
 
-// tslint:disable-next-line: variable-name
 export const App = hot(() =>
 {
     return (
