@@ -6,7 +6,7 @@ import { BaseReactProps } from "../../types";
 
 import * as styles from "./AppHeader.less";
 
-export const AppHeader: React.FC<BaseReactProps> = (props) =>
+export const AppHeader = (props: BaseReactProps) =>
 {
     const { className } = props;
     return (
