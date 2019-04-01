@@ -1,16 +1,16 @@
-@radius: 180px;
+@import "../../styles/variables.less";
+@diameter: 220px;
 
 .container
 {
-    height: @radius;
-    width: @radius;
+    .circle(@diameter);
+
     background-color: #eee;
-    border-radius: 50%;
     margin: 0 auto;
 }
 
 .title
 {
     text-align: center;
-    line-height: @radius;
+    line-height: @diameter;
 }
