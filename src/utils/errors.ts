@@ -65,9 +65,24 @@ export function enhanceError(
 ): EnhancedError
 {
     const e: EnhancedError = error;
-    e.code = code;
-    e.request = request;
-    e.response = response;
-    e.meta = meta;
+    if (code !== undefined)
+    {
+        e.code = code;
+    }
+
+    if (request !== undefined)
+    {
+        e.request = request;
+    }
+
+    if (response !== undefined)
+    {
+        e.response = response;
+    }
+
+    if (meta !== undefined)
+    {
+        e.meta = meta;
+    }
     return e;
 }
