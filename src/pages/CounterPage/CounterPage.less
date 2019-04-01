@@ -5,8 +5,7 @@
     display: inline-block;
     background-color: @backgroundColorSecondary;
     border-radius: @borderRadiusBase;
-    padding: 10px;
-
+    padding: 8px 16px;
 }
 
 .valueText
@@ -18,5 +17,13 @@
 
 .btn
 {
-    margin-left: 15px;
+    cursor: pointer;
+    border-radius: @borderRadiusBase;
+    padding: 4px 16px;
+    margin-left: 16px;
+
+    &:focus
+    {
+        outline: none;
+    }
 }
