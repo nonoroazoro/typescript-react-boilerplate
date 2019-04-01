@@ -1,13 +1,16 @@
+@import "../../styles//variables.less";
+
 .nav
 {
-    border-bottom: 2px solid #555;
+    border-bottom: 2px solid @textColor;
 }
 
 .link
 {
     display: inline-block;
     padding: 2px 10px;
-    color: #555;
+
+    color: @textColor;
 
     &:hover
     {
@@ -16,7 +19,7 @@
 
     &.active
     {
-        background-color: #555;
-        color: #fff;
+        color: @white;
+        background-color: @textColor;
     }
 }

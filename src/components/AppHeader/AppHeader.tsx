@@ -6,11 +6,9 @@ import { BaseReactProps } from "../../types";
 
 import * as styles from "./AppHeader.less";
 
-/**
- * App header.
- */
-export function AppHeader({ className }: BaseReactProps)
+export const AppHeader: React.FC<BaseReactProps> = (props) =>
 {
+    const { className } = props;
     return (
         <header className={cs(className)}>
             <nav className={styles.nav}>
@@ -19,4 +17,4 @@ export function AppHeader({ className }: BaseReactProps)
             </nav>
         </header>
     );
-}
+};
