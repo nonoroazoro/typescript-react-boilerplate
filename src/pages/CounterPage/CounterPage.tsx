@@ -10,53 +10,26 @@ export interface CounterPageProps extends BaseReactProps
     value: number;
 }
 
-export interface CounterPageState
+export const CounterPage: React.FC<CounterPageProps> = (props) =>
 {
-    value: number;
-}
+    const { className, value: initialValue } = props;
+    const [value, setValue] = React.useState(initialValue);
+    return (
+        <div className={cs(className, styles.container)}>
+            <span className={styles.value}>{value}</span>
+            <button className={styles.btn} onClick={_handleClick(1)}>+1</button>
+            <button className={styles.btn} onClick={_handleClick(-1)}>-1</button>
+            <button className={styles.btn} onClick={_handleClick(2)}>+2</button>
+            <button className={styles.btn} onClick={_handleClick(-3)}>-3</button>
+        </div>
+    );
 
-export class CounterPage extends React.PureComponent<CounterPageProps, CounterPageState>
-{
-    static defaultProps: CounterPageProps = {
-        value: 0
-    };
-
-    state = {
-        value: this.props.value
-    };
-
-    render()
+    function _handleClick(increment: number)
     {
-        const { className } = this.props;
-        const { value } = this.state;
-        return (
-            <div className={cs(className, styles.container)}>
-                <span className={styles.value}>{value}</span>
-                <button
-                    className={styles.btn}
-                    onClick={() => this.setState({ value: this.state.value + 1 })}
-                >
-                    +1
-                </button>
-                <button
-                    className={styles.btn}
-                    onClick={() => this.setState({ value: this.state.value - 1 })}
-                >
-                    -1
-                </button>
-                <button
-                    className={styles.btn}
-                    onClick={() => this.setState({ value: this.state.value + 2 })}
-                >
-                    +2
-                </button>
-                <button
-                    className={styles.btn}
-                    onClick={() => this.setState({ value: this.state.value - 3 })}
-                >
-                    -3
-                </button>
-            </div>
-        );
+        return () => setValue((prev) => prev + increment);
     }
-}
+};
+
+CounterPage.defaultProps = {
+    value: 0
+};
