@@ -1,12 +1,12 @@
 import { shallow, ShallowWrapper } from "enzyme";
 import * as React from "react";
 
-import { Counter, CounterProps } from "../../components/Counter";
+import { CounterPage, CounterPageProps } from "../../pages/CounterPage";
 
 describe("Counter Component", () =>
 {
-    let props: CounterProps;
-    let wrapper: ShallowWrapper<CounterProps>;
+    let props: CounterPageProps;
+    let wrapper: ShallowWrapper<CounterPageProps>;
 
     beforeAll(() =>
     {
@@ -14,7 +14,7 @@ describe("Counter Component", () =>
             className: "counter-test",
             value: 0
         };
-        wrapper = shallow(<Counter {...props} />);
+        wrapper = shallow(<CounterPage {...props} />);
     });
 
     it("render component", () =>

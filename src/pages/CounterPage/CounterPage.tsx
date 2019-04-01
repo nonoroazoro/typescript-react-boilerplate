@@ -3,21 +3,21 @@ import * as React from "react";
 
 import { BaseReactProps } from "../../types";
 
-import * as styles from "./Counter.less";
+import * as styles from "./CounterPage.less";
 
-export interface CounterProps extends BaseReactProps
+export interface CounterPageProps extends BaseReactProps
 {
     value: number;
 }
 
-export interface CounterState
+export interface CounterPageState
 {
     value: number;
 }
 
-export class Counter extends React.PureComponent<CounterProps, CounterState>
+export class CounterPage extends React.PureComponent<CounterPageProps, CounterPageState>
 {
-    static defaultProps: CounterProps = {
+    static defaultProps: CounterPageProps = {
         value: 0
     };
 
