@@ -32,10 +32,30 @@ export class Counter extends React.PureComponent<CounterProps, CounterState>
         return (
             <div className={cs(className, styles.container)}>
                 <span className={styles.value}>{value}</span>
-                <button className={styles.btn} onClick={() => this.setState({ value: this.state.value + 1 })}>+1</button>
-                <button className={styles.btn} onClick={() => this.setState({ value: this.state.value - 1 })}>-1</button>
-                <button className={styles.btn} onClick={() => this.setState({ value: this.state.value + 2 })}>+2</button>
-                <button className={styles.btn} onClick={() => this.setState({ value: this.state.value - 3 })}>-3</button>
+                <button
+                    className={styles.btn}
+                    onClick={() => this.setState({ value: this.state.value + 1 })}
+                >
+                    +1
+                </button>
+                <button
+                    className={styles.btn}
+                    onClick={() => this.setState({ value: this.state.value - 1 })}
+                >
+                    -1
+                </button>
+                <button
+                    className={styles.btn}
+                    onClick={() => this.setState({ value: this.state.value + 2 })}
+                >
+                    +2
+                </button>
+                <button
+                    className={styles.btn}
+                    onClick={() => this.setState({ value: this.state.value - 3 })}
+                >
+                    -3
+                </button>
             </div>
         );
     }
