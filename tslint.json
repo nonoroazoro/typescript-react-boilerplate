@@ -23,7 +23,10 @@
         "max-classes-per-file": true,
         "max-line-length": [
             true,
-            200
+            {
+                "limit": 120,
+                "ignore-pattern": "<path .*"
+            }
         ],
         "member-access": false,
         "member-ordering": [
@@ -52,9 +55,12 @@
             "severity": "warn",
             "options": 1
         },
-        "no-console": {
-            "severity": "warn"
-        },
+        "no-console": [
+            true,
+            "debug",
+            "log",
+            "trace"
+        ],
         "no-empty": false,
         "no-empty-interface": false,
         "no-string-literal": false,
@@ -72,9 +78,11 @@
                 "singleline": "never"
             }
         ],
-        "variable-name": {
-            "severity": "warn",
-            "options": "allow-leading-underscore"
-        }
+        "variable-name": [
+            true,
+            "allow-pascal-case",
+            "ban-keywords",
+            "check-format"
+        ]
     }
 }
