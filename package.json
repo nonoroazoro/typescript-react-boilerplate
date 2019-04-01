@@ -3,12 +3,12 @@
     "version": "1.0.0",
     "description": "Minimal example for React with TypeScript.",
     "license": "MIT",
-    "main": "dist/typescript-react-boilerplate.min.js",
+    "main": "dist/index.js",
     "types": "dist/types/index.d.ts",
     "author": {
         "email": "xiaochao.k@gmail.com",
         "name": "nonoroazoro",
-        "url": "http://www.alibabagroup.com/"
+        "url": "https://github.com/nonoroazoro"
     },
     "repository": {
         "type": "git",
