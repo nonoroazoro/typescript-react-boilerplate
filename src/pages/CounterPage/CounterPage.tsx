@@ -16,7 +16,7 @@ export const CounterPage: React.FC<CounterPageProps> = (props) =>
     const [value, setValue] = React.useState(initialValue);
     return (
         <div className={cs(className, styles.container)}>
-            <span className={styles.value}>{value}</span>
+            <span className={styles.valueText}>{value}</span>
             <button className={styles.btn} onClick={_handleClick(1)}>+1</button>
             <button className={styles.btn} onClick={_handleClick(-1)}>-1</button>
             <button className={styles.btn} onClick={_handleClick(2)}>+2</button>
