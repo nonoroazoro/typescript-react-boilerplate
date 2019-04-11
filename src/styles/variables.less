@@ -32,7 +32,7 @@
 @disabledColor: fade(@black, 25%);
 
 // Border.
-@borderColor: hsv(0, 0, 85%);
+@borderColor: hsv(0, 0, 88%);
 @borderRadiusLarge: 6px;
 @borderRadiusBase: 4px;
 
@@ -60,19 +60,18 @@
 
 .hDivider()
 {
-    opacity: .2;
-    border-bottom: 1px solid @textColor;
+    border-bottom: 1px solid @borderColor;
 }
 
 .vDivider()
 {
-    opacity: .2;
-    border-left: 1px solid @textColor;
+    border-left: 1px solid @borderColor;
 }
 
 .circle(@diameter)
 {
-    height: @diameter;
-    width: @diameter;
     border-radius: 50%;
+    width: @diameter;
+    height: @diameter;
+    line-height: @diameter;
 }
