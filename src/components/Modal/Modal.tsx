@@ -26,14 +26,14 @@ export const Modal = (props: ModalProps) =>
     const [visible, setVisible] = React.useState(false);
     React.useEffect(() =>
     {
-        setVisible((prevShow) =>
+        setVisible((prevVisible) =>
         {
-            if (show !== prevShow)
+            if (show !== prevVisible)
             {
                 // From invisible to visible (or visible to invisible step 1).
                 return true;
             }
-            return prevShow;
+            return prevVisible;
         });
     }, [show]);
     React.useEffect(() =>
