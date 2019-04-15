@@ -2,36 +2,51 @@
 
 exports[`Counter Component render component 1`] = `
 <div
-  className="counter-test container"
+  className="counter-test"
 >
-  <span
-    className="valueText"
+  <div
+    className="content"
   >
-    0
-  </span>
-  <button
-    className="btn"
-    onClick={[Function]}
-  >
-    +1
-  </button>
-  <button
-    className="btn"
-    onClick={[Function]}
-  >
-    -1
-  </button>
-  <button
-    className="btn"
-    onClick={[Function]}
-  >
-    +2
-  </button>
-  <button
-    className="btn"
-    onClick={[Function]}
-  >
-    -3
-  </button>
+    <span
+      className="valueText"
+    >
+      0
+    </span>
+    <button
+      className="btn"
+      onClick={[Function]}
+    >
+      +1
+    </button>
+    <button
+      className="btn"
+      onClick={[Function]}
+    >
+      -1
+    </button>
+    <button
+      className="btn"
+      onClick={[Function]}
+    >
+      +2
+    </button>
+    <button
+      className="btn"
+      onClick={[Function]}
+    >
+      -3
+    </button>
+    <button
+      className="btn"
+      onClick={[Function]}
+    >
+      I need a dialog...
+    </button>
+  </div>
+  <Component
+    onCancel={[Function]}
+    onOK={[Function]}
+    show={false}
+  />
 </div>
 `;
