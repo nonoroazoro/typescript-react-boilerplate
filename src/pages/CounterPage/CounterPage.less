@@ -17,13 +17,22 @@
 
 .btn
 {
-    cursor: pointer;
-    border-radius: @borderRadiusBase;
-    padding: 4px 16px;
-    margin-left: 16px;
+    background-color: @white;
+    padding: 8px 16px;
+    margin: 0 8px;
+    min-width: 60px;
 
-    &:focus
+    cursor: pointer;
+    font-weight: @fontWeightBold;
+    border: 1px solid @borderColor;
+    letter-spacing: .2px;
+    box-shadow: @shadowInformation;
+    text-align: center;
+    transition: all .2s;
+
+    &:hover
     {
-        outline: none;
+        background-color: lighten(@primaryColor, 15%);
+        border-color: lighten(@primaryColor, 15%);
     }
 }
