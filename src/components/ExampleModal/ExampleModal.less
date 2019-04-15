@@ -1,0 +1,87 @@
+@import "../../styles/variables.less";
+@btnHeight: 50px;
+
+.content
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 330px;
+    background-color: @white;
+    border-radius: @borderRadiusLarge;
+    box-shadow: @shadowModal;
+}
+
+.title
+{
+    color: @primaryColor;
+    font-weight: @fontWeightBold;
+    margin-top: 12px;
+}
+
+.divider
+{
+    .hDivider();
+    .fullWidth();
+    margin-top: 12px;
+}
+
+.main
+{
+    padding: 30px 12px;
+}
+
+.footer
+{
+    .fullWidth();
+    display: flex;
+}
+
+.btn
+{
+    flex: 1 1 50%;
+    height: @btnHeight;
+    line-height: @btnHeight;
+    padding: 0;
+
+    cursor: pointer;
+    font-weight: @fontWeightBold;
+    border: 1px solid transparent;
+    letter-spacing: .17px;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, .045);
+    text-align: center;
+    transition: all .2s;
+
+    &:active, &:hover
+    {
+        background-color: lighten(@primaryColor, 15%);
+    }
+}
+
+.btnCancel
+{
+    color: @textColorSecondary;
+    background-color: @white;
+    border-top-color: @borderColor;
+    border-bottom-left-radius: @borderRadiusBase;
+
+    &:active, &:hover
+    {
+        background-color: lighten(@primaryColor, 55%);
+    }
+}
+
+.btnOK
+{
+    color: @white;
+    background-color: @primaryColor;
+    border-top-color: @primaryColor;
+    border-bottom-right-radius: @borderRadiusBase;
+
+    &:active, &:hover
+    {
+        background-color: lighten(@primaryColor, 15%);
+        border-top-color: lighten(@primaryColor, 15%);
+    }
+}
