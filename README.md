@@ -4,8 +4,8 @@
 ## Based on
 
 - typescript
-- react
-- react-router-dom
+- react (with hooks)
+- react-router
 - react-hot-loader
 - css-modules
 - webpack
@@ -34,6 +34,6 @@
         }
         ```
 
-1. While using [react-router-dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom), you should use `withRouter()` as a function call instead of as a decorator (`@withRouter`), because `TypeScript` doesn't allow decorators to change the signature of the classes they are decorating.
+1. While using [react-router](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom), you should use `withRouter()` as a function call instead of as a decorator (`@withRouter`), because `TypeScript` doesn't allow decorators to change the signature of the classes they are decorating.
 
 1. In [jest.config.js](./scripts/jest/jest.config.js), the primary challenge is how to configure the `rootDir` appropriately.
