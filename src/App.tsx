@@ -16,7 +16,7 @@ export const App = hot(() =>
             <main className={styles.main}>
                 <Switch>
                     <Route exact path="/" component={CounterPage} />
-                    <Route path="/about" component={AboutPage} />
+                    <Route exact path="/about" component={AboutPage} />
                     <Redirect to="/" />
                 </Switch>
             </main>
