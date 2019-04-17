@@ -24,7 +24,7 @@ describe("Counter Component", () =>
 
     it("render init value", () =>
     {
-        expect(wrapper.find(".valueText").text()).toBe(String(props.value));
+        expect(wrapper.find(".value").text()).toBe(String(props.value));
     });
 
     it("render class name", () =>
