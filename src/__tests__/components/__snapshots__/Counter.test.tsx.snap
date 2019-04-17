@@ -2,13 +2,11 @@
 
 exports[`Counter Component render component 1`] = `
 <div
-  className="counter-test"
+  className="counter-test container"
 >
-  <div
-    className="content"
-  >
+  <div>
     <span
-      className="valueText"
+      className="value"
     >
       0
     </span>
