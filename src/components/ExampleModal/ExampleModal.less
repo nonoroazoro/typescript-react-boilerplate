@@ -45,21 +45,30 @@
 
 .btn
 {
+    .button();
+
     flex: 1 1 50%;
     height: @btnHeight;
     line-height: @btnHeight;
+}
 
-    cursor: pointer;
-    font-weight: @fontWeightMedium;
-    border: 1px solid transparent;
-    letter-spacing: .2px;
-    box-shadow: @shadowInformation;
-    text-align: center;
-    transition: all .2s;
+.btnOK
+{
+    color: @white;
+    background-color: @primaryColor;
+    border-top-color: @primaryColor;
+    border-bottom-right-radius: @borderRadiusMedium;
 
     &:hover
     {
-        background-color: lighten(@primaryColor, 15%);
+        background-color: lighten(@primaryColor, 12%);
+        border-top-color: lighten(@primaryColor, 12%);
+
+        &:active
+        {
+            background-color: lighten(@primaryColor, 24%);
+            border-top-color: lighten(@primaryColor, 24%);
+        }
     }
 }
 
@@ -72,20 +81,11 @@
 
     &:hover
     {
-        background-color: lighten(@primaryColor, 55%);
-    }
-}
+        color: @textColorSecondary;
 
-.btnOK
-{
-    color: @white;
-    background-color: @primaryColor;
-    border-top-color: @primaryColor;
-    border-bottom-right-radius: @borderRadiusMedium;
-
-    &:hover
-    {
-        background-color: lighten(@primaryColor, 15%);
-        border-top-color: lighten(@primaryColor, 15%);
+        &:active
+        {
+            color: lighten(@textColorSecondary, 12%);
+        }
     }
 }
