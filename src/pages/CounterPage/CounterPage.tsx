@@ -17,9 +17,9 @@ export const CounterPage = (props: CounterPageProps) =>
     const [value, setValue] = React.useState(initialValue);
     const [showModal, setShowModal] = React.useState(false);
     return (
-        <div className={cs(className)}>
-            <div className={styles.content}>
-                <span className={styles.valueText}>{value}</span>
+        <div className={cs(className, styles.container)}>
+            <div>
+                <span className={styles.value}>{value}</span>
                 <button className={styles.btn} onClick={_handleClick(1)}>+1</button>
                 <button className={styles.btn} onClick={_handleClick(-1)}>-1</button>
                 <button className={styles.btn} onClick={_handleClick(2)}>+2</button>
@@ -28,8 +28,8 @@ export const CounterPage = (props: CounterPageProps) =>
             </div>
             <ExampleModal
                 show={showModal}
-                onOK={() => setShowModal(false)}
-                onCancel={() => setShowModal(false)}
+                onOK={_handleHideModal}
+                onCancel={_handleHideModal}
             />
         </div>
     );
@@ -42,6 +42,11 @@ export const CounterPage = (props: CounterPageProps) =>
     function _handleShowModal()
     {
         setShowModal(true);
+    }
+
+    function _handleHideModal()
+    {
+        setShowModal(false);
     }
 };
 

@@ -1,38 +1,45 @@
 @import "../../styles/variables.less";
 
-.content
+.container
 {
-    display: inline-block;
     background-color: @backgroundColorSecondary;
     border-radius: @borderRadiusMedium;
-    padding: 8px 16px;
+    box-shadow: @shadowCover;
+    padding: 16px;
 }
 
-.valueText
+.value
 {
     display: inline-block;
-    min-width: 30px;
     text-align: center;
+    min-width: 32px;
 }
 
 .btn
 {
+    .buttonTypeScale();
+
     background-color: @white;
     padding: 8px 16px;
     margin: 0 8px;
     min-width: 60px;
 
     cursor: pointer;
-    font-weight: @fontWeightMedium;
     border: 1px solid @borderColor;
-    letter-spacing: .2px;
     box-shadow: @shadowInformation;
+    outline: none;
     text-align: center;
     transition: all .2s;
 
     &:hover
     {
-        background-color: lighten(@primaryColor, 15%);
-        border-color: lighten(@primaryColor, 15%);
+        background-color: lighten(@primaryColor, 12%);
+        border-color: lighten(@primaryColor, 12%);
+
+        &:active
+        {
+            background-color: lighten(@primaryColor, 24%);
+            border-color: lighten(@primaryColor, 24%);
+        }
     }
 }
