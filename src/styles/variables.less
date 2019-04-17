@@ -1,9 +1,11 @@
+// Part of this file is from [Google Material Design](https://material.io/design/).
+
 // Font.
 @fontFamily: "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 // Font Size.
-@fontSizeBase: 16px;
-@fontSizeSmall: 80%;
+@fontSizeSmall: 14px;
+@fontSizeMedium: 16px;
 
 // Font Weight.
 @fontWeightLight: 300;
@@ -11,36 +13,73 @@
 @fontWeightMedium: 500;
 @fontWeightBold: 700;
 
-// Line Height.
-@lineHeightBase: 1.5;
-
 // Color.
 @black: #000;
 @white: #FFF;
 @primaryColor: #1890FF;
 @backgroundColor: @white;
 @backgroundColorSecondary: #EEE;
-@textColor: fade(@black, 60%);
-@textColorSecondary: fade(@black, 45%);
-@disabledColor: fade(@black, 25%);
+@textColor: fade(@black, 87%);
+@textColorSecondary: fade(@black, 60%);
+@disabledColor: fade(@black, 38%);
 
 // Border.
-@borderColor: hsv(0, 0, 88%);
+@borderColor: #E0E0E0;
+@borderRadiusMedium: 4px;
 @borderRadiusLarge: 6px;
-@borderRadiusBase: 4px;
 
 // Link.
 @linkColor: @primaryColor;
-@linkColorHover: #40A9FF;
+@linkColorHover: lighten(@primaryColor, 20%);
 
 // Shadow.
 @shadowColor: rgba(0, 0, 0, .15);
-@shadowModal: 0 10px 20px @shadowColor;
-@shadowNavigation: 0 6px 12px @shadowColor;
-@shadowCover: 0 4px 8px @shadowColor;
 @shadowInformation: 0 2px 4px @shadowColor;
+@shadowCover: 0 4px 8px @shadowColor;
+@shadowNavigation: 0 6px 12px @shadowColor;
+@shadowModal: 0 10px 20px @shadowColor;
 
 // Mixins.
+.subtitleTypeScale()
+{
+    font-weight: @fontWeightRegular;
+    font-size: @fontSizeMedium;
+    line-height: 24px;
+    letter-spacing: .15px;
+}
+
+.subtitleTypeScaleSecondary()
+{
+    font-weight: @fontWeightMedium;
+    font-size: @fontSizeSmall;
+    line-height: 24px;
+    letter-spacing: .1px;
+}
+
+.bodyTypeScale()
+{
+    font-weight: @fontWeightRegular;
+    font-size: @fontSizeMedium;
+    line-height: 28px;
+    letter-spacing: .44px;
+}
+
+.bodyTypeScaleSecondary()
+{
+    font-weight: @fontWeightRegular;
+    font-size: @fontSizeSmall;
+    line-height: 20px;
+    letter-spacing: .25px;
+}
+
+.buttonTypeScale()
+{
+    font-weight: @fontWeightMedium;
+    font-size: @fontSizeSmall;
+    line-height: 16px;
+    letter-spacing: 1.35px;
+}
+
 .fullWidth()
 {
     width: 100%;
