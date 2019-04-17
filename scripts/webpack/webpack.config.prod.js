@@ -11,6 +11,8 @@ config.mode = "production";
 config.devtool = "hidden-source-map";
 
 config.externals = {
+    "classnames": "classNames",
+    "history": "History",
     "react": "React",
     "react-dom": "ReactDOM",
     "react-router-dom": "ReactRouterDOM"
