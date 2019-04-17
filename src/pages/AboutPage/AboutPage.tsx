@@ -6,7 +6,7 @@ export const AboutPage = () =>
 {
     return (
         <div className={styles.container}>
-            <h3 className={styles.title}>For the Horde!</h3>
+            <h5 className={styles.content}>For the Horde!</h5>
         </div>
     );
 };
