@@ -11,8 +11,8 @@ import * as styles from "./App.less";
 export const App = hot(() =>
 {
     return (
-        <div className={styles.app} >
-            <AppHeader className={styles.appHeader} />
+        <div className={styles.container} >
+            <AppHeader />
             <main className={styles.main}>
                 <Switch>
                     <Route exact path="/" component={CounterPage} />
