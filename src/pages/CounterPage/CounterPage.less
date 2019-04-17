@@ -5,7 +5,7 @@
     background-color: @backgroundColorSecondary;
     border-radius: @borderRadiusMedium;
     box-shadow: @shadowCover;
-    padding: 16px;
+    padding: 16px 8px;
 }
 
 .value
@@ -17,19 +17,14 @@
 
 .btn
 {
-    .buttonTypeScale();
+    .button();
 
-    background-color: @white;
     padding: 8px 16px;
     margin: 0 8px;
     min-width: 60px;
 
-    cursor: pointer;
-    border: 1px solid @borderColor;
-    box-shadow: @shadowInformation;
-    outline: none;
-    text-align: center;
-    transition: all .2s;
+    background-color: @white;
+    border-color: @borderColor;
 
     &:hover
     {
