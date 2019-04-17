@@ -1,16 +1,24 @@
 @import "../../styles/variables.less";
 
+.container
+{
+    .fullWidth();
+}
+
 .nav
 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     border-bottom: 2px solid @textColor;
 }
 
 .link
 {
-    display: inline-block;
     padding: 4px 16px;
-
-    color: @textColor;
+    transition-duration: .2s;
+    transition-property: background-color, color;
 
     &:hover
     {
