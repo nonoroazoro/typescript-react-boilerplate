@@ -5,41 +5,35 @@
 {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    text-align: center;
 
-    width: 330px;
     background-color: @white;
     border-radius: @borderRadiusLarge;
     box-shadow: @shadowModal;
+
+    width: 330px;
 }
 
-.title
+.header
 {
     color: @primaryColor;
-    font-weight: @fontWeightMedium;
-    margin-top: 12px;
-}
-
-.divider
-{
-    .hDivider();
-    .fullWidth();
-    margin-top: 12px;
+    border-bottom: 1px solid @borderColor;
+    padding: 12px 0;
 }
 
 .main
 {
-    padding: 30px 12px 10px;
+    padding: 30px 0;
 }
 
-.timer
+.time
 {
-    padding-bottom: 30px;
+    display: inline-block;
+    min-width: 32px;
 }
 
 .footer
 {
-    .fullWidth();
     display: flex;
 }
 

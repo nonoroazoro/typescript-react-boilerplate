@@ -40,10 +40,13 @@ export const ExampleModal = (props: ExampleModalProps) =>
             onMaskClick={onCancel}
         >
             <div className={styles.content}>
-                <div className={styles.title}>Tips</div>
-                <div className={styles.divider} />
-                <div className={styles.main}>Press Esc or click the buttons.</div>
-                <div className={styles.timer}>{`Time Elapsed: ${time}s`}</div>
+                <header className={styles.header}>
+                    <h6>Dialog</h6>
+                </header>
+                <div className={styles.main}>
+                    <div>Press Esc or click the buttons.</div>
+                    <div>Time Elapsed: <span className={styles.time}>{`${time}s`}</span></div>
+                </div>
                 <div className={styles.footer}>
                     <div className={cs(styles.btn, styles.btnCancel)} onClick={onCancel}>Cancel</div>
                     <div className={cs(styles.btn, styles.btnOK)} onClick={onOK}>OK</div>
