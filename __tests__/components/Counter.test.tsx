@@ -1,7 +1,7 @@
 import { shallow, ShallowWrapper } from "enzyme";
 import * as React from "react";
 
-import { CounterPage, CounterPageProps } from "../../pages/CounterPage";
+import { CounterPage, CounterPageProps } from "../../src/pages/CounterPage";
 
 describe("Counter Component", () =>
 {
