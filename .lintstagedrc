@@ -1,6 +1,6 @@
 {
     "*.{ts,tsx}": [
-        "tslint",
+        "eslint",
         "git add"
     ]
 }
