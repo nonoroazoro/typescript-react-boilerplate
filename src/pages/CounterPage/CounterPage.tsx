@@ -20,11 +20,11 @@ export const CounterPage = (props: CounterPageProps) =>
         <div className={cs(className, styles.container)}>
             <div>
                 <span className={styles.value}>{value}</span>
-                <button className={styles.btn} onClick={_handleClick(1)}>+1</button>
-                <button className={styles.btn} onClick={_handleClick(-1)}>-1</button>
-                <button className={styles.btn} onClick={_handleClick(2)}>+2</button>
-                <button className={styles.btn} onClick={_handleClick(-3)}>-3</button>
-                <button className={styles.btn} onClick={_handleShowModal}>I need a dialog...</button>
+                <button className={styles.btn} type="button" onClick={_handleClick(1)}>+1</button>
+                <button className={styles.btn} type="button" onClick={_handleClick(-1)}>-1</button>
+                <button className={styles.btn} type="button" onClick={_handleClick(2)}>+2</button>
+                <button className={styles.btn} type="button" onClick={_handleClick(-3)}>-3</button>
+                <button className={styles.btn} type="button" onClick={_handleShowModal}>I need a dialog...</button>
             </div>
             <ExampleModal
                 show={showModal}

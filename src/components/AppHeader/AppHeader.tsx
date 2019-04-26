@@ -13,7 +13,7 @@ export const AppHeader = (props: BaseReactProps) =>
         <header className={cs(className, styles.container)}>
             <nav className={styles.nav}>
                 <NavLink exact to="/" className={styles.link} activeClassName={styles.active}>Home</NavLink>
-                <NavLink exact to="/about" className={styles.link} activeClassName={styles.active} >About</NavLink>
+                <NavLink exact to="/about" className={styles.link} activeClassName={styles.active}>About</NavLink>
             </nav>
         </header>
     );

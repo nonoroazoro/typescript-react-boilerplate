@@ -11,7 +11,7 @@ import * as styles from "./App.less";
 export const App = hot(() =>
 {
     return (
-        <div className={styles.container} >
+        <div className={styles.container}>
             <AppHeader />
             <main className={styles.main}>
                 <Switch>
@@ -20,6 +20,6 @@ export const App = hot(() =>
                     <Redirect to="/" />
                 </Switch>
             </main>
-        </div >
+        </div>
     );
 });
