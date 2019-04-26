@@ -88,11 +88,5 @@
         "webpack-bundle-analyzer": "^3.3.2",
         "webpack-cli": "^3.3.1",
         "webpack-dev-server": "^3.3.1"
-    },
-    "lint-staged": {
-        "./src/**/*.tsx?": [
-            "tslint",
-            "git add"
-        ]
     }
 }
