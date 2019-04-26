@@ -13,30 +13,35 @@ exports[`Counter Component render component 1`] = `
     <button
       className="btn"
       onClick={[Function]}
+      type="button"
     >
       +1
     </button>
     <button
       className="btn"
       onClick={[Function]}
+      type="button"
     >
       -1
     </button>
     <button
       className="btn"
       onClick={[Function]}
+      type="button"
     >
       +2
     </button>
     <button
       className="btn"
       onClick={[Function]}
+      type="button"
     >
       -3
     </button>
     <button
       className="btn"
       onClick={[Function]}
+      type="button"
     >
       I need a dialog...
     </button>
