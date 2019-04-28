@@ -2,6 +2,9 @@
     "extends": [
         "eslint-config-zoro"
     ],
+    "env": {
+        "jest": true
+    },
     "parserOptions": {
         "project": "./tsconfig.json"
     }
