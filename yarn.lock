@@ -2590,10 +2590,10 @@ escodegen@^1.9.1:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-config-zoro@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/eslint-config-zoro/-/eslint-config-zoro-2.0.3.tgz#2822eac9576f0ad552e24f5b294af3a657287b92"
-  integrity sha512-RjIXhE6P/402aAGyWy/g7sz0cXz7uBixtyccEbNDtt+GrjnYEUWZ+fPn287t4QHPfjTvMfFxcxrEoeENytvdiw==
+eslint-config-zoro@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-zoro/-/eslint-config-zoro-2.1.0.tgz#f9bcf4fbcc39595c7b122230354d2f944ea4ac75"
+  integrity sha512-8q1DsrFEEVB/LarmmgEZ1QoBhb2U7FcBJaJvKdVCiJJh9/bbhvpKnCe1Q2KdGvasgztmLOo2HSz//wuPCqKYjA==
 
 eslint-plugin-react-hooks@^1.6.0:
   version "1.6.0"
