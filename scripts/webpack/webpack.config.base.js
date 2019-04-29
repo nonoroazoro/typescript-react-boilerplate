@@ -1,6 +1,4 @@
 const path = require("path");
-const webpack = require("webpack");
-const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
 const ROOT_PATH = path.resolve(__dirname, "../../");
 const BUILD_PATH = path.join(ROOT_PATH, "./dist");
@@ -21,6 +19,13 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                enforce: "pre",
+                test: /\.tsx?$/,
+                loader: "eslint-loader",
+                options: { cache: true },
+                exclude: /node_modules/
+            },
             {
                 test: /\.tsx?$/,
                 use: [
@@ -72,10 +77,7 @@ module.exports = {
             }
         ]
     },
-    plugins: [
-        new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true, tslint: true }),
-        new webpack.WatchIgnorePlugin([/less\.d\.ts$/])
-    ],
+    plugins: [],
     stats: {
         children: false,
         modules: false
