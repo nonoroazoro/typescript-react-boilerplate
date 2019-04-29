@@ -19,6 +19,12 @@
 - enzyme
 
 
+## Linter
+
+- [eslint](https://eslint.org/)
+- [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint)
+
+
 ## Something you should know
 
 1. In `transpileOnly` mode of `ts-loader`, the `Typescript` compiler **will not** generate declaration files, but you can generate them via `tsc`.
@@ -39,3 +45,5 @@
 1. While using [react-router](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom), you should use `withRouter()` as a function call instead of as a decorator (`@withRouter`), because `TypeScript` doesn't allow decorators to change the signature of the classes they are decorating.
 
 1. In [jest.config.js](./scripts/jest/jest.config.js), the primary challenge is how to configure the `rootDir` appropriately.
+
+1. The [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) is still a very new thing, which means the related configurations may change in the future.
