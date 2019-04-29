@@ -22,7 +22,8 @@
         "boilerplate",
         "react",
         "typescript-react-boilerplate",
-        "typescript"
+        "typescript",
+        "typescript-eslint"
     ],
     "scripts": {
         "prebuild": "npm run clean && npm run cleanCov",
