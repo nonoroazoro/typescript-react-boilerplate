@@ -43,7 +43,7 @@ compiler.hooks.done.tap("done", (stats) =>
             "\n",
             symbols.success,
             chalk.bold.greenBright("DevServer is ready on"),
-            chalk.bold.underline.cyan(`${devHost}:${devPort}\n`)
+            chalk.bold.underline.cyan(`${devProtocol}://${devHost}:${devPort}\n`)
         );
     }
 });
