@@ -1,7 +1,13 @@
-# typescript-react-boilerplate [![Dependency Status](https://david-dm.org/nonoroazoro/typescript-react-boilerplate.svg?style=flat-square)](https://david-dm.org/nonoroazoro/typescript-react-boilerplate) [![Build Status](https://travis-ci.org/nonoroazoro/typescript-react-boilerplate.svg?branch=master)](https://travis-ci.org/nonoroazoro/typescript-react-boilerplate)
-
-> Just clone and rename to create your own app.
-
+<h1 align="center">typescript-react-boilerplate</h1>
+<p align="center">Just clone and rename to create your own React app</p>
+<p align="center">
+    <a href="https://github.com/nonoroazoro/typescript-react-boilerplate/blob/master/LICENSE">
+        <img src="https://img.shields.io/github/license/nonoroazoro/typescript-react-boilerplate.svg" alt="GitHub License" />
+    </a>
+    <a href="https://travis-ci.org/nonoroazoro/typescript-react-boilerplate">
+        <img src="https://img.shields.io/travis/nonoroazoro/typescript-react-boilerplate/master.svg" alt="Build Status" />
+    </a>
+</p>
 
 ## Based on
 
@@ -43,7 +49,5 @@
         ```
 
 1. While using [react-router](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom), you should use `withRouter()` as a function call instead of as a decorator (`@withRouter`), because `TypeScript` doesn't allow decorators to change the signature of the classes they are decorating.
-
-1. In [jest.config.js](./scripts/jest/jest.config.js), the primary challenge is how to configure the `rootDir` appropriately.
 
 1. The [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) is still a very new thing, which means the related configurations may change in the future.
