@@ -1,15 +1,13 @@
-const path = require("path");
-
-const ROOT_PATH = path.resolve(__dirname, "../../");
-const BUILD_PATH = path.join(ROOT_PATH, "./dist");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const env = require("../utils/env");
 
 module.exports = {
-    context: ROOT_PATH,
+    context: env.rootPath,
     entry: {
         index: ["./src"]
     },
     output: {
-        path: BUILD_PATH,
+        path: env.buildPath,
         publicPath: "/",
         filename: "[name].js",
         chunkFilename: "[name].chunk.js"
@@ -77,7 +75,25 @@ module.exports = {
             }
         ]
     },
-    plugins: [],
+    plugins: [
+        new HtmlWebpackPlugin({
+            inject: true,
+            template: env.htmlPath,
+            favicon: env.faviconPath,
+            minify: {
+                collapseWhitespace: true,
+                keepClosingSlash: true,
+                minifyCSS: true,
+                minifyJS: true,
+                minifyURLs: true,
+                removeComments: true,
+                removeEmptyAttributes: true,
+                removeRedundantAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                useShortDoctype: true
+            }
+        })
+    ],
     stats: {
         children: false,
         modules: false
