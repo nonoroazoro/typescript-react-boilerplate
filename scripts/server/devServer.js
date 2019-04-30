@@ -1,4 +1,3 @@
-const path = require("path");
 const chalk = require("chalk");
 const symbols = require("log-symbols");
 const webpack = require("webpack");
@@ -9,7 +8,6 @@ const port = process.env.PORT || 8080;
 const config = require("../webpack/webpack.config.dev");
 const compiler = webpack(config);
 const server = new WebpackDevServer(compiler, {
-    contentBase: path.resolve(__dirname, "../../examples"),
     disableHostCheck: true,
     historyApiFallback: true,
     hot: true,
