@@ -1,4 +1,4 @@
-﻿const TerserPlugin = require("terser-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 // const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
@@ -47,7 +47,7 @@ config.module.rules.push(
                 loader: "css-loader",
                 options: {
                     camelCase: true,
-                    localIdentName: "[hash:base64]",
+                    localIdentName: "[sha1:hash:hex:5]",
                     modules: true
                 }
             },
