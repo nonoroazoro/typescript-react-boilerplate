@@ -1,0 +1,3 @@
+# Project specific stuff
+@coverage
+dist
