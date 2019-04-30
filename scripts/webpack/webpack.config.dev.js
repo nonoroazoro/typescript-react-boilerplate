@@ -1,5 +1,6 @@
 const webpack = require("webpack");
 
+const { devProtocol, devHost, devPort } = require("../utils/env");
 const config = require("./webpack.config.base");
 config.mode = "development";
 config.devtool = "cheap-module-eval-source-map";
@@ -41,7 +42,7 @@ config.resolve.alias = {
 Object.keys(config.entry).forEach((key) =>
 {
     config.entry[key].unshift(
-        "webpack-dev-server/client?http://0.0.0.0:8080",
+        `webpack-dev-server/client?${devProtocol}://${devHost}:${devPort}`,
         "webpack/hot/only-dev-server"
     );
 });

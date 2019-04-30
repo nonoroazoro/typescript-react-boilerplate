@@ -3,15 +3,14 @@ const symbols = require("log-symbols");
 const webpack = require("webpack");
 const WebpackDevServer = require("webpack-dev-server");
 
-const host = "0.0.0.0";
-const port = process.env.PORT || 8080;
+const { devProtocol, devHost, devPort } = require("../utils/env");
 const config = require("../webpack/webpack.config.dev");
 const compiler = webpack(config);
 const server = new WebpackDevServer(compiler, {
     disableHostCheck: true,
     historyApiFallback: true,
     hot: true,
-    https: false,
+    https: devProtocol === "https",
     noInfo: false,
     publicPath: config.output.publicPath,
     quiet: false,
@@ -44,9 +43,9 @@ compiler.hooks.done.tap("done", (stats) =>
             "\n",
             symbols.success,
             chalk.bold.greenBright("DevServer is ready on"),
-            chalk.bold.underline.cyan(`${host}:${port}\n`)
+            chalk.bold.underline.cyan(`${devHost}:${devPort}\n`)
         );
     }
 });
 
-server.listen(port, host);
+server.listen(devPort, devHost);
