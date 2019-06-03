@@ -29,13 +29,13 @@
 
     &:hover
     {
-        background-color: lighten(@primaryColor, 12%);
-        border-color: lighten(@primaryColor, 12%);
+        background-color: @primaryColor;
+        border-color: @primaryColor;
 
         &:active
         {
-            background-color: lighten(@primaryColor, 24%);
-            border-color: lighten(@primaryColor, 24%);
+            background-color: darken(@primaryColor, 8%);
+            border-color: darken(@primaryColor, 8%);
         }
     }
 }

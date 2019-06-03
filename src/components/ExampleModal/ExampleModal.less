@@ -55,13 +55,13 @@
 
     &:hover
     {
-        background-color: lighten(@primaryColor, 12%);
-        border-top-color: lighten(@primaryColor, 12%);
+        background-color: darken(@primaryColor, 8%);
+        border-top-color: darken(@primaryColor, 8%);
 
         &:active
         {
-            background-color: lighten(@primaryColor, 24%);
-            border-top-color: lighten(@primaryColor, 24%);
+            background-color: darken(@primaryColor, 12%);
+            border-top-color: darken(@primaryColor, 12%);
         }
     }
 }
@@ -75,11 +75,11 @@
 
     &:hover
     {
-        color: @textColorSecondary;
+        color: fadeout(@textColor, 24%);
 
         &:active
         {
-            color: lighten(@textColorSecondary, 12%);
+            color: fadeout(@textColor, 36%);
         }
     }
 }
