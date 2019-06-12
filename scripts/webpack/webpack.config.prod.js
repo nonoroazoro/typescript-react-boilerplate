@@ -46,9 +46,10 @@ config.module.rules.push(
             {
                 loader: "css-loader",
                 options: {
-                    camelCase: true,
-                    localIdentName: "[sha1:hash:hex:5]",
-                    modules: true
+                    localsConvention: "camelCase",
+                    modules: {
+                        localIdentName: "[sha1:hash:hex:5]"
+                    }
                 }
             },
             "less-loader"

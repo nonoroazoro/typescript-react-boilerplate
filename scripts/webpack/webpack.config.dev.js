@@ -22,9 +22,10 @@ config.module.rules.push(
             {
                 loader: "css-loader",
                 options: {
-                    camelCase: true,
-                    localIdentName: "[name]-[local]",
-                    modules: true
+                    localsConvention: "camelCase",
+                    modules: {
+                        localIdentName: "[name]-[local]"
+                    }
                 }
             },
             "less-loader"
