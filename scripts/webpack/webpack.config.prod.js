@@ -58,7 +58,10 @@ config.module.rules.push(
 );
 
 config.plugins.push(
-    new MiniCssExtractPlugin({ filename: "[name].css", chunkFilename: "[id].chunk.css" })
+    new MiniCssExtractPlugin({
+        filename: "[name].css",
+        chunkFilename: "[id].chunk.css"
+    })
 );
 
 // config.plugins.push(new BundleAnalyzerPlugin());
