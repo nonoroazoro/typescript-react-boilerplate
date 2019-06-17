@@ -1,7 +1,6 @@
 {
 	"recommendations": [
-		"dbaeumer.vscode-eslint",
-		"wangtao0101.vscode-perfect-css-modules"
+		"dbaeumer.vscode-eslint"
 	],
 	"unwantedRecommendations": []
 }
