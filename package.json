@@ -34,6 +34,7 @@
         "build": "npm run build:prod && npm run build:es",
         "build:es": "tsc --project ./tsconfig.es.json",
         "build:prod": "cross-env NODE_ENV=production webpack --config ./scripts/webpack/webpack.config.prod.js --progress",
+        "build:analyze": "cross-env NODE_ENV=production BUILD_ANALYZE=true webpack --config ./scripts/webpack/webpack.config.prod.js --progress --env.analyze",
         "test": "jest --config ./scripts/jest/jest.config.js",
         "test:watch": "npm test -- --watch",
         "test:cov": "npm run cleanCov && npm test -- --coverage",

@@ -1,7 +1,7 @@
 const TerserPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-// const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 const config = require("./webpack.config.base");
 config.mode = "production";
@@ -65,6 +65,9 @@ config.plugins.push(
     })
 );
 
-// config.plugins.push(new BundleAnalyzerPlugin());
+if (process.env.BUILD_ANALYZE === "true")
+{
+    config.plugins.push(new BundleAnalyzerPlugin());
+}
 
 module.exports = config;
