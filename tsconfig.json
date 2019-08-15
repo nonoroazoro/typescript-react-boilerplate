@@ -3,6 +3,11 @@
         "rootDir": "src",
         "module": "es6",
         "target": "es5",
+        "lib": [
+            "dom",
+            "es5",
+            "es6"
+        ],
         "jsx": "react",
         "declaration": true,
         "sourceMap": true,
@@ -18,12 +23,7 @@
         "pretty": true,
         "skipLibCheck": true,
         "strictBindCallApply": true,
-        "strictNullChecks": true,
-        "lib": [
-            "dom",
-            "es5",
-            "es6"
-        ]
+        "strictNullChecks": true
     },
     "include": [
         "src"
