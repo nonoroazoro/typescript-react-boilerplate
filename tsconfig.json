@@ -1,6 +1,5 @@
 {
     "compilerOptions": {
-        "rootDir": "src",
         "module": "es6",
         "target": "es5",
         "lib": [
@@ -9,8 +8,8 @@
             "es6"
         ],
         "jsx": "react",
-        "declaration": true,
-        "sourceMap": true,
+        "declaration": false,
+        "sourceMap": false,
         "moduleResolution": "node",
         "allowUnreachableCode": true,
         "experimentalDecorators": true,
