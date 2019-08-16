@@ -42,7 +42,7 @@ compiler.hooks.done.tap("done", (stats) =>
         console.log(
             "\n",
             symbols.success,
-            chalk.bold.greenBright("DevServer is ready on"),
+            chalk.bold.greenBright("DevServer is running on"),
             chalk.bold.underline.cyan(`${devProtocol}://${devHost}:${devPort}\n`)
         );
     }
