@@ -1,3 +1,4 @@
+const WebpackBar = require("webpackbar");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const env = require("../utils/env");
 
@@ -92,7 +93,8 @@ module.exports = {
                 removeStyleLinkTypeAttributes: true,
                 useShortDoctype: true
             }
-        })
+        }),
+        new WebpackBar()
     ],
     stats: {
         children: false,
