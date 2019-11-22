@@ -45,7 +45,7 @@ export const ExampleModal = (props: ExampleModalProps) =>
                 </header>
                 <div className={styles.main}>
                     <div>Press Esc or click the buttons.</div>
-                    <div>Time Elapsed: <span className={styles.time}>{`${time}s`}</span></div>
+                    <div>Time Elapsed: <span className={styles.time}>{`${String(time)}s`}</span></div>
                 </div>
                 <div className={styles.footer}>
                     <div className={cs(styles.btn, styles.btnCancel)} onClick={onCancel}>Cancel</div>
