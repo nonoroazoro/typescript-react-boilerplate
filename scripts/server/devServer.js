@@ -3,10 +3,11 @@ const symbols = require("log-symbols");
 const webpack = require("webpack");
 const WebpackDevServer = require("webpack-dev-server");
 
-const { devProtocol, devHost, devPort } = require("../utils/env");
+const { devProtocol, devHost, devPort, examplesPath } = require("../build.config");
 const config = require("../webpack/webpack.config.dev");
 const compiler = webpack(config);
 const server = new WebpackDevServer(compiler, {
+    contentBase: examplesPath,
     disableHostCheck: true,
     historyApiFallback: true,
     hot: true,
@@ -34,7 +35,7 @@ compiler.hooks.done.tap("done", (stats) =>
         console.log(
             "\n",
             symbols.error,
-            chalk.bold.redBright(`Failed to start the DevServer: ${stats.errors}\n`)
+            chalk.bold.redBright(`Failed to start the DevServer: ${String(stats.errors)}\n`)
         );
     }
     else

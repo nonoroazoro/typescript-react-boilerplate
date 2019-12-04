@@ -22,6 +22,7 @@ config.optimization = {
     minimizer: [
         new TerserPlugin({
             cache: true,
+            extractComments: false,
             parallel: true,
             sourceMap: true
         }),

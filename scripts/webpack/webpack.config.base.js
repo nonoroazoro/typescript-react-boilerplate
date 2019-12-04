@@ -1,14 +1,13 @@
 const WebpackBar = require("webpackbar");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const env = require("../utils/env");
+const buildConfig = require("../build.config");
 
 module.exports = {
-    context: env.rootPath,
+    context: buildConfig.rootPath,
     entry: {
         index: ["./src"]
     },
     output: {
-        path: env.buildPath,
+        path: buildConfig.buildPath,
         publicPath: "/",
         filename: "[name].js",
         chunkFilename: "[name].chunk.js"
@@ -76,26 +75,7 @@ module.exports = {
             }
         ]
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            inject: true,
-            template: env.htmlPath,
-            favicon: env.faviconPath,
-            minify: {
-                collapseWhitespace: true,
-                keepClosingSlash: true,
-                minifyCSS: true,
-                minifyJS: true,
-                minifyURLs: true,
-                removeComments: true,
-                removeEmptyAttributes: true,
-                removeRedundantAttributes: true,
-                removeStyleLinkTypeAttributes: true,
-                useShortDoctype: true
-            }
-        }),
-        new WebpackBar()
-    ],
+    plugins: [new WebpackBar()],
     stats: {
         children: false,
         modules: false

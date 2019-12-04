@@ -11,9 +11,5 @@ module.exports = {
     devHost: process.env.HOST || "0.0.0.0",
     devPort: process.env.PORT || 8080,
     buildPath: path.resolve(rootPath, "./dist"),
-    faviconPath: path.resolve(rootPath, "./templates/favicon.ico"),
-    htmlPath: path.resolve(
-        rootPath,
-        `./templates/${isProd ? "index-prod" : "index-dev"}.html`
-    )
+    examplesPath: path.resolve(rootPath, "./examples")
 };
