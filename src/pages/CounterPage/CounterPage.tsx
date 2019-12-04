@@ -1,8 +1,10 @@
 import * as cs from "classnames";
 import * as React from "react";
 
-import { ExampleModal } from "../../components/ExampleModal";
 import { BaseReactProps } from "../../types";
+import { ErrorBoundaryContext } from "../../components/ErrorBoundary";
+import { ExampleModal } from "../../components/ExampleModal";
+import { queryValue } from "../../api";
 
 import * as styles from "./CounterPage.less";
 
@@ -14,11 +16,19 @@ export interface CounterPageProps extends BaseReactProps
 export const CounterPage = (props: CounterPageProps) =>
 {
     const { className, value: initialValue } = props;
+    const { throwError } = React.useContext(ErrorBoundaryContext);
+
     const [value, setValue] = React.useState(initialValue);
     const [showModal, setShowModal] = React.useState(false);
+
+    React.useEffect(() =>
+    {
+        queryValue().then(setValue).catch(throwError);
+    }, [throwError]);
+
     return (
         <div className={cs(className, styles.container)}>
-            <div>
+            <div className={styles.innerContainer}>
                 <span className={styles.value}>{value}</span>
                 <button className={styles.btn} type="button" onClick={_handleClick(1)}>+1</button>
                 <button className={styles.btn} type="button" onClick={_handleClick(-1)}>-1</button>
