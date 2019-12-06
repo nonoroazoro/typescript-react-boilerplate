@@ -67,7 +67,7 @@
         "enzyme-adapter-react-16": "^1.15.1",
         "enzyme-to-json": "^3.4.3",
         "eslint": "^6.7.2",
-        "eslint-config-zoro": "^2.7.2",
+        "eslint-config-zoro": "^2.7.3",
         "eslint-loader": "^3.0.2",
         "eslint-plugin-react": "^7.17.0",
         "eslint-plugin-react-hooks": "^2.3.0",
