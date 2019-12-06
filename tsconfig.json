@@ -18,7 +18,7 @@
         "noImplicitReturns": true,
         "noImplicitThis": true,
         "noImplicitUseStrict": true,
-        "noUnusedLocals": true,
+        "noUnusedLocals": false,
         "noUnusedParameters": true,
         "pretty": true,
         "skipLibCheck": true,
