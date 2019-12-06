@@ -4,7 +4,9 @@ exports[`Counter Component render component 1`] = `
 <div
   className="counter-test container"
 >
-  <div>
+  <div
+    className="innerContainer"
+  >
     <span
       className="value"
     >
