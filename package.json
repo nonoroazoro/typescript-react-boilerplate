@@ -35,7 +35,7 @@
         "build:es": "tsc --project ./tsconfig.es.json",
         "build:prod": "cross-env NODE_ENV=production webpack --config ./scripts/webpack/webpack.config.prod.js",
         "build:analyze": "cross-env NODE_ENV=production BUILD_ANALYZE=true webpack --config ./scripts/webpack/webpack.config.prod.js --env.analyze",
-        "test": "jest --config ./scripts/jest/jest.config.js",
+        "test": "jest --config ./scripts/jest/jest.config.json",
         "test:watch": "npm test -- --watch",
         "test:cov": "npm run cleanCov && npm test -- --coverage",
         "test:update": "npm test -- --updateSnapshot"
@@ -53,6 +53,7 @@
         "@hot-loader/react-dom": "^16.13.0",
         "@types/classnames": "^2.2.10",
         "@types/enzyme": "^3.10.5",
+        "@types/enzyme-adapter-react-16": "^1.0.6",
         "@types/jest": "^25.1.4",
         "@types/react": "^16.9.29",
         "@types/react-dom": "^16.9.5",
