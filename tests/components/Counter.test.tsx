@@ -10,10 +10,7 @@ describe("Counter Component", () =>
 
     beforeAll(() =>
     {
-        props = {
-            className: "counter-test",
-            value: 0
-        };
+        props = { className: "counter-test", value: 0 };
         wrapper = shallow(<CounterPage {...props} />);
     });
 
@@ -29,6 +26,6 @@ describe("Counter Component", () =>
 
     it("render class name", () =>
     {
-        expect(wrapper.find(`.${props.className}`)).not.toBeNull();
+        expect(wrapper.find(`.${props.className ?? ""}`)).not.toBeNull();
     });
 });
