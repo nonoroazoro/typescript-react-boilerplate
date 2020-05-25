@@ -24,6 +24,7 @@ export const Modal = (props: ModalProps) =>
 {
     const { className, children, show, onKeyDown = noop, onMaskClick = noop } = props;
     const [visible, setVisible] = React.useState(false);
+
     React.useEffect(() =>
     {
         setVisible((prevVisible) =>
@@ -36,6 +37,7 @@ export const Modal = (props: ModalProps) =>
             return prevVisible;
         });
     }, [show]);
+
     React.useEffect(() =>
     {
         if (show)
@@ -48,6 +50,7 @@ export const Modal = (props: ModalProps) =>
         }
         return;
     }, [show, onKeyDown]);
+
     return (
         <div
             className={cs(

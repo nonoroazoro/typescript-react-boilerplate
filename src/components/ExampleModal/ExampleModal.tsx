@@ -26,6 +26,7 @@ export const ExampleModal = (props: ExampleModalProps) =>
         // Reset time.
         setTime(0);
     }, [show]);
+
     useInterval(
         () => setTime((prevTime) => prevTime + 1),
         1000,
