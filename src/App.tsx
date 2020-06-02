@@ -16,7 +16,7 @@ export const App = hot(() =>
         <div className={styles.container}>
             <AppHeader />
             <ErrorBoundary>
-                <React.Suspense fallback={<div>Loading</div>}>
+                <React.Suspense fallback={<div className={styles.loader}>Loading</div>}>
                     <Switch>
                         <Route exact path="/" component={CounterPage} />
                         <Route exact path="/about" component={AboutPage} />
