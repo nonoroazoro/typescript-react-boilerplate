@@ -1,4 +1,6 @@
 const WebpackBar = require("webpackbar");
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
+
 const buildConfig = require("../build.config");
 
 module.exports = {
@@ -18,17 +20,13 @@ module.exports = {
     module: {
         rules: [
             {
-                enforce: "pre",
-                test: /\.tsx?$/,
-                loader: "eslint-loader",
-                options: { cache: true },
-                exclude: /node_modules/
-            },
-            {
                 test: /\.tsx?$/,
                 use: [
                     "cache-loader",
-                    "ts-loader"
+                    {
+                        loader: "ts-loader",
+                        options: { transpileOnly: true }
+                    }
                 ],
                 exclude: /node_modules/
             },
@@ -72,7 +70,14 @@ module.exports = {
             }
         ]
     },
-    plugins: [new WebpackBar()],
+    plugins: [
+        new ForkTsCheckerWebpackPlugin({
+            eslint: {
+                files: "{packages,scripts,src,tests,examples}/**/*.{js,jsx,ts,tsx}"
+            }
+        }),
+        new WebpackBar()
+    ],
     stats: {
         children: false,
         modules: false
