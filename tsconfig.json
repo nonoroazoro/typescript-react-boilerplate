@@ -8,10 +8,10 @@
             "es6"
         ],
         "jsx": "react",
-        "declaration": false,
-        "sourceMap": false,
+        "sourceMap": true,
         "moduleResolution": "node",
         "allowUnreachableCode": true,
+        "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "importHelpers": true,
         "noImplicitAny": true,
@@ -24,7 +24,8 @@
         "removeComments": true,
         "skipLibCheck": true,
         "strictBindCallApply": true,
-        "strictNullChecks": true
+        "strictNullChecks": true,
+        "suppressImplicitAnyIndexErrors": true
     },
     "include": [
         "src"

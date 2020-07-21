@@ -4,6 +4,7 @@
         "allowJs": true
     },
     "include": [
+        "examples",
         "scripts",
         "src",
         "tests"

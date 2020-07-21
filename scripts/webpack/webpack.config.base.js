@@ -73,7 +73,7 @@ module.exports = {
     plugins: [
         new ForkTsCheckerWebpackPlugin({
             eslint: {
-                files: "{packages,scripts,src,tests,examples}/**/*.{js,jsx,ts,tsx}"
+                files: "{examples,scripts,src,tests}/**/*.{js,jsx,ts,tsx}"
             }
         }),
         new WebpackBar()
