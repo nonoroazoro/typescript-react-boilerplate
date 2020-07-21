@@ -4,6 +4,7 @@
     "description": "Minimal example for React with TypeScript.",
     "license": "MIT",
     "main": "dist/index.js",
+    "module": "dist/es/index.js",
     "types": "dist/types/index.d.ts",
     "author": {
         "email": "xiaochao.k@gmail.com",
