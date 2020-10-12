@@ -4,6 +4,11 @@
 export interface EnhancedError extends Error
 {
     /**
+     * Indicates whether it's an enhanced error.
+     */
+    isEnhancedError: boolean;
+
+    /**
      * The error code, if available.
      */
     code?: number | string;
@@ -64,7 +69,9 @@ export function enhanceError(
     meta?: any
 ): EnhancedError
 {
-    const e: EnhancedError = error;
+    const e = error as EnhancedError;
+    e.isEnhancedError = true;
+
     if (code !== undefined)
     {
         e.code = code;
@@ -84,5 +91,48 @@ export function enhanceError(
     {
         e.meta = meta;
     }
+
+    e["toJSON"] = function toJSON()
+    {
+        const result: Record<string, any> = {};
+
+        // Standard
+        result.message = this.message;
+        result.name = this.name;
+        result.stack = this.stack;
+
+        // Microsoft
+        if (this["description"] != null)
+        {
+            result.description = this["description"];
+        }
+        if (this["number"] != null)
+        {
+            result.number = this["number"];
+        }
+
+        // Mozilla
+        if (this["fileName"] != null)
+        {
+            result.fileName = this["fileName"];
+        }
+        if (this["lineNumber"] != null)
+        {
+            result.lineNumber = this["lineNumber"];
+        }
+        if (this["columnNumber"] != null)
+        {
+            result.columnNumber = this["columnNumber"];
+        }
+
+        // Enhanced
+        if (this.code != null)
+        {
+            result.code = this.code;
+        }
+
+        return result;
+    };
+
     return e;
 }
