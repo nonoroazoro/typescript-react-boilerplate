@@ -20,7 +20,12 @@ config.externals = {
 
 config.optimization = {
     minimizer: [
-        new TerserPlugin({ extractComments: false }),
+        new TerserPlugin({
+            extractComments: false,
+            terserOptions: {
+                format: { comments: false }
+            }
+        }),
         new OptimizeCSSAssetsPlugin()
     ]
 };
