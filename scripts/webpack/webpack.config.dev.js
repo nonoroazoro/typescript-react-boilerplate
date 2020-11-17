@@ -22,7 +22,6 @@ config.module.rules.push(
             {
                 loader: "css-loader",
                 options: {
-                    localsConvention: "camelCase",
                     modules: {
                         localIdentName: "[name]-[local]"
                     }
