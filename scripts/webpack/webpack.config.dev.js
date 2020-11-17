@@ -3,7 +3,7 @@ const webpack = require("webpack");
 const { devProtocol, devHost, devPort } = require("../build.config");
 const config = require("./webpack.config.base");
 config.mode = "development";
-config.devtool = "cheap-module-eval-source-map";
+config.devtool = "eval-cheap-module-source-map";
 
 config.module.rules.push(
     {
