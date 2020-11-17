@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 const chalk = require("chalk");
 const symbols = require("log-symbols");
 const webpack = require("webpack");
