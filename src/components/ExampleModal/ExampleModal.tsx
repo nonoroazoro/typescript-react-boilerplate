@@ -28,7 +28,7 @@ export const ExampleModal = (props: ExampleModalProps) =>
     }, [show]);
 
     useInterval(
-        () => setTime((prevTime) => prevTime + 1),
+        () => { setTime((prevTime) => prevTime + 1); },
         1000,
         !show
     );

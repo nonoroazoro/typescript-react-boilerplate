@@ -46,7 +46,7 @@ export const CounterPage = (props: CounterPageProps) =>
 
     function _handleClick(increment: number)
     {
-        return () => setValue((prev) => prev + increment);
+        return () => { setValue((prev) => prev + increment); };
     }
 
     function _handleShowModal()
