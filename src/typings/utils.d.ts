@@ -31,6 +31,11 @@ export type Properties<T, Type> = Pick<T, PropertyNames<T, Type>>;
 export type ExcludeProperties<T, Type> = Pick<T, ExcludePropertyNames<T, Type>>;
 
 /**
- * Converts union type into Intersection type.
+ * Converts enum type into union type (TypeScript 4.1+).
  */
-type UnionToIntersection<U> = (U extends any ? (arg: U) => void : never) extends ((arg: infer I) => void) ? I : never;
+export type EnumToUnion<E> = `${E}`;
+
+/**
+ * Converts union type into intersection type.
+ */
+export type UnionToIntersection<U> = (U extends any ? (arg: U) => void : never) extends ((arg: infer I) => void) ? I : never;
