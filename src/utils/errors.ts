@@ -55,14 +55,14 @@ export function createError(
  * Enhances an existing `Error` or `EnhancedError` object with the specified
  * error code, request, response and meta data.
  *
- * @param {(Error | EnhancedError)} error The error to enhance.
+ * @param {(EnhancedError | Error)} error The error to enhance.
  * @param {(number | string)} [code] The error code.
  * @param {any} [request] The request.
  * @param {any} [response] The response.
  * @param {any} [meta] The meta data.
  */
 export function enhanceError(
-    error: Error | EnhancedError,
+    error: EnhancedError | Error,
     code?: number | string,
     request?: any,
     response?: any,

@@ -1,7 +1,7 @@
 /**
  * JSON value.
  */
-export type JSONValue = string | number | boolean | null | JSONObject | JSONArray;
+export type JSONValue = JSONArray | JSONObject | boolean | number | string | null;
 
 /**
  * JSON object.
