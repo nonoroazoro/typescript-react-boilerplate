@@ -1,4 +1,5 @@
 import * as React from "react";
+import memoize from "memoize-one";
 
 import { BaseReactProps } from "../../types";
 import { EnhancedError } from "../../utils";
@@ -13,6 +14,8 @@ export interface ErrorBoundaryState
 
 export class ErrorBoundary extends React.PureComponent<BaseReactProps, ErrorBoundaryState>
 {
+    private _getProviderValue = memoize(() => ({ throwError: this._throwError }));
+
     constructor(props: BaseReactProps)
     {
         super(props);
@@ -51,7 +54,7 @@ export class ErrorBoundary extends React.PureComponent<BaseReactProps, ErrorBoun
             }
         }
         return (
-            <ErrorBoundaryContext.Provider value={{ throwError: this._throwError }}>
+            <ErrorBoundaryContext.Provider value={this._getProviderValue()}>
                 {this.props.children}
             </ErrorBoundaryContext.Provider>
         );
