@@ -18,7 +18,12 @@ config.module.rules.push(
     {
         test: /\.less$/,
         use: [
-            "style-loader",
+            {
+                loader: "style-loader",
+                options: {
+                    esModule: false
+                }
+            },
             {
                 loader: "css-loader",
                 options: {

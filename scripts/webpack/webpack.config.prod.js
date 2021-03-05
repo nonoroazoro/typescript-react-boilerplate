@@ -1,6 +1,6 @@
 const TerserPlugin = require("terser-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 const config = require("./webpack.config.base");
@@ -26,7 +26,7 @@ config.optimization = {
                 format: { comments: false }
             }
         }),
-        new OptimizeCSSAssetsPlugin()
+        new CssMinimizerPlugin()
     ]
 };
 
@@ -43,7 +43,12 @@ config.module.rules.push(
     {
         test: /\.less$/,
         use: [
-            MiniCssExtractPlugin.loader,
+            {
+                loader: MiniCssExtractPlugin.loader,
+                options: {
+                    esModule: false
+                }
+            },
             {
                 loader: "css-loader",
                 options: {
