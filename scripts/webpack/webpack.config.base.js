@@ -3,6 +3,7 @@ const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
 const buildConfig = require("../build.config");
 
+/** @type { import("webpack").Configuration } */
 module.exports = {
     context: buildConfig.rootPath,
     entry: {
