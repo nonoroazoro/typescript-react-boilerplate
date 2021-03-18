@@ -3,5 +3,9 @@
     "compilerOptions": {
         "outDir": "dist/es",
         "sourceMap": false
-    }
+    },
+    "exclude": [
+        "scripts",
+        "tests"
+    ]
 }

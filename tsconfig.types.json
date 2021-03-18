@@ -1,10 +1,14 @@
 {
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "declaration": true,
-    "declarationDir": "dist/types",
-    "emitDeclarationOnly": true,
-    "removeComments": false,
-    "sourceMap": false
-  }
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "declaration": true,
+        "declarationDir": "dist/types",
+        "emitDeclarationOnly": true,
+        "removeComments": false,
+        "sourceMap": false
+    },
+    "exclude": [
+        "scripts",
+        "tests"
+    ]
 }
