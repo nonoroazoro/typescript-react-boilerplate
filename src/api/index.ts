@@ -1,7 +1,3 @@
-const API = {
-    queryValue: "demoApi"
-};
-
 /**
  * Queries some data.
  *
@@ -9,6 +5,6 @@ const API = {
  */
 export async function queryValue()
 {
-    // const result = await get<number>(API.queryValue);
-    return Math.floor(Math.random() * 100);
+    // return Math.floor(Math.random() * 100);
+    return 1;
 }

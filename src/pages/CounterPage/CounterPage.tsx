@@ -29,7 +29,7 @@ export const CounterPage = (props: CounterPageProps) =>
     return (
         <div className={cs(className, styles.container)}>
             <div className={styles.innerContainer}>
-                <span className={styles.value}>{value}</span>
+                <span className={styles.value} data-testid="counter-value">{value}</span>
                 <button className={styles.btn} type="button" onClick={_handleClick(1)}>+1</button>
                 <button className={styles.btn} type="button" onClick={_handleClick(-1)}>-1</button>
                 <button className={styles.btn} type="button" onClick={_handleClick(2)}>+2</button>

@@ -1,57 +1,99 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Counter Component render component 1`] = `
+exports[`CounterPage should render the page 1`] = `
 <div
-  className="counter-test container"
+  class="counter-page-test container"
 >
   <div
-    className="innerContainer"
+    class="innerContainer"
   >
     <span
-      className="value"
+      class="value"
+      data-testid="counter-value"
     >
-      0
+      1
     </span>
     <button
-      className="btn"
-      onClick={[Function]}
+      class="btn"
       type="button"
     >
       +1
     </button>
     <button
-      className="btn"
-      onClick={[Function]}
+      class="btn"
       type="button"
     >
       -1
     </button>
     <button
-      className="btn"
-      onClick={[Function]}
+      class="btn"
       type="button"
     >
       +2
     </button>
     <button
-      className="btn"
-      onClick={[Function]}
+      class="btn"
       type="button"
     >
       -3
     </button>
     <button
-      className="btn"
-      onClick={[Function]}
+      class="btn"
       type="button"
     >
       I need a dialog...
     </button>
   </div>
-  <Component
-    onCancel={[Function]}
-    onOK={[Function]}
-    show={false}
-  />
+  <div
+    class="container containerHide"
+  >
+    <div
+      class="mask fadeOut"
+    />
+    <div
+      class="content zoomOut"
+    >
+      <div
+        class="content"
+      >
+        <header
+          class="header"
+        >
+          <h6>
+            Dialog
+          </h6>
+        </header>
+        <div
+          class="main"
+        >
+          <div>
+            Press Esc or click the buttons.
+          </div>
+          <div>
+            Time Elapsed: 
+            <span
+              class="time"
+            >
+              0s
+            </span>
+          </div>
+        </div>
+        <div
+          class="footer"
+        >
+          <div
+            class="btn btnCancel"
+          >
+            Cancel
+          </div>
+          <div
+            class="btn btnOK"
+          >
+            OK
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;

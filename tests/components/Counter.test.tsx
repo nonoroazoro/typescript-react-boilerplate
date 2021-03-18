@@ -1,31 +1,31 @@
-import { shallow, ShallowWrapper } from "enzyme";
 import * as React from "react";
+import { fireEvent, render, waitFor } from "@testing-library/react";
 
-import { CounterPage, CounterPageProps } from "../../src/pages/CounterPage";
+import { CounterPage } from "../../src/pages/CounterPage";
 
-describe("Counter Component", () =>
+describe("CounterPage", () =>
 {
-    let props: CounterPageProps;
-    let wrapper: ShallowWrapper<CounterPageProps>;
+    const props = { className: "counter-page-test", value: 1 };
 
-    beforeAll(() =>
+    it("should render the page", () =>
     {
-        props = { className: "counter-test", value: 0 };
-        wrapper = shallow(<CounterPage {...props} />);
+        const { container } = render(<CounterPage {...props} />);
+        expect(container.firstChild).toMatchSnapshot();
     });
 
-    it("render component", () =>
+    it("should render initial value", () =>
     {
-        expect(wrapper).toMatchSnapshot();
+        const { getByTestId } = render(<CounterPage {...props} />);
+        expect(getByTestId("counter-value").textContent).toBe(String(props.value));
     });
 
-    it("render init value", () =>
+    it("should change value after the increase button is clicked", async () =>
     {
-        expect(wrapper.find(".value").text()).toBe(String(props.value));
-    });
-
-    it("render class name", () =>
-    {
-        expect(wrapper.find(`.${props.className ?? ""}`)).not.toBeNull();
+        const { getByTestId, getByText } = render(<CounterPage {...props} />);
+        fireEvent.click(getByText("+1"));
+        await waitFor(() =>
+        {
+            expect(getByTestId("counter-value").textContent).toEqual(String(props.value + 1));
+        });
     });
 });
