@@ -10,12 +10,12 @@ import * as styles from "./CounterPage.less";
 
 export interface CounterPageProps extends BaseReactProps
 {
-    value: number;
+    value?: number;
 }
 
 export const CounterPage = (props: CounterPageProps) =>
 {
-    const { className, value: initialValue } = props;
+    const { className, value: initialValue = 0 } = props;
     const { throwError } = React.useContext(ErrorBoundaryContext);
 
     const [value, setValue] = React.useState(initialValue);
@@ -58,8 +58,4 @@ export const CounterPage = (props: CounterPageProps) =>
     {
         setShowModal(false);
     }
-};
-
-CounterPage.defaultProps = {
-    value: 0
 };
