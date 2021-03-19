@@ -1,7 +1,7 @@
 import * as cs from "classnames";
 import * as React from "react";
 
-import { BaseReactProps } from "../../types";
+import type { BaseReactProps } from "../../types";
 import { ErrorBoundaryContext } from "../../components/ErrorBoundary";
 import { ExampleModal } from "../../components/ExampleModal";
 import { queryValue } from "../../api";

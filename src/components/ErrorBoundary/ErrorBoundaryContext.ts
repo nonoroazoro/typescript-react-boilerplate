@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { EnhancedError } from "../../utils";
+import type { EnhancedError } from "../../utils";
 
 export interface ErrorBoundaryContext
 {

@@ -2,7 +2,7 @@ import * as cs from "classnames";
 import * as React from "react";
 import { NavLink } from "react-router-dom";
 
-import { BaseReactProps } from "../../types";
+import type { BaseReactProps } from "../../types";
 
 import * as styles from "./AppHeader.less";
 

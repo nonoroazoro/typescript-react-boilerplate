@@ -1,8 +1,8 @@
 import * as React from "react";
 import memoize from "memoize-one";
 
-import { BaseReactProps } from "../../types";
-import { EnhancedError } from "../../utils";
+import type { BaseReactProps } from "../../types";
+import type { EnhancedError } from "../../utils";
 import { ErrorBoundaryContext } from "./ErrorBoundaryContext";
 
 export interface ErrorBoundaryState
