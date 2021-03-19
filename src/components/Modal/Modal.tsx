@@ -3,7 +3,7 @@ import * as React from "react";
 
 import type { BaseReactProps } from "../../types";
 
-import * as styles from "./Modal.less";
+import * as styles from "./Modal.module.less";
 
 export interface ModalProps extends BaseReactProps
 {

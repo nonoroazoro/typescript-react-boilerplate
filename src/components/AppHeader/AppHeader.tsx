@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 import type { BaseReactProps } from "../../types";
 
-import * as styles from "./AppHeader.less";
+import * as styles from "./AppHeader.module.less";
 
 export const AppHeader = (props: BaseReactProps) =>
 {

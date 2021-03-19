@@ -5,7 +5,7 @@ import * as React from "react";
 import { AppHeader } from "./components/AppHeader";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 
-import * as styles from "./App.less";
+import * as styles from "./App.module.less";
 
 const AboutPage = React.lazy(() => import("./pages/AboutPage"));
 const CounterPage = React.lazy(() => import("./pages/CounterPage"));

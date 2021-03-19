@@ -1,12 +1,12 @@
 import * as cs from "classnames";
 import * as React from "react";
 
-import type { BaseReactProps } from "../../types";
 import { ErrorBoundaryContext } from "../../components/ErrorBoundary";
 import { ExampleModal } from "../../components/ExampleModal";
 import { queryValue } from "../../api";
+import type { BaseReactProps } from "../../types";
 
-import * as styles from "./CounterPage.less";
+import * as styles from "./CounterPage.module.less";
 
 export interface CounterPageProps extends BaseReactProps
 {
