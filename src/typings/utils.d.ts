@@ -6,8 +6,8 @@
  */
 type TypedProperties<T, Type, Reversed = false> = {
     [Key in keyof T]-?: Exclude<T[Key], undefined> extends Type
-    ? (Reversed extends false ? Key : never)
-    : (Reversed extends false ? never : Key)
+        ? (Reversed extends false ? Key : never)
+        : (Reversed extends false ? never : Key)
 };
 
 /**
