@@ -8,7 +8,7 @@ module.exports = {
     rootPath,
 
     devProtocol: "http",
-    devHost: process.env.HOST || "0.0.0.0",
+    devHost: process.env.HOST || "localhost",
     devPort: process.env.PORT || 8080,
     buildPath: path.resolve(rootPath, "./dist"),
     examplesPath: path.resolve(rootPath, "./examples")
