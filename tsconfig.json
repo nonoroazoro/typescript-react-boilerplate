@@ -1,12 +1,7 @@
 {
     "compilerOptions": {
         "module": "esnext",
-        "target": "es5",
-        "lib": [
-            "dom",
-            "es5",
-            "es6"
-        ],
+        "target": "esnext",
         "jsx": "react",
         "sourceMap": true,
         "moduleResolution": "node",
@@ -15,6 +10,7 @@
         "experimentalDecorators": true,
         "forceConsistentCasingInFileNames": true,
         "importHelpers": true,
+        "importsNotUsedAsValues": "error",
         "noImplicitAny": true,
         "noImplicitReturns": true,
         "noImplicitThis": true,
