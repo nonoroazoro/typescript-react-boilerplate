@@ -1,6 +1,15 @@
 {
     "rootDir": "../../",
     "coverageDirectory": "<rootDir>/@coverage",
+    "globals": {
+        "ts-jest": {
+            "diagnostics": {
+                "ignoreCodes": [
+                    151001
+                ]
+            }
+        }
+    },
     "moduleFileExtensions": [
         "js",
         "ts",
