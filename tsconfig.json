@@ -23,5 +23,8 @@
         "strictBindCallApply": true,
         "strictNullChecks": true,
         "suppressImplicitAnyIndexErrors": true
-    }
+    },
+    "include": [
+        "src"
+    ]
 }
