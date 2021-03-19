@@ -23,7 +23,6 @@ module.exports = {
             {
                 test: /\.tsx?$/,
                 use: [
-                    "cache-loader",
                     {
                         loader: "ts-loader",
                         options: { transpileOnly: true }
