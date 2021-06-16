@@ -1,7 +1,5 @@
 /* eslint-disable no-console */
-
 const chalk = require("chalk");
-const symbols = require("log-symbols");
 const webpack = require("webpack");
 const WebpackDevServer = require("webpack-dev-server");
 
@@ -36,7 +34,6 @@ compiler.hooks.done.tap("done", (stats) =>
     {
         console.log(
             "\n",
-            symbols.error,
             chalk.bold.redBright(`Failed to start the DevServer: ${String(stats.errors)}\n`)
         );
     }
@@ -44,8 +41,7 @@ compiler.hooks.done.tap("done", (stats) =>
     {
         console.log(
             "\n",
-            symbols.success,
-            chalk.bold.greenBright("DevServer is running on"),
+            chalk.bold.greenBright("DevServer is running at"),
             chalk.bold.underline.cyan(`${devProtocol}://${devHost}:${devPort}\n`)
         );
     }
