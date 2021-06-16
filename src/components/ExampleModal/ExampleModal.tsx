@@ -1,6 +1,6 @@
-import * as cs from "classnames";
-import * as React from "react";
+import { useEffect, useState } from "react";
 import { useInterval } from "react-fxxking-hooks";
+import cs from "classnames";
 
 import { Modal } from "../Modal";
 import type { BaseReactProps } from "../../types";
@@ -20,8 +20,8 @@ export const ExampleModal = (props: ExampleModalProps) =>
     const { className, show, onOK = noop, onCancel = noop } = props;
 
     // The following is a simple example of how to use React hooks.
-    const [time, setTime] = React.useState(0);
-    React.useEffect(() =>
+    const [time, setTime] = useState(0);
+    useEffect(() =>
     {
         // Reset time.
         setTime(0);

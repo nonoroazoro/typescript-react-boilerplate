@@ -1,4 +1,3 @@
-import * as React from "react";
 import { fireEvent, render, waitFor } from "@testing-library/react";
 
 import { CounterPage } from "../../src/pages/CounterPage";

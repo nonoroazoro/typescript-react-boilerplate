@@ -1,5 +1,4 @@
-import * as React from "react";
-
+import { createContext } from "react";
 import type { EnhancedError } from "../../utils";
 
 export interface ErrorBoundaryContext
@@ -13,4 +12,4 @@ export interface ErrorBoundaryContext
     throwError: (error: EnhancedError, toast?: boolean) => void;
 }
 
-export const ErrorBoundaryContext = React.createContext({} as ErrorBoundaryContext);
+export const ErrorBoundaryContext = createContext({} as ErrorBoundaryContext);

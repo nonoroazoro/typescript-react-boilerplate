@@ -1,6 +1,5 @@
-import * as cs from "classnames";
-import * as React from "react";
 import { NavLink } from "react-router-dom";
+import cs from "classnames";
 
 import type { BaseReactProps } from "../../types";
 

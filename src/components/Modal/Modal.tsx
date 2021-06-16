@@ -1,5 +1,5 @@
-import * as cs from "classnames";
-import * as React from "react";
+import { useEffect, useState } from "react";
+import cs from "classnames";
 
 import type { BaseReactProps } from "../../types";
 
@@ -23,9 +23,9 @@ export interface ModalProps extends BaseReactProps
 export const Modal = (props: ModalProps) =>
 {
     const { className, children, show, onKeyDown = noop, onMaskClick = noop } = props;
-    const [visible, setVisible] = React.useState(false);
+    const [visible, setVisible] = useState(false);
 
-    React.useEffect(() =>
+    useEffect(() =>
     {
         setVisible((prevVisible) =>
         {
@@ -38,7 +38,7 @@ export const Modal = (props: ModalProps) =>
         });
     }, [show]);
 
-    React.useEffect(() =>
+    useEffect(() =>
     {
         if (show)
         {

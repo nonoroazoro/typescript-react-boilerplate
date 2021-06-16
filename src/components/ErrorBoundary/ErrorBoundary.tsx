@@ -1,4 +1,4 @@
-import * as React from "react";
+import { PureComponent } from "react";
 import memoize from "memoize-one";
 
 import { ErrorBoundaryContext } from "./ErrorBoundaryContext";
@@ -12,7 +12,7 @@ export interface ErrorBoundaryState
     error?: EnhancedError;
 }
 
-export class ErrorBoundary extends React.PureComponent<BaseReactProps, ErrorBoundaryState>
+export class ErrorBoundary extends PureComponent<BaseReactProps, ErrorBoundaryState>
 {
     private _getProviderValue = memoize(() => ({ throwError: this._throwError }));
 
@@ -32,7 +32,7 @@ export class ErrorBoundary extends React.PureComponent<BaseReactProps, ErrorBoun
         this.setState({ hasError: true, toast, error });
     };
 
-    render()
+    override render()
     {
         const { error, hasError, toast } = this.state;
         if (hasError && error != null)

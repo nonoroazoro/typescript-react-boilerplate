@@ -1,5 +1,5 @@
-import * as cs from "classnames";
-import * as React from "react";
+import { useContext, useEffect, useState } from "react";
+import cs from "classnames";
 
 import { ErrorBoundaryContext } from "../../components/ErrorBoundary";
 import { ExampleModal } from "../../components/ExampleModal";
@@ -16,12 +16,12 @@ export interface CounterPageProps extends BaseReactProps
 export const CounterPage = (props: CounterPageProps) =>
 {
     const { className, value: initialValue = 0 } = props;
-    const { throwError } = React.useContext(ErrorBoundaryContext);
+    const { throwError } = useContext(ErrorBoundaryContext);
 
-    const [value, setValue] = React.useState(initialValue);
-    const [showModal, setShowModal] = React.useState(false);
+    const [value, setValue] = useState(initialValue);
+    const [showModal, setShowModal] = useState(false);
 
-    React.useEffect(() =>
+    useEffect(() =>
     {
         queryValue().then(setValue).catch(throwError);
     }, [throwError]);
