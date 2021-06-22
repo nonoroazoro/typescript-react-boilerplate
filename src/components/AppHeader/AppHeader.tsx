@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import cs from "classnames";
+import cs from "clsx";
 
 import type { BaseReactProps } from "../../types";
 

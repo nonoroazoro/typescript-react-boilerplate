@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import cs from "classnames";
+import cs from "clsx";
 
 import { ErrorBoundaryContext } from "../../components/ErrorBoundary";
 import { ExampleModal } from "../../components/ExampleModal";

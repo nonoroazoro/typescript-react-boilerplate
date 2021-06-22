@@ -11,7 +11,7 @@ config.mode = "production";
 config.devtool = "hidden-source-map";
 
 config.externals = {
-    "classnames": "classNames",
+    "clsx": "clsx",
     "history": "History",
     "react": "React",
     "react-dom": "ReactDOM",
