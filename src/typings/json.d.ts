@@ -1,16 +1,16 @@
 /**
- * JSON value.
- */
-type JSONValue = JSONArray | JSONObject | boolean | number | string | null;
-
-/**
  * JSON object.
  */
 type JSONObject = {
-    [key in string]?: JSONValue
+    [key in string]?: JsonArray | JsonObject | JSONScalar
 };
 
 /**
  * JSON array.
  */
-interface JSONArray extends Array<JSONValue> { }
+type JSONArray = Array<JsonArray | JsonObject | JSONScalar>;
+
+/**
+ * JSON scalar.
+ */
+type JSONScalar = boolean | number | string | null;
