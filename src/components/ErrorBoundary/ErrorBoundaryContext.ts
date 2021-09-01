@@ -12,4 +12,5 @@ export interface ErrorBoundaryContext
     throwError: (error: EnhancedError, toast?: boolean) => void;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare
 export const ErrorBoundaryContext = createContext({} as ErrorBoundaryContext);
