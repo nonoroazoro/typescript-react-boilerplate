@@ -4,6 +4,7 @@
         "allowJs": true
     },
     "include": [
+        ".eslintrc.js",
         "examples",
         "scripts",
         "src",
