@@ -6,11 +6,6 @@ const { devProtocol, devHost, devPort, examplesPath } = require("../build.config
 const config = require("../webpack/webpack.config.dev");
 const compiler = webpack(config);
 const server = new WebpackDevServer({
-    client: {
-        overlay: {
-            warnings: false
-        }
-    },
     compress: true,
     historyApiFallback: true,
     host: devHost,
