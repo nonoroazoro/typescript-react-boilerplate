@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useInterval } from "react-fxxking-hooks";
-import cs from "clsx";
+import cs from "classnames";
 
 import { Modal } from "../Modal";
 import type { BaseReactProps } from "../../types";

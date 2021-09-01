@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import cs from "clsx";
+import cs from "classnames";
 
 import type { BaseReactProps } from "../../types";
 
