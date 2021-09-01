@@ -43,7 +43,7 @@
         "test:update": "npm test -- --updateSnapshot"
     },
     "dependencies": {
-        "clsx": "^1.1.1",
+        "classnames": "^2.3.1",
         "history": "^4.10.1",
         "memoize-one": "^5.2.1",
         "normalize.css": "^8.0.1",
