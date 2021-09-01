@@ -80,6 +80,7 @@ module.exports = {
     ],
     stats: {
         children: false,
+        colors: true,
         modules: false
     }
 };

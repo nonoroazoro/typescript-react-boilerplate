@@ -1,7 +1,5 @@
-const webpack = require("webpack");
-
-const { devProtocol, devHost, devPort } = require("../build.config");
 const config = require("./webpack.config.base");
+
 config.mode = "development";
 config.devtool = "eval-cheap-module-source-map";
 
@@ -38,21 +36,9 @@ config.module.rules.push(
     }
 );
 
-// 1. HMR: Use patched react-dom to support React 16.6+ features in RHL.
+// HMR: Use patched react-dom to support React 16.6+ features in RHL.
 config.resolve.alias = {
     "react-dom": "@hot-loader/react-dom"
 };
-
-// 2. HMR: Add entries and plugins.
-Object.keys(config.entry).forEach((key) =>
-{
-    config.entry[key].unshift(
-        `webpack-dev-server/client?${devProtocol}://${devHost}:${devPort}`,
-        "webpack/hot/only-dev-server"
-    );
-});
-config.plugins.push(
-    new webpack.HotModuleReplacementPlugin()
-);
 
 module.exports = config;

@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 const chalk = require("chalk");
 const webpack = require("webpack");
 const WebpackDevServer = require("webpack-dev-server");
@@ -6,26 +5,26 @@ const WebpackDevServer = require("webpack-dev-server");
 const { devProtocol, devHost, devPort, examplesPath } = require("../build.config");
 const config = require("../webpack/webpack.config.dev");
 const compiler = webpack(config);
-const server = new WebpackDevServer(compiler, {
-    contentBase: examplesPath,
-    disableHostCheck: true,
+const server = new WebpackDevServer({
+    client: {
+        overlay: {
+            warnings: false
+        }
+    },
+    compress: true,
     historyApiFallback: true,
+    host: devHost,
     hot: true,
     https: devProtocol === "https",
-    noInfo: false,
-    publicPath: config.output.publicPath,
-    quiet: false,
-    compress: true,
-    stats: {
-        children: false,
-        colors: true,
-        modules: false
-    },
-    staticOptions: {
-        cacheControl: true,
-        maxAge: 1000 * 60 * 60 * 24 * 365
+    port: devPort,
+    static: {
+        directory: examplesPath,
+        staticOptions: {
+            cacheControl: true,
+            maxAge: 1000 * 60 * 60 * 24 * 365
+        }
     }
-});
+}, compiler);
 
 compiler.hooks.done.tap("done", (stats) =>
 {
@@ -47,4 +46,4 @@ compiler.hooks.done.tap("done", (stats) =>
     }
 });
 
-server.listen(devPort, devHost);
+server.start();
