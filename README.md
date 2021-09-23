@@ -4,9 +4,6 @@
     <a href="https://github.com/nonoroazoro/typescript-react-boilerplate/blob/master/LICENSE">
         <img src="https://img.shields.io/github/license/nonoroazoro/typescript-react-boilerplate.svg" alt="GitHub License" />
     </a>
-    <a href="https://travis-ci.org/nonoroazoro/typescript-react-boilerplate">
-        <img src="https://img.shields.io/travis/nonoroazoro/typescript-react-boilerplate/master.svg" alt="Build Status" />
-    </a>
 </p>
 
 ## Based on
