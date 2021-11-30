@@ -19,7 +19,7 @@
 ## Testing
 
 - jest
-- enzyme
+- @testing-library
 
 
 ## Linter
