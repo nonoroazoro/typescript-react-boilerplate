@@ -1,6 +1,6 @@
 import { hot } from "react-hot-loader/root";
 import { lazy, Suspense } from "react";
-import { Redirect, Route, Switch } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import { AppHeader } from "./components/AppHeader";
 import { ErrorBoundary } from "./components/ErrorBoundary";
@@ -17,15 +17,10 @@ export const App = hot(() =>
             <AppHeader />
             <ErrorBoundary>
                 <Suspense fallback={<div className={styles.loader}>Loading...</div>}>
-                    <Switch>
-                        <Route exact path="/">
-                            <CounterPage />
-                        </Route>
-                        <Route exact path="/about">
-                            <AboutPage />
-                        </Route>
-                        <Redirect to="/" />
-                    </Switch>
+                    <Routes>
+                        <Route path="/" element={<CounterPage />} />
+                        <Route path="/about" element={<AboutPage />} />
+                    </Routes>
                 </Suspense>
             </ErrorBoundary>
         </div>

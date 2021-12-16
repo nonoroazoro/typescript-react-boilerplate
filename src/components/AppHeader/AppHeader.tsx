@@ -11,8 +11,20 @@ export const AppHeader = (props: BaseReactProps) =>
     return (
         <header className={cs(className, styles.container)}>
             <nav className={styles.nav}>
-                <NavLink exact to="/" className={styles.link} activeClassName={styles.active}>Home</NavLink>
-                <NavLink exact to="/about" className={styles.link} activeClassName={styles.active}>About</NavLink>
+                <NavLink
+                    end
+                    to="/"
+                    className={({ isActive }) => cs(styles.link, { [styles.active]: isActive })}
+                >
+                    Home
+                </NavLink>
+                <NavLink
+                    end
+                    to="/about"
+                    className={({ isActive }) => cs(styles.link, { [styles.active]: isActive })}
+                >
+                    About
+                </NavLink>
             </nav>
         </header>
     );
