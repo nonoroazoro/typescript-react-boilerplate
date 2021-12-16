@@ -10,8 +10,9 @@ const server = new WebpackDevServer({
     historyApiFallback: true,
     host: devHost,
     hot: true,
-    https: devProtocol === "https",
+    server: devProtocol,
     port: devPort,
+    allowedHosts: "all",
     static: {
         directory: examplesPath,
         staticOptions: {
