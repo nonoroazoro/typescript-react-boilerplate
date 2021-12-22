@@ -1,6 +1,6 @@
 import { fireEvent, render, waitFor } from "@testing-library/react";
 
-import { CounterPage } from "../../src/pages/CounterPage";
+import { CounterPage } from "../CounterPage";
 
 describe("CounterPage", () =>
 {

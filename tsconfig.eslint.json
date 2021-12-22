@@ -7,7 +7,6 @@
         ".eslintrc.js",
         "examples",
         "scripts",
-        "src",
-        "tests"
+        "src"
     ]
 }

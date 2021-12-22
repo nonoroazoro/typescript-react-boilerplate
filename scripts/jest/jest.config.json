@@ -23,7 +23,7 @@
         "<rootDir>/scripts/jest/jest.setup.ts"
     ],
     "testEnvironment": "jsdom",
-    "testRegex": "/tests/.+\\.(test|spec)\\.tsx?$",
+    "testRegex": "/(src|tests)/.+\\.(test|spec)\\.tsx?$",
     "transform": {
         "^.+\\.tsx?$": "ts-jest"
     },
