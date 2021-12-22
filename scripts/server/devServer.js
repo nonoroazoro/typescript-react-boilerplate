@@ -2,7 +2,7 @@ const chalk = require("chalk");
 const webpack = require("webpack");
 const WebpackDevServer = require("webpack-dev-server");
 
-const { devProtocol, devHost, devPort, examplesPath } = require("../build.config");
+const { devProtocol, devHost, devPort, examplesPath } = require("../env.config");
 const config = require("../webpack/webpack.config.dev");
 const compiler = webpack(config);
 const server = new WebpackDevServer({

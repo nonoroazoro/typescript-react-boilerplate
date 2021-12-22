@@ -1,4 +1,4 @@
-const { isProd } = require("./scripts/build.config");
+const { isProd } = require("./scripts/env.config");
 
 const config = {
     "extends": [
