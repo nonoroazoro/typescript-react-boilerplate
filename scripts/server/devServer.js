@@ -8,8 +8,8 @@ const compiler = webpack(config);
 const server = new WebpackDevServer({
     compress: true,
     historyApiFallback: true,
-    host: devHost,
     hot: true,
+    host: devHost,
     server: devProtocol,
     port: devPort,
     allowedHosts: "all",
@@ -19,6 +19,9 @@ const server = new WebpackDevServer({
             cacheControl: true,
             maxAge: 1000 * 60 * 60 * 24 * 365
         }
+    },
+    headers: {
+        "Access-Control-Allow-Origin": "*"
     }
 }, compiler);
 
