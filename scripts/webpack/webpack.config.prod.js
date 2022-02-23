@@ -1,3 +1,4 @@
+const { getPackageJSON } = require("../utils/package");
 const TerserPlugin = require("terser-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -53,7 +54,7 @@ config.module.rules.push(
                 loader: "css-loader",
                 options: {
                     modules: {
-                        localIdentName: "[sha1:hash:hex:5]"
+                        localIdentName: `${getPackageJSON().name}-[sha1:hash:hex:5]`
                     }
                 }
             },

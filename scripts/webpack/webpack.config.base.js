@@ -1,4 +1,5 @@
 const WebpackBar = require("webpackbar");
+const ESLintPlugin = require("eslint-webpack-plugin");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
 const buildConfig = require("../env.config");
@@ -71,11 +72,8 @@ module.exports = {
         ]
     },
     plugins: [
-        new ForkTsCheckerWebpackPlugin({
-            eslint: {
-                files: "src/**/*.{js,jsx,ts,tsx}"
-            }
-        }),
+        new ESLintPlugin(),
+        new ForkTsCheckerWebpackPlugin(),
         new WebpackBar()
     ],
     stats: {
