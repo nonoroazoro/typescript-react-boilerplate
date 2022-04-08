@@ -36,9 +36,4 @@ config.module.rules.push(
     }
 );
 
-// HMR: Use patched react-dom to support React 16.6+ features in RHL.
-config.resolve.alias = {
-    "react-dom": "@hot-loader/react-dom"
-};
-
 module.exports = config;
