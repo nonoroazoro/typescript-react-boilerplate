@@ -9,7 +9,7 @@
 ## Based on
 
 - typescript
-- react (with hooks)
+- react v18 (with hooks)
 - react-router
 - react-hot-loader
 - css-modules
