@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import cs from "classnames";
+import * as cs from "classnames";
 
 import type { BaseReactProps } from "../../types";
 
