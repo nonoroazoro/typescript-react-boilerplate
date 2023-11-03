@@ -92,7 +92,7 @@ export function enhanceError(
         e.meta = meta;
     }
 
-    e["toJSON"] = function toJSON()
+    (e as any)["toJSON"] = function toJSON()
     {
         const result: Record<string, any> = {};
 
