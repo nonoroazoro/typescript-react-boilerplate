@@ -10,20 +10,17 @@
         "experimentalDecorators": true,
         "forceConsistentCasingInFileNames": true,
         "importHelpers": true,
-        "importsNotUsedAsValues": "error",
         "noImplicitAny": true,
         "noImplicitOverride": true,
         "noImplicitReturns": true,
         "noImplicitThis": true,
-        "noImplicitUseStrict": true,
         "noUnusedLocals": false,
         "noUnusedParameters": true,
         "pretty": true,
         "removeComments": true,
         "skipLibCheck": true,
         "strictBindCallApply": true,
-        "strictNullChecks": true,
-        "suppressImplicitAnyIndexErrors": true
+        "strictNullChecks": true
     },
     "include": [
         "src"
